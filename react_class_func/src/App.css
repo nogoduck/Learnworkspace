@@ -1,0 +1,9 @@
+body {
+  border: 5px solid red;
+}
+
+.container {
+  border: 5px solid red;
+  margin: 5px;
+  padding: 5px;
+}
