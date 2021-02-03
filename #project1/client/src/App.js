@@ -1,36 +1,29 @@
 import React from "react";
+import axios from "axios";
 
 class App extends React.Component {
   state = {
-    cnt: 0,
-  };
-  add = () => {
-    this.setState((current) => ({ cnt: current.cnt + 1 }));
-  };
-  minus = () => {
-    this.setState((current) => ({ cnt: current.cnt - 1 }));
+    isLoading: true,
+    movies: [],
   };
 
-  componentDidMount() {
-    console.log("Component rendered");
-  }
-  componentDidUpdate() {
-    console.log("I just updated");
-  }
-  componentWillMount() {
-    //컴포넌트가 떠날 때 호출됌 ex)페이지 이동
-    console.log("Goodbye, cruel world");
-  }
-
-  render() {
-    console.log("I`m rendering");
-    return (
-      <div>
-        <h1>The number is : {this.state.cnt}</h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>Minus</button>
-      </div>
+  getMovies = async () => {
+    const {
+      data: {
+        data: { movies },
+      },
+    } = await axios.get(
+      "https://yts-proxy.nomadcoders1.now.sh/list_movies.json"
     );
+    this.setState({ movies, isLoading: false });
+  };
+  componentDidMount() {
+    this.getMovies();
+  }
+  render() {
+    const { isLoading } = this.state;
+    return <div>{isLoading ? "Loading..." : "We are ready"}</div>;
   }
 }
+
 export default App;
