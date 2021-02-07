@@ -1,3 +1,4 @@
-const inf = "B M C";
-console.log("hi");
+"use strict";
+
+const inf = "JavaScript";
 console.log(`${inf} 입니다`);
