@@ -1,0 +1,30 @@
+body {
+  margin: 0px;
+  border: 3px solid red;
+}
+div {
+  width: 50px;
+  height: 50px;
+  background: red;
+  margin-bottom: 20px;
+}
+
+.container {
+  background: dodgerblue;
+  left: 20px;
+  top: 20px;
+  position: relative;
+  /* position:static (기본값) */
+}
+
+.b {
+  color: white;
+  background: green;
+  left: 20px;
+  top: 20px;
+  /* position: static; // 기본값 */
+  /* position: absolute; // 내가 담겨있는 상자를 기준으로 이동한다 */
+  /* position: relative; // 기본값을 기준으로 변경한 값 만큼 이동한다 */
+  /* position: fixed; //상자를 벗어나 페이지를 기준으로 이동한다 */
+  position: sticky; //기본값 자리에 있고 스크롤을 해도 위치가 고정된다
+}
