@@ -3,5 +3,16 @@ span {
   width: 80px;
   height: 80px;
   margin: 20px;
-  background: pink;
+}
+
+div {
+  background-color: crimson;
+  color: white;
+  display: inline;
+}
+
+span {
+  background: chartreuse;
+  color: black;
+  display: block;
 }
