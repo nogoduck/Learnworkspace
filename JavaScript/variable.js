@@ -3,7 +3,7 @@
 // use this for Vanila Javascript.
 "use strict";
 
-// 2. Variable
+// 2. Variable (read/write)
 // let (added in ES6)
 {
   let name = "BMC";
@@ -16,7 +16,7 @@ console.log(name);
 //일반적인 프로그래밍언어에서는 볼 수 없는 규칙이며 var은 블럭스코프를 사용할 수 없다
 //어느 위치에 있든 사용가능
 
-// 3. Constants 상수 : 값 변경 X
+// 3. Constants 상수 : 값 변경 X (read  only)
 //mutable : 값 변경 가능 => let
 //immutable 값 변경 불가능 (보안상 좋음) => const
 
