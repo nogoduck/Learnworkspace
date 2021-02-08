@@ -31,40 +31,47 @@ html {
   align-content: space-between;
 }
 
+.items {
+  padding-top: 100px;
+  background-color: beige;
+  height: 100vh;
+  display: flex;
+}
 .item {
   color: white;
   width: 80px;
   height: 80px;
   border: 2px solid black;
 }
+
 .item1 {
-  background-color: red;
   /* padding: 20px; */
+  /* order로 순서 지정가능 > 1부터 시작 */
+  /* order: 3; */
+  background-color: red;
+
+  /* 화면의 비율이 바뀔때 얼마나 늘어나는지 지정한다 
+  기본값: 0, ex)2, 1, 1 > 아이템1만 2배의 크기를 가진다 */
+  /* flex-grow: 2; */
+  /* grow와는 반대로 비율이 바뀔때 얼마나 줄어들지 지정 */
+  /* flex-shrink: 2; */
+
+  /* flex-basis: 아이템별로 비율을 나눈다 */
+  /* flex-basis: 60%; */
+  flex: 2 2 auto;
 }
 .item2 {
   background-color: orangered;
+  /* flex-basis: 20%; */
+  /* flex-grow: 1;
+  flex-shrink: 1; */
+
+  /* 아이템 각각의 특성을 지정가능하다 */
+  /* align-self: center; */
 }
 .item3 {
   background-color: orange;
-}
-.item4 {
-  background-color: purple;
-}
-.item5 {
-  background-color: blueviolet;
-}
-.item6 {
-  background-color: darkslateblue;
-}
-.item7 {
-  background-color: blue;
-}
-.item8 {
-  background-color: green;
-}
-.item9 {
-  background-color: yellow;
-}
-.item10 {
-  background-color: grey;
+  /* flex-basis: 20%; */
+  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
 }
