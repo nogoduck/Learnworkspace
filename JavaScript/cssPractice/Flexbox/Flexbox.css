@@ -1,0 +1,53 @@
+body,
+html {
+  margin: 0px;
+  height: 100%;
+}
+.con {
+  background: oldlace;
+  /* .con의 부모클래스의 높이에 맞추겠다는 의미다 */
+  /* .con의 부모는 html 이다 */
+  /* height: 100%; */
+  /* 보이는 viewport의 100%를 쓰겠다는 의미다 */
+  height: 100vh;
+  /* flex박스 사용 */
+  display: flex;
+  /* 기본값 : row, 반대: row-reverse, 위에서아래: column, 위아래 반대: coloumn-reverse*/
+  flex-direction: row;
+}
+
+.item {
+  color: white;
+  width: 40px;
+  height: 40px;
+}
+.item1 {
+  background-color: red;
+}
+.item2 {
+  background-color: orangered;
+}
+.item3 {
+  background-color: orange;
+}
+.item4 {
+  background-color: purple;
+}
+.item5 {
+  background-color: blueviolet;
+}
+.item6 {
+  background-color: darkslateblue;
+}
+.item7 {
+  background-color: blue;
+}
+.item8 {
+  background-color: green;
+}
+.item9 {
+  background-color: yellow;
+}
+.item10 {
+  background-color: grey;
+}
