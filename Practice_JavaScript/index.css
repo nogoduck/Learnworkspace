@@ -1,0 +1,19 @@
+body {
+  background-color: goldenrod;
+  margin: 0px;
+}
+.topbar {
+  border: 1px solid blue;
+  justify-content: space-between;
+}
+.logo {
+  border: 1px solid red;
+}
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+.menu {
+  border: 1px solid;
+  justify-content: space-between;
+}
