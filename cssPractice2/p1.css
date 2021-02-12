@@ -1,0 +1,39 @@
+* {
+  margin: 0px;
+}
+.container {
+  background: #7f8c8d;
+  height: 100vh;
+  color: white;
+}
+
+.item1 {
+  background: #c0392b;
+}
+.item2 {
+  background: #d35400;
+}
+.item3 {
+  background: #e67e22;
+}
+.item4 {
+  background: #f39c12;
+}
+.item5 {
+  background: #f1c40f;
+}
+.item6 {
+  background: #16a085;
+}
+.item7 {
+  background: #27ae60;
+}
+.item8 {
+  background: #2980b9;
+}
+.item9 {
+  background: #8e44ad;
+}
+.item10 {
+  background: #2c3e50;
+}
