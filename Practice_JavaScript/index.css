@@ -4,7 +4,7 @@ body {
 }
 .topbar {
   border: 1px solid blue;
-  justify-content: space-between;
+  justify-content: space-between;z
 }
 .logo {
   border: 1px solid red;
@@ -16,4 +16,36 @@ body {
 .menu {
   border: 1px solid;
   justify-content: space-between;
+}
+
+.container {
+  display:grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  height:100%;
+  grid-gap:20px;
+  grid-template-areas: 
+  "header header"
+  "side main"
+  "footer footer";
+}
+
+.header {
+  grid-area:header;
+  border:1px solid black;
+}
+
+.side {
+  grid-area:side;
+  border:1px solid black;
+}
+
+.main {
+  grid-area:main;
+  border:1px solid black;
+}
+
+.footer {
+  border:1px solid black;
+  grid-area:footer;
 }
