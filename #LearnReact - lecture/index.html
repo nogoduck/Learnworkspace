@@ -23,11 +23,25 @@
         // 컴포넌트가 실행될때 제일먼저 실행되는 부분
         constructor(props) {
           super(props);
+          this.state = {
+            //바뀔수 있는 상태들을 적는다
+            liked: false,
+          };
         }
 
         //화면을 그려주는 메서드
         render() {
-          return e("button", null, "Like"); //<button>Like</button>태그를 만든다
+          return e(
+            "button",
+            {
+              onClick: () => {
+                // console.log("CLICKED");
+                this.setState({ liked: true });
+              },
+              type: "submit",
+            },
+            this.state.liked === true ? "Liked" : "Like"
+          ); //<button>Like</button>태그를 만든다
         }
       }
     </script>
