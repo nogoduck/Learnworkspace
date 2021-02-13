@@ -36,7 +36,9 @@
             {
               onClick: () => {
                 // console.log("CLICKED");
-                this.setState({ liked: true });
+                this.state.liked === false
+                  ? this.setState({ liked: true })
+                  : this.setState({ liked: false });
               },
               type: "submit",
             },
