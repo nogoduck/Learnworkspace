@@ -45,11 +45,13 @@ while (true) {
   ans = prompt(firstNum + "X" + secondNum + "= ??");
 
   if (Number(ans) === res) {
-    alert("딩동댕");
+    alert("That`s right");
   } else {
-    alert("오답XX");
+    alert("That`s a wrong answer.");
     break;
   }
 }
 //무한루프 걸렷을때 SHIFT + ESC (브라우저 관리자)
 //프롬프트창에서 취소를 누르면 null 값이 들어감 이를 Number로 변환하면 0 값이 들어감
+
+window.document.querySelector("");
