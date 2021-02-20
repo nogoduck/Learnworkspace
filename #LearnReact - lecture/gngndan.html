@@ -33,7 +33,7 @@
             this.state.first * this.state.second
           ) {
             this.setState({
-              res: "정답",
+              res: this.state.value + "정답",
               first: Math.ceil(Math.random() * 9),
               second: Math.ceil(Math.random() * 9),
               value: "",
