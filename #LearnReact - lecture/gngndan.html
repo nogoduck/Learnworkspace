@@ -1,5 +1,7 @@
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <title>구구단</title>
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -16,15 +18,60 @@
       class GuGuDan extends React.Component {
         constructor(props) {
           super(props);
+          this.state = {
+            first: Math.ceil(Math.random() * 9),
+            second: Math.ceil(Math.random() * 9),
+            value: "",
+            res: "",
+          };
         }
 
+        onSubmit = (e) => {
+          e.preventDefault();
+          if (
+            parseInt(this.state.value) ===
+            this.state.first * this.state.second
+          ) {
+            this.setState({
+              res: "정답",
+              first: Math.ceil(Math.random() * 9),
+              second: Math.ceil(Math.random() * 9),
+              value: "",
+            });
+          } else {
+            this.setState({
+              res: "땡",
+              value: "",
+            });
+          }
+        };
+
+        onChange = (e) => this.setState({ value: e.target.value });
         render() {
-          return;
+          return (
+            <div>
+              <div>
+                {this.state.first}곱하기 {this.state.second}는?
+              </div>
+              <form onSubmit={this.onSubmit}>
+                <input
+                  type="number"
+                  value={this.state.value}
+                  onChange={this.onChange}
+                />
+                <button>입력!</button>
+              </form>
+              <div>{this.state.res}</div>
+            </div>
+          );
         }
       }
     </script>
     <script type="text/babel">
-      ReactDOM.render(<LikeButton />, document.querySelector("#root"));
+      ReactDOM.render(<GuGuDan />, document.querySelector("#root"));
     </script>
   </body>
 </html>
+
+<!-- 변수명을 value => val / result => res로 진행하였더니 오류가 발생했다  -->
+<!-- val을 value 로 바꿧더니 정상작동한다 뭐가 문제인지 모르겠다 상관관계를 이해하기위해 자바스크립트를 다시 공부해야겠다 -->

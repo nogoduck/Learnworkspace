@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class 한글테스트 extends React.Component {
+        constructor(props) {
+          super(props);
+        }
+
+        render() {
+          return (
+            <div>
+              <button>입력</button>
+            </div>
+          );
+        }
+      }
+    </script>
+    <script type="text/babel">
+      ReactDOM.render(<한글테스트 />, document.querySelector("#root"));
+    </script>
+  </body>
+</html>
+
+<!-- 다른 강의 영상도 따라하다보면 영어 컴포넌트는 안되는 경우가 있었는데 
+이번에도 혹시나 하는마음에 한글로했더니 바로됬다 무엇이 문제인가 -->
