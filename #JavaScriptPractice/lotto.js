@@ -27,3 +27,14 @@ let numlist = Array(45)
     return i + 1;
   });
 console.log(numlist);
+
+//기준값이 바뀔땐 for보단 while 선호
+//Math.random은 랜덤객체이긴한데 온전한 랜덤은 아니고 수학적으로 계산된 랜덤이다 + 컴퓨터는 태초부터 규칙성을 가지고 있어 완전한 랜덤을 구현하는것은 불가능하다
+
+let shuffle = [];
+while (numlist.length > 0) {
+  let rdval = numlist.splice(Math.floor(Math.random() * numlist.length), 1)[0];
+  shuffle.push(rdval);
+}
+
+console.log(numlist, shuffle);
