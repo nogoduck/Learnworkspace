@@ -67,6 +67,8 @@ console.log("당첨번호: ", winnum, "보너스번호: ", bonusnum);
 
 //html에 있는 id가 result인 태그를 선택
 //id는 중복으로 사용하면 안된다
+//querySeletor로 대체 가능
+//querySeletorAll 여러 태그 동시 선택
 let result = document.getElementById("result");
 
 // for (let i = 0; i < winnum.length; i++) {
@@ -79,15 +81,18 @@ let result = document.getElementById("result");
 let time = 0;
 let ci = 0;
 const color = [
-  "#4cd137",
-  "#00a8ff",
   "#e84118",
+  "#4cd137",
+  "#EAB543",
+  "#00a8ff",
   "#718093",
   "#487eb0",
   "#82589F",
-  "#EAB543",
 ];
 
+//함수를 효율적으로 만들기 위한 구도
+// 겹치는 부분 => 함수
+// 서로 다른부분 => 함수의 매개변수로
 const setColor = (n) => {
   n.style.display = "inline-block";
   n.style.border = "1px solid black";
