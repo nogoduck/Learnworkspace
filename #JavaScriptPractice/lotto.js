@@ -64,3 +64,65 @@ console.log(shuffle.slice(0, 6));
 let winnum = shuffle.slice(0, 6).sort((a, b) => a - b);
 let bonusnum = shuffle[shuffle.length - 1];
 console.log("당첨번호: ", winnum, "보너스번호: ", bonusnum);
+
+//html에 있는 id가 result인 태그를 선택
+//id는 중복으로 사용하면 안된다
+let result = document.getElementById("result");
+
+// for (let i = 0; i < winnum.length; i++) {
+//   let ball = document.createElement("div");
+//   ball.textContent = winnum[i];
+//   console.log(winnum[i]);
+// }
+//위 코드와 동일함 forEach 사용에 익숙해지기 위해 코드변경
+//강의에선 for문을 사용하였고 클로저 문제로(for문안에 비동기 함수가 들어가는 경우) 코드가작동하지 않았지만 나는 잘 작동해서 변수를 조금 수정해 작성했다
+let time = 0;
+let ci = 0;
+const color = [
+  "#4cd137",
+  "#00a8ff",
+  "#e84118",
+  "#718093",
+  "#487eb0",
+  "#82589F",
+  "#EAB543",
+];
+
+const setColor = (n) => {
+  n.style.display = "inline-block";
+  n.style.border = "1px solid black";
+  //css에서는 border-radius로 적용하는데 js에서는 빼기로 동작하기에 아래와 같이 카멜케이스를 사용한다
+  n.style.borderRadius = "50px";
+  n.style.width = "50px";
+  n.style.height = "50px";
+  n.style.textAlign = "center";
+  n.style.fontSize = "30px";
+  n.style.fontWeight = "bold";
+  n.style.padding = "5px";
+  n.style.margin = "10px";
+  n.style.backgroundColor = color[ci];
+  n.style.color = "white";
+};
+winnum.forEach((a) => {
+  // 1000 밀리초가 1초이다 10000 => 10초
+  time += 1000;
+
+  setTimeout(() => {
+    let ball = document.createElement("div");
+    ball.textContent = a;
+    setColor(ball);
+    result.appendChild(ball);
+    ci++;
+  }, time);
+  // console.log(a);
+});
+
+//
+//class는 id와 다르게 중복이 허용되기 때문에 번호를 붙여줘야한다
+setTimeout(() => {
+  let bonus = document.getElementsByClassName("bonus")[0];
+  let bonusball = document.createElement("div");
+  bonusball.textContent = bonusnum;
+  setColor(bonusball);
+  bonus.appendChild(bonusball);
+}, time + 1000);
