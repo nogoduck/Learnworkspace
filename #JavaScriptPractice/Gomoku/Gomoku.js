@@ -91,11 +91,11 @@ const func = (e) => {
   }
 };
 //append와 appendChild의 차이점을 아직 모르겠다.
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 15; i++) {
   var tr = document.createElement("tr");
   line.push(tr);
   arr.push([]);
-  for (let j = 0; j < 3; j++) {
+  for (let j = 0; j < 15; j++) {
     let td = document.createElement("td");
     td.addEventListener("click", func);
     arr[i].push(td);
