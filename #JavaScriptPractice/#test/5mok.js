@@ -1,4 +1,3 @@
-console.log("TEST");
 const dx = [
   [-1, 1],
   [0, 0],
