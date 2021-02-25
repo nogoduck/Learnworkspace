@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" id="row" placeholder="행(가로)를 입력해주세요" />
+    <input type="number" id="col" placeholder="열(세로)를 입력해주세요" />
+    <input type="number" id="mine" placeholder="지뢰 갯수를 입력해주세요" />
+    <button id="run">만들기</button>
+    <script src="Minesweeper.js"></script>
+    <table id="table">
+      <thead>
+        <tr>
+          <td><span id="timer">0</span></td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
