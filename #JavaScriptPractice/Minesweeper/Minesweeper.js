@@ -1,3 +1,5 @@
+let tbody = document.querySelector("#table tbody");
+
 document.querySelector("#run").addEventListener("click", () => {
   //parseInt 정수형 값으로 변환후 리턴
   let row = parseInt(document.querySelector("#row").value);
@@ -23,8 +25,8 @@ document.querySelector("#run").addEventListener("click", () => {
 
   //맵 출력
   let mineMap = [];
-  let tbody = document.querySelector("#table tbody");
-  console.log(tbody);
+  tbody = document.querySelector("#table tbody");
+  console.log("TBODY: ", tbody);
   //tr(세로)를 먼저 만들어야 그 안에 가로를 넣을 수 있다
   for (let i = 0; i < col; i++) {
     //화면에 출력하는 값과 배열을 서로 시물레이션 하기 위해 매칭해준다
@@ -51,3 +53,14 @@ document.querySelector("#run").addEventListener("click", () => {
   }
   console.log(mineMap);
 });
+
+//contextmenu는 마우스 우클릭 이벤트입니다
+tbody.querySelectorAll("td").forEach((td) => {
+  td.addEventListener("contextmenu", () => {
+    console.log("오른쪽클릭");
+  });
+});
+
+//우클릭 깃발 꼽기 ⛳
+
+//우클릭 두번 물음표 꼽기 ❓
