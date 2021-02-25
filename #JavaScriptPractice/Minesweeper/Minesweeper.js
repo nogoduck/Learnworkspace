@@ -5,6 +5,23 @@ document.querySelector("#run").addEventListener("click", () => {
   let mine = parseInt(document.querySelector("#mine").value);
   console.log(row, col, mine);
 
+  //지뢰 랜덤 생성
+
+  let numArr = Array(row * col)
+    .fill()
+    .map((value, index) => {
+      return index;
+    });
+
+  let numMix = [];
+  console.log(numArr.length);
+  for (let i = 0; i < mine; i++) {
+    let tmp = numArr.splice(Math.floor(Math.random() * numArr.length), 1)[0];
+    numMix.push(tmp);
+  }
+  console.log(numMix);
+
+  //맵 출력
   let mineMap = [];
   let tbody = document.querySelector("#table tbody");
   console.log(tbody);
@@ -23,4 +40,14 @@ document.querySelector("#run").addEventListener("click", () => {
     tbody.appendChild(tr);
     console.log(arr);
   }
+
+  //지뢰 심기 💣
+  for (let i = 0; i < mine; i++) {
+    let mineRow = numMix[i] % col;
+    let mineCol = Math.floor(numMix[i] / row);
+    console.log(mineCol, mineRow);
+    tbody.children[mineCol].children[mineRow].textContent = "💣";
+    mineMap[mineCol][mineRow] = "X";
+  }
+  console.log(mineMap);
 });
