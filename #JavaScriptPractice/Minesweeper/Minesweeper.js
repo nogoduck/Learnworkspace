@@ -1,11 +1,13 @@
 //210227 bug : 지뢰판의 사이즈가 너무 커지면 지뢰가 화면에 표시되지 않는 버그가 있다, 지뢰를 찾기위해 우클릭을 하면 나타난다
+//210227 bug 해결 : mineMap 을 전역변수로 세팅해서 지뢰판을 새로 만들때마다
+//기존의 지뢰맵과 중첩되면서 생기는 버그였다 => 클릭할때마다 새로운 데이터맵을 생성하게 변경
 //이번 강의는 화면과 데이터차트를 서로 일치 시키기위해 번거로운일이 너무 많았다
 //이런걸 편하게 하기위해 프레임워크를 꼭 배워 효율을 높여야겠다
 let tbody = document.querySelector("#table tbody");
-let mineMap = [];
 
 // console.log("Tbody: ", tbody); //html<tbody>태그 사이에 값을 넣어줘도 null값만 가져온다, 동작 순서를 도저히 모르겠다
 document.querySelector("#run").addEventListener("click", () => {
+  let mineMap = [];
   //parseInt 정수형 값으로 변환후 리턴
   let tbody = document.querySelector("#table tbody");
   //tbody 내부 초기화
