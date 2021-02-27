@@ -31,7 +31,7 @@ document.querySelector("#run").addEventListener("click", () => {
     let tmp = numArr.splice(Math.floor(Math.random() * numArr.length), 1)[0];
     numMix.push(tmp);
   }
-  console.log(numMix);
+  // console.log(numMix);
 
   //맵 출력
 
@@ -67,7 +67,7 @@ document.querySelector("#run").addEventListener("click", () => {
         );
         let x = Array.prototype.indexOf.call(tbodyParent.children, tr);
         let target = e.currentTarget.textContent;
-        console.log("X, Y : ", x, y);
+        // console.log("X, Y : ", x, y);
         if (target === "" || target === "💣") {
           e.currentTarget.textContent = "⛳";
           // 데이터 맵에는 반영될 필요가 없어보여 제거
@@ -89,6 +89,65 @@ document.querySelector("#run").addEventListener("click", () => {
         // let row = td.parentNode.rowIndex - 1;
         // console.log(target, row, col);
       });
+
+      //클릭했을 떄 주변의 지뢰 갯수 카운트
+      td.addEventListener("click", (e) => {
+        // // parent, child관계 확인용 => children은 자식 태그가 하나도 없기때문에 결과값이 나오지 않음
+        // console.log("target : ", e.currentTarget);
+        // console.log(
+        //   "parent1, parent2, parent3 : ",
+        //   e.currentTarget.parentNode,
+        //   e.currentTarget.parentNode.parentNode,
+        //   e.currentTarget.parentNode.parentNode.parentNode
+        // );
+        // console.log(
+        //   "children1, children2, children3 : ",
+        //   e.currentTarget.children,
+        //   e.currentTarget.children.children,
+        //   e.currentTarget.children.children.children
+        // );
+        // e = <td></td> / e.parent = <tr></tr> / e.parent.parent = <tbody></tbody>
+        let trParent = e.currentTarget.parentNode;
+        let tbodyParent = e.currentTarget.parentNode.parentNode;
+        let y = Array.prototype.indexOf.call(
+          trParent.children,
+          e.currentTarget
+        );
+        let x = Array.prototype.indexOf.call(tbodyParent.children, tr);
+        // console.log(x, y);
+        if (mineMap[x][y] === "X") {
+          e.currentTarget.textContent = "💥";
+        } else {
+          //filter 배열내에서 지정된 값을 찾아서 리턴해준다 // 2차원으로 잘 감싸야 에러가 안난다
+          let mineIndex = [mineMap[x][y - 1], mineMap[x][y + 1]];
+          //나는 큐를 사용해서 8칸을 비교후 테이블을 벗어나면 무시하게 알고리즘을 설계하려고 했으나
+          //강사분이 if문만 써서 구현하는걸 보고 몇번을 보고있지만 아직도 이해가 너무너무너무 안된다
+
+          //x좌표는 없으면 에러가 나지만 y는 처리하지 않아도 에러가 나지않고 undifined가 되기 떄문에 따로 처리를 안했다고 한다
+          console.log(mineIndex);
+
+          if (mineMap[x - 1]) {
+            //concat은 배열과 배열을 합친다, push를 써서 합칠려면 하나씩 써야한다
+
+            mineIndex = mineIndex.concat([
+              mineMap[x - 1][y - 1],
+              mineMap[x - 1][y],
+              mineMap[x - 1][y + 1],
+            ]);
+          }
+          if (mineMap[x + 1]) {
+            mineIndex = mineIndex.concat([
+              mineMap[x + 1][y - 1],
+              mineMap[x + 1][y],
+              mineMap[x + 1][y + 1],
+            ]);
+          }
+          console.log(mineIndex);
+          e.currentTarget.textContent = mineIndex.filter((v) => {
+            return v === "X";
+          }).length;
+        }
+      });
       tr.appendChild(td);
     }
     tbody.appendChild(tr);
@@ -99,11 +158,11 @@ document.querySelector("#run").addEventListener("click", () => {
   for (let i = 0; i < mine; i++) {
     let mineRow = numMix[i] % row;
     let mineCol = Math.floor(numMix[i] / row);
-    console.log(mineCol, mineRow);
+    // console.log(mineCol, mineRow);
     tbody.children[mineCol].children[mineRow].textContent = "💣";
     mineMap[mineCol][mineRow] = "X";
   }
-  console.log(mineMap);
+  // console.log(mineMap);
 });
 
 //+추가내용
