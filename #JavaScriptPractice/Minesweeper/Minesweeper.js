@@ -10,7 +10,8 @@
 //이런걸 편하게 하기위해 프레임워크를 꼭 배워 효율을 높여야겠다
 let tbody = document.querySelector("#table tbody");
 
-const dx = [];
+// const dx = [-1, 1, 0, 0 - 1, -1, 1, 1];
+// const dy = [0, 0, -1, 1, -1, 1, -1, 1];
 
 // console.log("Tbody: ", tbody); //html<tbody>태그 사이에 값을 넣어줘도 null값만 가져온다, 동작 순서를 도저히 모르겠다
 document.querySelector("#run").addEventListener("click", () => {
@@ -185,6 +186,7 @@ document.querySelector("#run").addEventListener("click", () => {
             );
 
             if (tbody.children[x - 1]) {
+              console.log("위쪽 배열 합치기");
               clickIndex = clickIndex.concat([
                 tbody.children[x - 1].children[y - 1],
                 tbody.children[x - 1].children[y],
@@ -193,6 +195,7 @@ document.querySelector("#run").addEventListener("click", () => {
             }
 
             if (tbody.children[x + 1]) {
+              console.log("아래쪽 배열 합치기");
               clickIndex = clickIndex.concat([
                 tbody.children[x + 1].children[y - 1],
                 tbody.children[x + 1].children[y],
