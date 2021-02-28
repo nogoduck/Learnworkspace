@@ -124,7 +124,7 @@ document.querySelector("#run").addEventListener("click", () => {
           //강사분이 if문만 써서 구현하는걸 보고 몇번을 보고있지만 아직도 이해가 너무너무너무 안된다
 
           //x좌표는 없으면 에러가 나지만 y는 처리하지 않아도 에러가 나지않고 undifined가 되기 떄문에 따로 처리를 안했다고 한다
-          console.log(mineIndex);
+          // console.log(mineIndex);
 
           if (mineMap[x - 1]) {
             //concat은 배열과 배열을 합친다, push를 써서 합칠려면 하나씩 써야한다
@@ -142,7 +142,7 @@ document.querySelector("#run").addEventListener("click", () => {
               mineMap[x + 1][y + 1],
             ]);
           }
-          console.log(mineIndex);
+          // console.log(mineIndex);
           e.currentTarget.textContent = mineIndex.filter((v) => {
             return v === "X";
           }).length;
@@ -185,3 +185,62 @@ document.querySelector("#run").addEventListener("click", () => {
 //   console.log(e.currentTarget);
 //   console.log(e.target);
 // });
+
+// // #스코프
+
+// let x = "Global";
+// function ex() {
+//   //이름이 같더라도 선언하지 않으면 전역변수값을 가져온다
+//   //안에 선안된 변수가 없으면 바깥을 나가서 찾아보는데 거기에도 없으면(제일 바깥)에러가 나타난다
+// 실제로 해보니까 어디에도 선언을 안한 상테에서는 에러가 나타나지 않고 값만 비어있다 그러나
+// 함수 아래쪽에 선언을 하면 오류가 확실히 뜬다
+
+//   //var은 선언된 함수 내부에서만 존재한다 요즘엔 쓰이지 않는다
+//   //let은 {}블록 안에서만 존재한다 이를 스코프라고 한다
+//   x = "Local";
+//   x = "change";
+// }
+
+// ex();
+// alert(x);
+
+// //var 기준 / const랑은 완전히 성질이 다르다
+// //#스코프 체인
+// // 함수를 기준으로 한 블록씩 이동
+// // 스코프 간의 상하관계를 스코프 체인이라고 한다
+// let name = "Banana";
+// // let enemy;
+// let outer = () => {
+//   //작동방식 : outer함수 내에서 name을 찾는다 => 없다 => 한 단계 밖에서 찾아서 값이 있으면 가져온다
+//   console.log("외부", name); //외부 name을 가져온다
+//   let inner = () => {
+//     // 바깥을 두번 나가서 탐색
+//     let enemy = "Feed";
+//     console.log("내부", name);
+//   };
+//   inner();
+// };
+// outer();
+// console.log("inner : ", enemy);
+
+// # 코드가 적히는 순간 스코프는 정해지고 이를 렉시컬 스코프(정적 스코프)라고 한다
+// 자바스크립트 언어자체는 다이나믹하지만 스코프만은 정적으로 동작한다
+
+// # 동적 스코프 : 함수의 실행 순서에 따라 스코프가 바뀌면 동적 스코프라고 한다
+//만약에 다른언어가 동적으로 동작한다면
+// warpper에 var name이라 선언한 상태로 log를 호출한다면 가장 최근에 실행됬던 함수의 스코프를 따른다
+
+let name = "Good";
+
+log = () => {
+  console.log(name);
+};
+
+wrapper = () => {
+  name = "bad"; // 실행결과 : bad
+  // var name = "bad"; // 실행결과 : Good
+  //변수나 함수나 스코프를 찾아서 실행하는것은 똑같다
+  log();
+};
+
+wrapper();
