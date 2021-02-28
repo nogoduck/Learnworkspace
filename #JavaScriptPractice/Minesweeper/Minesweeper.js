@@ -1,3 +1,8 @@
+//210228 강좌를 따라서 재귀를구현했더니 나는 무한루프에 걸렸다
+//210228 재귀함수 효율을 높이기위해 방문을 체크해주는 코드를 작성했더니 무한루프는 해결되었다
+//또한 if문이 너무 많이 중첩되있어서 코드를 수정할때마다 찾는데 너무 오래걸린다 이해하는데도 매번 머리가 리셋되는것같다
+//bfs알고리즘을 사용하면 내가 이해하기도 편하고 효율적으로 동작하게 할 수 있을것 같긴한데 저번에 오목을 만들어보고 코드가 너무 길어져서 이번엔 시도하지 않을것이다
+
 //210227 bug : 지뢰판의 사이즈가 너무 커지면 지뢰가 화면에 표시되지 않는 버그가 있다, 지뢰를 찾기위해 우클릭을 하면 나타난다
 //210227 bug 해결 : mineMap 을 전역변수로 세팅해서 지뢰판을 새로 만들때마다
 //기존의 지뢰맵과 중첩되면서 생기는 버그였다 => 클릭할때마다 새로운 데이터맵을 생성하게 변경
@@ -44,7 +49,7 @@ document.querySelector("#run").addEventListener("click", () => {
     let tr = document.createElement("tr");
     mineMap.push(arr);
     for (let j = 0; j < row; j++) {
-      arr.push(1);
+      arr.push(0);
       let td = document.createElement("td");
       //우클릭 깃발 꼽기 ⛳
       //표를 하나하나 만들자마자 마우스 우클릭 이벤트(contextmenu)를 달아준다
@@ -118,12 +123,12 @@ document.querySelector("#run").addEventListener("click", () => {
         //클릭시 opened라는 이름의 class를 추가해준다 (배경색을 바꿔주기 위함)
         //태그.classList로 태그의 클래스에 접근해서 add나 remove로 값을 추가하거나 삭제할 수 있다
         e.currentTarget.classList.add("opened");
-
         // console.log(x, y);
         if (mineMap[x][y] === "X") {
           e.currentTarget.textContent = "💥";
         } else {
           //filter 배열내에서 지정된 값을 찾아서 리턴해준다 // 2차원으로 잘 감싸야 에러가 안난다
+          mineMap[x][y] = 1;
           let mineIndex = [mineMap[x][y - 1], mineMap[x][y + 1]];
           //나는 큐를 사용해서 8칸을 비교후 테이블을 벗어나면 무시하게 알고리즘을 설계하려고 했으나
           //강사분이 if문만 써서 구현하는걸 보고 몇번을 보고있지만 아직도 이해가 너무너무너무 안된다
@@ -171,6 +176,12 @@ document.querySelector("#run").addEventListener("click", () => {
               tbody.children[x].children[y - 1],
               tbody.children[x].children[y + 1],
             ]);
+            console.log(
+              "TBODYINDEX: ",
+              tbody.children[x - 1],
+              tbody.children[x + 1]
+            );
+
             if (tbody.children[x - 1]) {
               clickIndex = clickIndex.concat([
                 tbody.children[x - 1].children[y - 1],
@@ -185,6 +196,7 @@ document.querySelector("#run").addEventListener("click", () => {
                 tbody.children[x + 1].children[y],
                 tbody.children[x + 1].children[y + 1],
               ]);
+
               console.log("clickIndex: ", clickIndex);
             }
 
@@ -195,9 +207,19 @@ document.querySelector("#run").addEventListener("click", () => {
                 return !!v;
               })
               .forEach(function (aroundIndex) {
+                let trParent = aroundIndex.parentNode;
+                let tbodyParent = aroundIndex.parentNode.parentNode;
+                let y = Array.prototype.indexOf.call(
+                  trParent.children,
+                  aroundIndex
+                );
+                let x = Array.prototype.indexOf.call(tbodyParent.children, tr);
                 console.log("aroundIndex: ", aroundIndex);
                 //click을 하게되면 위의 클릭함수가 다시 실행된다
-                aroundIndex.click();
+                if (mineMap[x][y] !== 1) {
+                  console.log(x, y);
+                  aroundIndex.click();
+                }
               });
           }
         }
