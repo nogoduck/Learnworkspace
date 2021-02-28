@@ -155,42 +155,48 @@ document.querySelector("#run").addEventListener("click", () => {
           }).length;
           e.currentTarget.textContent = mineCnt;
           console.log("tbody.children: ", tbody.children);
+          console.log("mineCnt: ", mineCnt);
 
           if (mineCnt === 0) {
-            tbody.children[x].children[y + 1].click();
-            console.log("X, Y: ", x, y);
+            // tbody.children[x].children[y + 1].click();
+            // console.log("X, Y: ", x, y);
+            console.log("open the around index");
+
             // mineMap[x][y];
-            let clickToMineIndex = [];
+            let clickIndex = [];
             //concat은 새로운 데이터를 반환하기 떄문에 반드시 대입을 해줘야 한다
-            console.log("clickToMineIndex: ", clickToMineIndex);
-            clickToMineIndex = clickToMineIndex.concat([
-              mineMap[x][y - 1],
-              mineMap[x][y + 1],
+            console.log("clickIndex: ", clickIndex);
+
+            clickIndex = clickIndex.concat([
+              tbody.children[x].children[y - 1],
+              tbody.children[x].children[y + 1],
             ]);
             if (tbody.children[x - 1]) {
-              clickToMineIndex = clickToMineIndex.concat([
+              clickIndex = clickIndex.concat([
                 tbody.children[x - 1].children[y - 1],
                 tbody.children[x - 1].children[y],
                 tbody.children[x - 1].children[y + 1],
               ]);
             }
+
             if (tbody.children[x + 1]) {
-              clickToMineIndex = clickToMineIndex.concat([
+              clickIndex = clickIndex.concat([
                 tbody.children[x + 1].children[y - 1],
                 tbody.children[x + 1].children[y],
                 tbody.children[x + 1].children[y + 1],
               ]);
-              console.log("clickToMineIndex: ", clickToMineIndex);
+              console.log("clickIndex: ", clickIndex);
             }
 
             // !!v는 undefined, null, 0, 또는 빈 문자열을 제거한다
-            clickToMineIndex
+            clickIndex
               .filter(function (v) {
                 console.log("V: ", v);
                 return !!v;
               })
               .forEach(function (aroundIndex) {
                 console.log("aroundIndex: ", aroundIndex);
+                //click을 하게되면 위의 클릭함수가 다시 실행된다
                 aroundIndex.click();
               });
           }
@@ -213,15 +219,17 @@ document.querySelector("#run").addEventListener("click", () => {
   // console.log(mineMap);
 });
 
-//지뢰 칸 한꺼번에 열기
-mineRecursive = (num) => {
-  console.log(num);
-  if (num < 5) {
-    mineRecursive(num + 1);
-  }
-};
+// // ######################################################################################################
 
-mineRecursive(1);
+// 재귀함수 예제
+// mineRecursive = (num) => {
+//   console.log(num);
+//   if (num < 5) {
+//     mineRecursive(num + 1);
+//   }
+// };
+
+// mineRecursive(1);
 
 // // ######################################################################################################
 //+추가내용
