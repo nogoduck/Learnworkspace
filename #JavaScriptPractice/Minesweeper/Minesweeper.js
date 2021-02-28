@@ -114,6 +114,11 @@ document.querySelector("#run").addEventListener("click", () => {
           e.currentTarget
         );
         let x = Array.prototype.indexOf.call(tbodyParent.children, tr);
+
+        //클릭시 opened라는 이름의 class를 추가해준다 (배경색을 바꿔주기 위함)
+        //태그.classList로 태그의 클래스에 접근해서 add나 remove로 값을 추가하거나 삭제할 수 있다
+        e.currentTarget.classList.add("opened");
+
         // console.log(x, y);
         if (mineMap[x][y] === "X") {
           e.currentTarget.textContent = "💥";
@@ -142,10 +147,53 @@ document.querySelector("#run").addEventListener("click", () => {
               mineMap[x + 1][y + 1],
             ]);
           }
+          console.log("mineMap", mineMap);
+          console.log("tbody", tbody.children);
           // console.log(mineIndex);
-          e.currentTarget.textContent = mineIndex.filter((v) => {
+          let mineCnt = mineIndex.filter((v) => {
             return v === "X";
           }).length;
+          e.currentTarget.textContent = mineCnt;
+          console.log("tbody.children: ", tbody.children);
+
+          if (mineCnt === 0) {
+            tbody.children[x].children[y + 1].click();
+            console.log("X, Y: ", x, y);
+            // mineMap[x][y];
+            let clickToMineIndex = [];
+            //concat은 새로운 데이터를 반환하기 떄문에 반드시 대입을 해줘야 한다
+            console.log("clickToMineIndex: ", clickToMineIndex);
+            clickToMineIndex = clickToMineIndex.concat([
+              mineMap[x][y - 1],
+              mineMap[x][y + 1],
+            ]);
+            if (tbody.children[x - 1]) {
+              clickToMineIndex = clickToMineIndex.concat([
+                tbody.children[x - 1].children[y - 1],
+                tbody.children[x - 1].children[y],
+                tbody.children[x - 1].children[y + 1],
+              ]);
+            }
+            if (tbody.children[x + 1]) {
+              clickToMineIndex = clickToMineIndex.concat([
+                tbody.children[x + 1].children[y - 1],
+                tbody.children[x + 1].children[y],
+                tbody.children[x + 1].children[y + 1],
+              ]);
+              console.log("clickToMineIndex: ", clickToMineIndex);
+            }
+
+            // !!v는 undefined, null, 0, 또는 빈 문자열을 제거한다
+            clickToMineIndex
+              .filter(function (v) {
+                console.log("V: ", v);
+                return !!v;
+              })
+              .forEach(function (aroundIndex) {
+                console.log("aroundIndex: ", aroundIndex);
+                aroundIndex.click();
+              });
+          }
         }
       });
       tr.appendChild(td);
@@ -164,6 +212,16 @@ document.querySelector("#run").addEventListener("click", () => {
   }
   // console.log(mineMap);
 });
+
+//지뢰 칸 한꺼번에 열기
+mineRecursive = (num) => {
+  console.log(num);
+  if (num < 5) {
+    mineRecursive(num + 1);
+  }
+};
+
+mineRecursive(1);
 
 // // ######################################################################################################
 //+추가내용
@@ -268,10 +326,10 @@ document.querySelector("#run").addEventListener("click", () => {
 //solution1 : var에서 let으로 i의 타입을 변경하면 클로저 문제가 해결되는것으로 보인다 (확실하진 않음 이것저거 바꿔보다 얻어걸림)
 //solution2 : 클로저의 특성을 활용한 해결법
 
-for (var i = 0; i < 100; i++) {
-  (function closure(j) {
-    setTimeout(function () {
-      console.log(j);
-    }, i * 1000);
-  })(i); //괄호로 감싸면 즉시실행 함수
-}
+// for (var i = 0; i < 100; i++) {
+//   (function closure(j) {
+//     setTimeout(function () {
+//       console.log(j);
+//     }, i * 1000);
+//   })(i); //괄호로 감싸면 즉시실행 함수
+// }
