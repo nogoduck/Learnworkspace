@@ -18,7 +18,17 @@ function Default() {
 }
 
 function setRandom() {}
-function Draw() {}
+function Draw() {
+  data.forEach((yData, i) => {
+    yData.forEach((xData, j) => {
+      if (xData > 0) {
+        table.children[i].children[j].textContent = xData;
+      } else {
+        table.children[i].children[j].textContent = "";
+      }
+    });
+  });
+}
 Default();
 setRandom();
 Draw();
