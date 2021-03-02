@@ -14,6 +14,7 @@ function Default() {
       let td = document.createElement("td");
       tr.appendChild(td);
     });
+    fragment.appendChild(tr);
   });
   console.log(fragment);
   table.appendChild(fragment);
