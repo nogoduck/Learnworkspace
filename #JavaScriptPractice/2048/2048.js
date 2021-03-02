@@ -48,9 +48,9 @@ setRandom();
 Draw();
 
 let startClick = false;
-
 let startPoint = [];
 let endPoint = [];
+let isdrag = false;
 
 // 마우스르 누르고 있을 때 동작
 window.addEventListener("mousedown", (e) => {
@@ -66,6 +66,7 @@ window.addEventListener("mousedown", (e) => {
 window.addEventListener("mousemove", (e) => {
   if (startClick) {
     // console.log("mousemove", e);
+    isdrag = true;
   }
 });
 // 마우스르 땔 때 동작
@@ -73,29 +74,32 @@ window.addEventListener("mouseup", (e) => {
   startClick = false;
   endPoint = [e.clientX, e.clientY];
   // console.log("mouseup", e);
-  let direction;
-  let xDiffPoint = endPoint[0] - startPoint[0];
-  let yDiffPoint = endPoint[1] - startPoint[1];
 
-  if (xDiffPoint < 0 && Math.abs(xDiffPoint) / Math.abs(yDiffPoint) > 1) {
-    direction = "left";
-  } else if (
-    xDiffPoint > 0 &&
-    Math.abs(xDiffPoint) / Math.abs(yDiffPoint) > 1
-  ) {
-    direction = "right";
-  } else if (
-    yDiffPoint > 0 &&
-    Math.abs(xDiffPoint) / Math.abs(yDiffPoint) < 1
-  ) {
-    direction = "down";
-  } else if (
-    yDiffPoint < 0 &&
-    Math.abs(xDiffPoint) / Math.abs(yDiffPoint) < 1
-  ) {
-    direction = "up";
+  if (isdrag) {
+    let direction;
+    let xDiffPoint = endPoint[0] - startPoint[0];
+    let yDiffPoint = endPoint[1] - startPoint[1];
+
+    if (xDiffPoint < 0 && Math.abs(xDiffPoint) / Math.abs(yDiffPoint) > 1) {
+      direction = "left";
+    } else if (
+      xDiffPoint > 0 &&
+      Math.abs(xDiffPoint) / Math.abs(yDiffPoint) > 1
+    ) {
+      direction = "right";
+    } else if (
+      yDiffPoint > 0 &&
+      Math.abs(xDiffPoint) / Math.abs(yDiffPoint) < 1
+    ) {
+      direction = "down";
+    } else if (
+      yDiffPoint < 0 &&
+      Math.abs(xDiffPoint) / Math.abs(yDiffPoint) < 1
+    ) {
+      direction = "up";
+    }
+    console.log("xDiff, yDiff", xDiffPoint, yDiffPoint, direction);
   }
-  console.log("xDiff, yDiff", xDiffPoint, yDiffPoint, direction);
 });
 
 //           │
