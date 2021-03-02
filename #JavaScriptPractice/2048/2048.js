@@ -100,12 +100,29 @@ window.addEventListener("mouseup", (e) => {
     }
     console.log("xDiff, yDiff", xDiffPoint, yDiffPoint, direction);
   }
+  startClick = false;
+  isdrag = false;
+
+  switch (direction) {
+    case "left":
+      break;
+    case "right":
+      break;
+    case "up":
+      break;
+    case "down":
+      break;
+  }
+  setRandom();
 });
 
+//#######################
+//.          │[-200, 100].
 //           │
 //           │
-//           │
+//           │[0,0]
 // ──────────┼───────────
+//           │        [-100, ]
 //           │
 //           │
-//           │
+// .         │          .
