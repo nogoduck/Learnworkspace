@@ -2,22 +2,23 @@ const table = document.querySelector("#table");
 let data = [];
 function Default() {
   const fragment = document.createDocumentFragment();
-  [1, 2, 3, 4].forEach((y) => {
+  [1, 2, 3, 4].forEach(() => {
     let yData = [];
-    yData.push(y);
-    console.log("y, yData: ", y, yData);
+    data.push(yData);
+    console.log("y, yData: ", yData);
     let tr = document.createElement("tr");
     [1, 2, 3, 4].forEach(() => {
-      let xData = [];
-      xData.push(0);
-      console.log("xD: ", xData);
+      yData.push(0);
       let td = document.createElement("td");
       tr.appendChild(td);
     });
     fragment.appendChild(tr);
   });
-  console.log(fragment);
   table.appendChild(fragment);
 }
 
+function setRandom() {}
+function Draw() {}
 Default();
+setRandom();
+Draw();
