@@ -46,3 +46,62 @@ function Draw() {
 Default();
 setRandom();
 Draw();
+
+let startClick = false;
+
+let startPoint = [];
+let endPoint = [];
+
+// 마우스르 누르고 있을 때 동작
+window.addEventListener("mousedown", (e) => {
+  startClick = true;
+  startPoint = [e.clientX, e.clientY];
+  // console.log("mousedown", e);
+});
+// 마우스의 움직임을 감지
+//screenX: 모니터 기준 좌표
+//pageX: 페이지(스크롤 포함) 좌표
+//clientX: 브라우저 화면 기준 좌표
+//offsetX: 이벤트 타겟 기준 좌표
+window.addEventListener("mousemove", (e) => {
+  if (startClick) {
+    // console.log("mousemove", e);
+  }
+});
+// 마우스르 땔 때 동작
+window.addEventListener("mouseup", (e) => {
+  startClick = false;
+  endPoint = [e.clientX, e.clientY];
+  // console.log("mouseup", e);
+  let direction;
+  let xDiffPoint = endPoint[0] - startPoint[0];
+  let yDiffPoint = endPoint[1] - startPoint[1];
+
+  if (xDiffPoint < 0 && Math.abs(xDiffPoint) / Math.abs(yDiffPoint) > 1) {
+    direction = "left";
+  } else if (
+    xDiffPoint > 0 &&
+    Math.abs(xDiffPoint) / Math.abs(yDiffPoint) > 1
+  ) {
+    direction = "right";
+  } else if (
+    yDiffPoint > 0 &&
+    Math.abs(xDiffPoint) / Math.abs(yDiffPoint) < 1
+  ) {
+    direction = "down";
+  } else if (
+    yDiffPoint < 0 &&
+    Math.abs(xDiffPoint) / Math.abs(yDiffPoint) < 1
+  ) {
+    direction = "up";
+  }
+  console.log("xDiff, yDiff", xDiffPoint, yDiffPoint, direction);
+});
+
+//           │
+//           │
+//           │
+// ──────────┼───────────
+//           │
+//           │
+//           │
