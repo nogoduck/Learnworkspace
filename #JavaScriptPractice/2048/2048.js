@@ -17,7 +17,21 @@ function Default() {
   table.appendChild(fragment);
 }
 
-function setRandom() {}
+function setRandom() {
+  voidArr = [];
+  data.forEach((yData, i) => {
+    yData.forEach((xData, j) => {
+      if (!xData) {
+        voidArr.push([i, j]);
+      }
+    });
+  });
+  console.log(voidArr);
+  randomIndex = voidArr[Math.floor(Math.random() * voidArr.length)];
+  data[randomIndex[0]][randomIndex[1]] = 2;
+  console.log("randomIndex: ", randomIndex);
+  Draw();
+}
 function Draw() {
   data.forEach((yData, i) => {
     yData.forEach((xData, j) => {
