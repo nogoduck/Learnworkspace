@@ -1,5 +1,7 @@
 const table = document.querySelector("#table");
+const score = document.querySelector("#score");
 let data = [];
+
 function Default() {
   const fragment = document.createDocumentFragment();
   [1, 2, 3, 4].forEach(() => {
@@ -26,10 +28,18 @@ function setRandom() {
       }
     });
   });
+
   console.log(voidArr);
-  randomIndex = voidArr[Math.floor(Math.random() * voidArr.length)];
-  data[randomIndex[0]][randomIndex[1]] = 2;
-  console.log("randomIndex: ", randomIndex);
+
+  if (voidArr.length === 0) {
+    alert("Game Over, your Score is " + score.textContent);
+    Default();
+  } else {
+    let randomIndex = voidArr[Math.floor(Math.random() * voidArr.length)];
+    data[randomIndex[0]][randomIndex[1]] = 2;
+    console.log("randomIndex: ", randomIndex);
+  }
+
   Draw();
 }
 function Draw() {
