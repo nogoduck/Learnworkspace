@@ -75,8 +75,8 @@ window.addEventListener("mouseup", (e) => {
   endPoint = [e.clientX, e.clientY];
   // console.log("mouseup", e);
 
+  let direction;
   if (isdrag) {
-    let direction;
     let xDiffPoint = endPoint[0] - startPoint[0];
     let yDiffPoint = endPoint[1] - startPoint[1];
 
@@ -105,12 +105,75 @@ window.addEventListener("mouseup", (e) => {
 
   switch (direction) {
     case "left":
+      let newLeftData = [[], [], [], []];
+      data.forEach((yData, i) => {
+        yData.forEach((xData, j) => {
+          if (xData) {
+            newLeftData[i].push([xData]);
+          }
+        });
+      });
+      console.log("down: ", newLeftData);
+
+      [1, 2, 3, 4].forEach((yData, i) => {
+        [1, 2, 3, 4].forEach((xData, j) => {
+          data[i][j] = newLeftData[i][j] || 0;
+        });
+      });
       break;
     case "right":
+      let newRightData = [[], [], [], []];
+      data.forEach((yData, i) => {
+        yData.forEach((xData, j) => {
+          if (xData) {
+            newRightData[i].unshift([xData]);
+          }
+        });
+      });
+      console.log("down: ", newRightData);
+
+      [1, 2, 3, 4].forEach((yData, i) => {
+        [1, 2, 3, 4].forEach((xData, j) => {
+          data[i][3 - j] = newRightData[i][j] || 0;
+        });
+      });
       break;
     case "up":
+      let newUpData = [[], [], [], []];
+      data.forEach((yData, i) => {
+        yData.forEach((xData, j) => {
+          if (xData) {
+            newUpData[j].push([xData]);
+          }
+        });
+      });
+      console.log("newUpData: ", newUpData);
+
+      [1, 2, 3, 4].forEach((yData, i) => {
+        [1, 2, 3, 4].forEach((xData, j) => {
+          data[j][i] = newUpData[i][j] || 0;
+        });
+      });
       break;
     case "down":
+      let newDownData = [[], [], [], []];
+      data.forEach((yData, i) => {
+        yData.forEach((xData, j) => {
+          if (xData) {
+            newDownData[j].unshift([xData]);
+          }
+        });
+      });
+      console.log("down: ", newDownData);
+
+      [1, 2, 3, 4].forEach((yData, i) => {
+        [1, 2, 3, 4].forEach((xData, j) => {
+          data[3 - j][i] = newDownData[i][j] || 0;
+        });
+      });
+      break;
+    default:
+      console.log("null move");
       break;
   }
   setRandom();
