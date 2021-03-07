@@ -119,7 +119,14 @@ window.addEventListener("mouseup", (e) => {
       data.forEach((yData, i) => {
         yData.forEach((xData, j) => {
           if (xData) {
-            newLeftData[i].push([xData]);
+            if (
+              newLeftData[newLeftData.length - 1] &&
+              newLeftData[newLeftData.length - 1] === xData
+            ) {
+              newLeftData[newLeftData.length - 1] *= 2;
+            } else {
+              newLeftData[i].push([xData]);
+            }
           }
         });
       });
