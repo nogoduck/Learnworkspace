@@ -71,3 +71,42 @@ yo();
 console.log("Main end");
 
 function doSomething() {}
+
+console.log("-------------[ Arrow Func ]-------------");
+
+// 화살표 함수와 일반 함수 의 차이
+// 화살표 함수에 없는 것: 함수 이름, this, arguments
+//
+
+console.log("-------------[ ProtoType ]-------------");
+//객체끼리 상속을 하는 개념으로 본다
+const car = {
+  wheels: 4,
+  drive() {
+    console.log("4WD snow tire");
+  },
+  navigation_version: 0.1,
+};
+
+const tesla = {
+  color: "yellow",
+  navigation_version: 1.5,
+  driving: "motor",
+};
+const audi = {
+  color: "green",
+  navigation_version: 3.0,
+  driving: "engine",
+};
+const volkswagen = {
+  color: "white",
+  navigation_version: 1.1,
+  driving: "engine",
+  name: "boongboong",
+};
+
+tesla.__proto__ = car;
+
+//Prototype Chain : 상속받은 객체에 해당하는 값이 없으면 계속 상위로 올라가
+// 탐색을 진행한다, 현재 위치의 객체에 값이 있으면 다른 객체에 값이 있더라도 무시한다
+volkswagen.__proto__ = tesla;
