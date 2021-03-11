@@ -110,3 +110,43 @@ tesla.__proto__ = car;
 //Prototype Chain : 상속받은 객체에 해당하는 값이 없으면 계속 상위로 올라가
 // 탐색을 진행한다, 현재 위치의 객체에 값이 있으면 다른 객체에 값이 있더라도 무시한다
 volkswagen.__proto__ = tesla;
+
+console.log("---------[ Exception ]-----------");
+
+//정해진 규칙에서 벗어났을 때 동작하는 코드블럭
+
+console.log("---------[ 생성자 ]-----------");
+
+function Person() {
+  this.name = name;
+  this.gender = gender;
+  this.A = A;
+}
+console.log("---------[ this ]-----------");
+
+const arrowFunc = () => {
+  console.log("Arrow: ", this);
+};
+
+arrowFunc();
+function defaultFunc() {
+  console.log("default Function: ", this);
+}
+
+defaultFunc();
+
+Object_this = {
+  road_bike: "BMC",
+  mtb: "Yeti",
+  a: function () {
+    console.log(this);
+  },
+};
+
+console.log("[Clousre Solution 1]");
+
+for (let i = 0; i < 10; i++) {
+  setInterval(() => {
+    console.log(i);
+  }, 1000);
+}
