@@ -48,12 +48,26 @@ console.log(json);
 // parse(json) : JSON => 객체(Object) 변환
 //json 다시 초기화
 json = JSON.stringify(Yeti_SB6_info);
-
-const obj = JSON.parse(json);
+console.log("JSON => OBJ");
+// const obj = JSON.parse(json);
+const obj = JSON.parse(json, (key, value) => {
+  console.log(`Key : ${key}, Value : ${value}`);
+  return key === "production_date" ? new Date(value) : value;
+  // return value;
+});
 //객체를 JSON으로 변환할 때 있었던 함수는 포함되지 않은 상태로 변환이 되었고
 // 그 JSON 데이터를 다시 객체로 변환하였기 떄문에 함수는 존재하지 않는다
 console.log(obj);
 
+//알아두면 편한 것
+//원본 객체의 생산일자를 출력
+console.log(Yeti_SB6_info.production_date.getDate());
+//원본 객체로 JSON 으로 변환후 obj 상태로 다시 출력 => 하지만 에러 발생
+// 생산일자가 JSON으로 변환 될 떄 String 타입의 데이터로 들어가기 떄문에 다시 Obj로 가져올때도 String으로 오기 떄문에 불러와지지 않음
+// + Yeti_info 객체안에 있는 Date는 Date라는 obj 자체이기 떄문에
+console.log(obj.production_date.getDate());
+console.log(obj.production_date);
+// ##########_##########_##########_##########_##########
 //추가학습 [JSON파일 읽어오기] 이렇게 쓰는게 아니고
 // 외부 자료를 살펴보니 함수를 따로 작성해서 그걸로 불러오는것으로 보인다 또는 JQuery를 사용했다
 //잘못된 코드예시
