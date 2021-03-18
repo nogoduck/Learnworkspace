@@ -92,16 +92,24 @@ addFavorite = () => {
 
 //bug : button 누를떄도 스크롤 동작 인식함
 let previousScrollY;
+let isClick = false;
 navbar.style.display = "flex";
+document.addEventListener("click", () => {
+  console.log("Button Click");
+  isClick = true;
+});
 document.addEventListener("scroll", (e) => {
   nowScrollY = scrollY;
-  if (nowScrollY > previousScrollY) {
-    console.log("down Scroll");
-    navbar.style.display = "none";
-  } else {
-    console.log("up Scroll");
-    navbar.style.display = "flex";
+  if (isClick === false) {
+    if (nowScrollY > previousScrollY) {
+      console.log("down Scroll");
+      navbar.style.display = "none";
+    } else {
+      console.log("up Scroll");
+      navbar.style.display = "flex";
+    }
   }
+  isClick = false;
   // 스크롤을 내릴 때
   previousScrollY = scrollY;
 });
