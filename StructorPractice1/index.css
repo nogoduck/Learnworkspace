@@ -54,3 +54,34 @@ footer {
   border: 1px solid black;
   height: 150px;
 }
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  border: 2px solid green;
+}
+.con {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row-reverse; */
+  /* flex-wrap: wrap-reverse; */
+}
+/* padding : border안의 속성에 적용되는 여백 */
+/* -> bacgkround-color에 영향을 미침 */
+.item1 {
+  background-color: green;
+  width: 300px;
+}
+.item2 {
+  margin-right: 120px;
+  background-color: #333;
+}
+.item3 {
+  margin-right: 120px;
+  background-color: blue;
+}
