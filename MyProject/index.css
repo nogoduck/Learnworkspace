@@ -27,14 +27,35 @@ header .header__container .notice {
 header .header__container .navigation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 10px 0px 10px;
   /* 상 우 하 좌 (시계방향) */
+  /* position: fixed; */
+  transition: 0.6s;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+header .sticky {
+  padding: 5px 100px;
+  background-color: blueviolet;
+}
+
+header .sticky ul li {
+  color: red;
+}
 header .logo {
   display: flex;
   cursor: pointer;
   padding-left: 30px;
+  text-transform: uppercase;
+  transition: 0.6s;
+  letter-spacing: 5px;
 }
 
 header .logo p {
