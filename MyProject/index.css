@@ -1,6 +1,92 @@
+/* Google CDN */
+@import url("https://fonts.googleapis.com/css2?family=Song+Myung&display=swap");
+
 body {
   margin: 0px;
   padding: 0px;
+  font-family: "Song Myung", serif;
 }
 
-head
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Header */
+i {
+  font-size: 3em;
+  color: darkorange;
+}
+header .header__container .notice {
+  background-color: #2d3436;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+}
+
+header .header__container .navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 0px 10px;
+  /* 상 우 하 좌 (시계방향) */
+}
+
+header .logo {
+  display: flex;
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+header .logo p {
+  font-size: 2em;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+header .logo p span {
+  font-size: 0.7em;
+  color: #c23616;
+}
+
+header ul {
+  display: flex;
+  margin: 10px 0px 16px 0px;
+}
+
+header li {
+  list-style: none;
+  padding: 0px 100px;
+  font-size: 1.5em;
+}
+
+header li:hover {
+  list-style: none;
+  padding: 0px 100px;
+  color: #c23616;
+  cursor: pointer;
+}
+/* End Header */
+
+/* Main Section */
+#main img {
+  width: 100%;
+}
+/* End Main Section */
+
+/* Event Section */
+
+/* End Event Section */
+
+/* Point1 Section */
+
+/* End Point1 Section */
+
+/* Point2 Section */
+
+/* End Point1 Section */
+
+/* Footer */
+
+/* End Footer */
+
+/* ################ [ TEST ] ############## */

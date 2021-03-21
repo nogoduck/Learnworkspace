@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -12,11 +18,15 @@
           <p>공지사항이 없습니다</p>
         </div>
         <div class="navigation">
+          <div class="logo">
+            <i class="fas fa-cookie-bite"></i>
+            <p><span>바삭한</span>쿠키</p>
+          </div>
           <ul>
-            <li class="main">Main</li>
-            <li class="point3">Event</li>
-            <li class="point1">Point1</li>
-            <li class="point2">Point2</li>
+            <li class="main">홈</li>
+            <li class="point3">이벤트</li>
+            <li class="point1">안내1</li>
+            <li class="point2">안내2</li>
           </ul>
         </div>
       </div>
@@ -33,34 +43,91 @@
 
     <!-- Event Section -->
     <section id="event">
-      <div class="event__container"></div>
+      <div class="event__container">
+        <div class="item1">
+          <div class="listBox">1</div>
+          <p>derosa<span>___cannondale</span></p>
+        </div>
+        <div class="item2">2</div>
+        <div class="listBox"></div>
+        <p>derosa<span>___cannondale</span></p>
+      </div>
     </section>
     <!-- End Event Section -->
 
     <!-- Point1 Section -->
     <section id="point1">
       <div class="point1__container">
-        <div class="title">POINT 1. 제목을 입력해 주세요</div>
-        <div class="article"></div>
+        <div class="title">안내 1. 제목을 입력해 주세요</div>
+        <!-- 1-Line Box -->
+        <div class="article">
+          <img src="http://placehold.it/400x300" />
+          <div class="info__conatiner">
+            <div class="info icon">
+              <img src="http://placehold.it/30x30" />
+            </div>
+            <div class="info title">제목</div>
+            <p class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod
+              modi commodi expedita incidunt praesentium alias consectetur
+              recusandae nulla maiores voluptates?
+            </p>
+          </div>
+        </div>
+        <!-- End 1-Line Box -->
+        <!-- 2-Line Box -->
+        <div class="article">
+          <img src="http://placehold.it/400x300" />
+          <div class="info__conatiner">
+            <div class="info icon">
+              <img src="http://placehold.it/30x30" />
+            </div>
+            <div class="info title">제목</div>
+            <p class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+              quod voluptatem, sequi sapiente in sed!
+            </p>
+          </div>
+        </div>
+        <!-- End 2-Line Box -->
       </div>
     </section>
     <!-- End Point1 Section -->
     <!-- Point2 Section -->
     <section id="point2">
       <div class="point2__container"></div>
-      <div class="title">POINT 2. 제목을 입력해 주세요</div>
+      <div class="title">안내 2. 제목을 입력해 주세요</div>
       <div class="article">
         <div class="item1">
           <img src="http://placehold.it/400x300" />
-          <div class="item icon">1개월</div>
+          <div class="item icon">10%</div>
           <ul class="item info">
             <li>상품을 소개해주세요 1</li>
             <li>상품을 소개해주세요 2</li>
             <li>상품을 소개해주세요 3</li>
           </ul>
+          <p>5 <span>4.5</span></p>
         </div>
-        <div class="item2"><img src="http://placehold.it/400x300" /></div>
-        <div class="item3"><img src="http://placehold.it/400x300" /></div>
+        <div class="item2">
+          <img src="http://placehold.it/400x300" />
+          <div class="item icon">25%</div>
+          <ul class="item info">
+            <li>상품을 소개해주세요 1</li>
+            <li>상품을 소개해주세요 2</li>
+            <li>상품을 소개해주세요 3</li>
+          </ul>
+          <p>24 <span>18</span></p>
+        </div>
+        <div class="item3">
+          <img src="http://placehold.it/400x300" />
+          <div class="item icon">30%</div>
+          <ul class="item info">
+            <li>상품을 소개해주세요 1</li>
+            <li>상품을 소개해주세요 2</li>
+            <li>상품을 소개해주세요 3</li>
+          </ul>
+          <p>74 <span>52</span></p>
+        </div>
       </div>
     </section>
     <!-- End Point2 Section -->
@@ -68,5 +135,7 @@
     <!-- Footer -->
     <footer>hi</footer>
     <!-- End Footer -->
+
+    <script src="index.js"></script>
   </body>
 </html>
