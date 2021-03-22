@@ -13,7 +13,7 @@ p {
 }
 
 /* Header */
-i {
+header i {
   font-size: 3em;
   color: darkorange;
 }
@@ -121,8 +121,9 @@ header li:hover {
 }
 
 #event .item .listbox {
+  box-shadow: 3px 3px gray;
   background-color: #0097e6;
-  padding: 0px 20px 2px 20px;
+  padding: 2px 20px 2px 20px;
   color: #fff;
   font-size: 3em;
 }
@@ -137,23 +138,58 @@ header li:hover {
 #event .content .title {
   font-size: 1.4em;
 }
+
 #event .content .article {
   font-size: 1.7em;
 }
 
-#evnet span {
-  color: #0097e6;
-  font-size: 2em;
+#event span {
+  color: 0097e6;
+  background-color: orange;
+  font-size: 1.2em;
 }
-
 /* End Event Section */
 
 /* Point1 Section */
+#point1 .point1__container {
+  border: 3px solid red;
+  background-color: #273c75;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 2em;
+  align-content: center;
+}
 
+#point1 .point1__container .title {
+  color: #fff;
+}
+
+#point1 .article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+#point1 .info__img {
+  border: 2px solid blue;
+}
+
+#point1 .info__conatiner {
+  border: 2px solid yellowgreen;
+}
 /* End Point1 Section */
 
 /* Point2 Section */
-
+#point2 .point2__container {
+  border: 1px solid black;
+  background-color: #273c75;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 2em;
+  align-content: center;
+}
 /* End Point1 Section */
 
 /* Footer */
