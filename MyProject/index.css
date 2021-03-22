@@ -17,6 +17,12 @@ i {
   font-size: 3em;
   color: darkorange;
 }
+
+header .none {
+  display: none;
+  color: chartreuse;
+}
+
 header .header__container .notice {
   background-color: #2d3436;
   color: #fff;
@@ -34,6 +40,10 @@ header .header__container .navigation {
   transition: 0.6s;
 }
 
+header .navigation .fixed:hover {
+  color: coral;
+  background-color: black;
+}
 header {
   position: fixed;
   width: 100%;
@@ -41,14 +51,6 @@ header {
   left: 0px;
 }
 
-header .sticky {
-  padding: 5px 100px;
-  background-color: blueviolet;
-}
-
-header .sticky ul li {
-  color: red;
-}
 header .logo {
   display: flex;
   cursor: pointer;
@@ -78,6 +80,9 @@ header li {
   list-style: none;
   padding: 0px 100px;
   font-size: 1.5em;
+  font-weight: 500px;
+  transition: 0.3s;
+  letter-spacing: 2px;
 }
 
 header li:hover {
@@ -95,6 +100,51 @@ header li:hover {
 /* End Main Section */
 
 /* Event Section */
+#event .event__title {
+  font-size: 3em;
+  margin: 30px;
+  padding: 50px;
+}
+
+#event .event__container {
+  text-align: center;
+  padding: 200px 50px 200px 50px;
+}
+
+#event .item__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#event .item {
+  display: flex;
+}
+
+#event .item .listbox {
+  background-color: #0097e6;
+  padding: 0px 20px 2px 20px;
+  color: #fff;
+  font-size: 3em;
+}
+
+#event .content {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding-left: 10px;
+}
+
+#event .content .title {
+  font-size: 1.4em;
+}
+#event .content .article {
+  font-size: 1.7em;
+}
+
+#evnet span {
+  color: #0097e6;
+  font-size: 2em;
+}
 
 /* End Event Section */
 
