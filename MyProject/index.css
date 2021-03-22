@@ -108,7 +108,7 @@ header li:hover {
 
 #event .event__container {
   text-align: center;
-  padding: 200px 50px 200px 50px;
+  padding: 200px 50px 400px 50px;
 }
 
 #event .item__container {
@@ -151,53 +151,144 @@ header li:hover {
 /* End Event Section */
 
 /* Point1 Section */
-#point1 {
-  border: 10px solid crimson;
-}
-#point1 .point1__container {
-  border: 3px solid red;
-  background-color: #273c75;
-  width: 100%;
-  /* height: 50px; */
-  높이를 고정해두고 왜 계속 아래 아이템들이 올라와있나 모든 코드의 div를 확인하는데 세시간을 썻다 나 자신에게 화가나서 이 한줄 찾고 커밋에 이런 어리석은 나를 공개한다
+#point1 .title__container {
+  padding-top: 25px;
   text-align: center;
-  font-size: 2em;
+  background-color: #273c75;
+  height: 85px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
   align-content: center;
+  font-size: 3em;
 }
 
-#point1 .point1__container .title {
-  color: #fff;
+#point1 .point1__container {
+  text-align: center;
+  /* font-size: 2em; */
+  align-content: center;
 }
 
 #point1 .article {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
 }
 
-#point1 .info__img {
-  border: 2px solid blue;
+#point1 .info__img img {
+  width: 100%;
 }
 
 #point1 .info__conatiner {
-  border: 2px solid yellowgreen;
+  background-color: #0097e6;
+  color: #fff;
+  padding: 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+#point1 .gift {
+  background-color: #353b48;
+}
+
+#point1 i {
+  font-size: 8em;
+}
+
+#point1 .info__title {
+  font-weight: 500;
+  font-size: 4em;
+  padding: 30px;
+}
+
+#point1 .info__article {
+  font-size: 1.5em;
+  line-height: 1.5;
 }
 /* End Point1 Section */
 
 /* Point2 Section */
-#point2 .point2__container {
-  border: 5px solid violet;
+#point2 .point2__container .title {
+  padding: 25px;
+  text-align: center;
   background-color: #273c75;
   width: 100%;
-  height: 50px;
+  color: #fff;
   text-align: center;
-  font-size: 2em;
   align-content: center;
+  font-size: 3em;
+}
+
+#point2 .article {
+  padding: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+#point2 .item__icon {
+  display: inline;
+  position: relative;
+  top: -70px;
+  left: 245px;
+  color: red;
+  padding: 20px;
+  background-color: #273c75;
+  color: #fff;
+  font-size: 2em;
+  border-radius: 200px 200px 50px 200px;
+  opacity: 0.7;
+}
+
+#point2 .item__icon span {
+  font-size: 1.5rem;
+}
+
+#point2 .item__info {
+  position: relative;
+  top: -50px;
+  color: #718093;
+}
+
+#point2 .price {
+  font-size: 2em;
+  top: -50px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: #718093;
+}
+#point2 .price span {
+  font-size: 1.2rem;
+}
+#point2 .original__price p {
+  /* text-decoration: line-through; */
+  position: relative;
+  top: -55px;
+}
+#point2 .sale__price {
+  color: #273c75;
+}
+
+#point2 hr {
+  position: relative;
+  left: -8px;
+  top: -15px;
+  color: red;
+  background-color: red;
+  border: 2px solid red;
+  width: 80px;
 }
 /* End Point1 Section */
 
 /* Footer */
-
+footer {
+  border-top: 1px solid black;
+  padding: 100px;
+  text-align: center;
+  font-size: 4em;
+}
 /* End Footer */
 
 /* ################ [ TEST ] ############## */
