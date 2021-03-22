@@ -151,11 +151,15 @@ header li:hover {
 /* End Event Section */
 
 /* Point1 Section */
+#point1 {
+  border: 10px solid crimson;
+}
 #point1 .point1__container {
   border: 3px solid red;
   background-color: #273c75;
   width: 100%;
-  height: 50px;
+  /* height: 50px; */
+  높이를 고정해두고 왜 계속 아래 아이템들이 올라와있나 모든 코드의 div를 확인하는데 세시간을 썻다 나 자신에게 화가나서 이 한줄 찾고 커밋에 이런 어리석은 나를 공개한다
   text-align: center;
   font-size: 2em;
   align-content: center;
@@ -182,7 +186,7 @@ header li:hover {
 
 /* Point2 Section */
 #point2 .point2__container {
-  border: 1px solid black;
+  border: 5px solid violet;
   background-color: #273c75;
   width: 100%;
   height: 50px;
