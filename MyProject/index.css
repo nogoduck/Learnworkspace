@@ -78,7 +78,8 @@ header ul {
 
 header li {
   list-style: none;
-  padding: 0px 100px;
+  /* padding: 0px 100px; */
+  margin: 0px 60px;
   font-size: 1.5em;
   font-weight: 500px;
   transition: 0.3s;
@@ -86,8 +87,6 @@ header li {
 }
 
 header li:hover {
-  list-style: none;
-  padding: 0px 100px;
   color: #c23616;
   cursor: pointer;
 }
@@ -280,7 +279,11 @@ header li:hover {
   border: 2px solid red;
   width: 80px;
 }
-/* End Point1 Section */
+
+#point2 img {
+  width: 100%;
+}
+/* End Point2 Section */
 
 /* Footer */
 footer {

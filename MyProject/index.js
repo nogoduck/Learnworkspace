@@ -23,3 +23,10 @@ document.addEventListener("scroll", () => {
   header_notice.classList.toggle("none", window.scrollY > 0);
   header_nav.classList.toggle("fixed", window.scrollY > 0);
 });
+
+let num1 = 10;
+
+function func() {
+  let num1 = 20;
+  console.log(num1);
+}
