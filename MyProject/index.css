@@ -1,0 +1,297 @@
+/* Google CDN */
+@import url("https://fonts.googleapis.com/css2?family=Song+Myung&display=swap");
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Song Myung", serif;
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Header */
+header i {
+  font-size: 3em;
+  color: darkorange;
+}
+
+header .none {
+  display: none;
+  color: chartreuse;
+}
+
+header .header__container .notice {
+  background-color: #2d3436;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+}
+
+header .header__container .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 0px 10px;
+  /* 상 우 하 좌 (시계방향) */
+  /* position: fixed; */
+  transition: 0.6s;
+}
+
+header .navigation .fixed:hover {
+  color: coral;
+  background-color: black;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+header .logo {
+  display: flex;
+  cursor: pointer;
+  padding-left: 30px;
+  text-transform: uppercase;
+  transition: 0.6s;
+  letter-spacing: 5px;
+}
+
+header .logo p {
+  font-size: 2em;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+header .logo p span {
+  font-size: 0.7em;
+  color: #c23616;
+}
+
+header ul {
+  display: flex;
+  margin: 10px 0px 16px 0px;
+}
+
+header li {
+  list-style: none;
+  /* padding: 0px 100px; */
+  margin: 0px 60px;
+  font-size: 1.5em;
+  font-weight: 500px;
+  transition: 0.3s;
+  letter-spacing: 2px;
+}
+
+header li:hover {
+  color: #c23616;
+  cursor: pointer;
+}
+/* End Header */
+
+/* Main Section */
+#main img {
+  width: 100%;
+}
+/* End Main Section */
+
+/* Event Section */
+#event .event__title {
+  font-size: 3em;
+  margin: 30px;
+  padding: 50px;
+}
+
+#event .event__container {
+  text-align: center;
+  padding: 200px 50px 400px 50px;
+}
+
+#event .item__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#event .item {
+  display: flex;
+}
+
+#event .item .listbox {
+  box-shadow: 3px 3px gray;
+  background-color: #0097e6;
+  padding: 2px 20px 2px 20px;
+  color: #fff;
+  font-size: 3em;
+}
+
+#event .content {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding-left: 10px;
+}
+
+#event .content .title {
+  font-size: 1.4em;
+}
+
+#event .content .article {
+  font-size: 1.7em;
+}
+
+#event span {
+  color: 0097e6;
+  background-color: orange;
+  font-size: 1.2em;
+}
+/* End Event Section */
+
+/* Point1 Section */
+#point1 .title__container {
+  padding-top: 25px;
+  text-align: center;
+  background-color: #273c75;
+  height: 85px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+  font-size: 3em;
+}
+
+#point1 .point1__container {
+  text-align: center;
+  /* font-size: 2em; */
+  align-content: center;
+}
+
+#point1 .article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#point1 .info__img img {
+  width: 100%;
+}
+
+#point1 .info__conatiner {
+  background-color: #0097e6;
+  color: #fff;
+  padding: 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+#point1 .gift {
+  background-color: #353b48;
+}
+
+#point1 i {
+  font-size: 8em;
+}
+
+#point1 .info__title {
+  font-weight: 500;
+  font-size: 4em;
+  padding: 30px;
+}
+
+#point1 .info__article {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+/* End Point1 Section */
+
+/* Point2 Section */
+#point2 .point2__container .title {
+  padding: 25px;
+  text-align: center;
+  background-color: #273c75;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+  font-size: 3em;
+}
+
+#point2 .article {
+  padding: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+#point2 .item__icon {
+  display: inline;
+  position: relative;
+  top: -70px;
+  left: 245px;
+  color: red;
+  padding: 20px;
+  background-color: #273c75;
+  color: #fff;
+  font-size: 2em;
+  border-radius: 200px 200px 50px 200px;
+  opacity: 0.7;
+}
+
+#point2 .item__icon span {
+  font-size: 1.5rem;
+}
+
+#point2 .item__info {
+  position: relative;
+  top: -50px;
+  color: #718093;
+}
+
+#point2 .price {
+  font-size: 2em;
+  top: -50px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: #718093;
+}
+#point2 .price span {
+  font-size: 1.2rem;
+}
+#point2 .original__price p {
+  /* text-decoration: line-through; */
+  position: relative;
+  top: -55px;
+}
+#point2 .sale__price {
+  color: #273c75;
+}
+
+#point2 hr {
+  position: relative;
+  left: -8px;
+  top: -15px;
+  color: red;
+  background-color: red;
+  border: 2px solid red;
+  width: 80px;
+}
+
+#point2 img {
+  width: 100%;
+}
+/* End Point2 Section */
+
+/* Footer */
+footer {
+  border-top: 1px solid black;
+  padding: 100px;
+  text-align: center;
+  font-size: 4em;
+}
+/* End Footer */
+
+/* ################ [ TEST ] ############## */

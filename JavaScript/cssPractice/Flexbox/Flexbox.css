@@ -1,3 +1,27 @@
+/* display : flex => 기준 : 가로
+W
+justify-content(기준을 중심삼아 각 요소간에 위치 선정가능)
+flex-start: 컨테이너 앞
+flex-start: 컨테이너 뒤
+center:컨테이너 중앙
+--- 잘 안쓰는 요소 : baseline(컨테이너의 시작 위치에 정렬) / stretch(컨테이너에 맞게 늘림
+############################################
+
+align-content(세로축을 기준삼아) / align-item
+
+flex-direction:각 요소의 정렬을 바꿀 수 있다
+가로 -> 세로 
+
+
+
+
+
+
+
+
+
+*/
+
 body,
 html {
   margin: 0px;
@@ -15,7 +39,7 @@ html {
   /* 기본값 : row, 반대: row-reverse, 위에서아래: column, 위아래 반대: coloumn-reverse*/
   /* flex-direction: row; */
   /* nowrap이 기본값이하고 wrap은 크기가 줄어듬에 따라 아래 줄로 이동한다 */
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   flex-flow: row wrap;
 
   /* flex-start 기본값, 끝으로 이동flex-end, center 중앙이동, space-around 박스를 둘러싼 빈공간을 만든다(그래서 각각 맨끝에 있는 class들과 class들과의 빈공간이 다르다*/

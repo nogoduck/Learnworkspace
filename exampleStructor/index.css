@@ -1,0 +1,187 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+}
+
+/* HEADER */
+#header .navbar {
+  background-color: white;
+  position: fixed;
+  border: 5px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+  margin-top: 15px;
+  border-radius: 25px;
+  width: 97.5%;
+  user-select: none;
+}
+#header .navbar .navbar__logo {
+  width: 50px;
+  /* border: 1px solid black; */
+  display: flex;
+  margin: 0px;
+  cursor: pointer;
+}
+
+#header .navbar .navbar__logo h3 {
+  font-size: 32px;
+  padding: 0px;
+  /* padding-top: 9px; */
+  /* padding-left: 5px; */
+  margin: 0px;
+}
+#header .navbar .navbar__logo h3 span {
+  font-size: 25px;
+  color: gray;
+}
+
+#header .navbar .navbar__logo img {
+  padding-left: px;
+  /* border: 1px solid black; */
+  width: 45px;
+  height: 45px;
+  margin: 0px;
+}
+
+#header .navbar .navbar__menu {
+  /* border: 1px solid black; */
+}
+#header .navbar .navbar__menu ul {
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+  margin-left: 80px;
+  list-style: none;
+  font-weight: 1000;
+  font-size: 20px;
+  /* border: 1px solid black; */
+}
+#header .navbar .navbar__menu ul li {
+  cursor: pointer;
+  padding: 0px 30px 0px 30px;
+  margin: 0px;
+}
+
+#header .navbar .navbar__menu ul li:hover {
+  /* padding-left: 30px; */
+  border: 2px solid red;
+  border-radius: 10px;
+  background-color: yellow;
+  padding: 0px 30px 0px 30px;
+  margin: 0px;
+}
+#header .navbar .navbar__login {
+  /* border: 1px solid black; */
+  display: flex;
+  margin-top: 8px;
+}
+#header .navbar .navbar__login p {
+  /* padding-left: 10px; */
+  /* display: block; */
+  font-size: 20px;
+  margin-right: 25px;
+
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px #3399dd solid;
+  background-color: skyblue;
+  text-align: center;
+  cursor: pointer;
+}
+
+#header .navbar .navbar__login p:hover {
+  background-color: steelblue;
+  border: 1px solid red;
+}
+
+/* END HEADER */
+
+/* CONTENT */
+#content .background img {
+  border: 5px solid gray;
+  width: 99.4%;
+}
+
+/* END CONTENT */
+
+/* YETI SECTION */
+
+#yeti .background {
+  margin: 0px;
+  padding: 0px;
+}
+#yeti .background img {
+  border: 5px solid red;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  width: 99.4%;
+}
+/* END YETI SECTION */
+
+/* KONA SECTION */
+#kona .background img {
+  border: 5px solid orange;
+  width: 100%;
+  width: 99.4%;
+}
+
+/* END KONA SECTION */
+
+/* SCOTT SECTION */
+#scott .background img {
+  border: 5px solid green;
+  width: 100%;
+  width: 99.4%;
+}
+
+/* END SCOTT SECTION */
+
+/* TREK SECTION */
+#trek .background img {
+  border: 5px solid darkblue;
+  width: 100%;
+  width: 99.4%;
+}
+
+/* END TREK SECTION */
+
+/* FOOTER */
+#footer {
+  background-color: white;
+}
+#footer .footer__items {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  margin-left: 120px;
+}
+
+#footer .footer__items .item {
+  width: 20%;
+  cursor: pointer;
+  user-select: none;
+}
+
+#footer .copyright {
+  text-align: center;
+  border-top: 1px solid black;
+  padding: 50px;
+}
+#footer .copyright p {
+  /* border: 1px solid black; */
+  font-size: 20px;
+  font-weight: 500;
+}
+#footer .copyright p span {
+  /* border: 1px solid black; */
+  font-weight: 800;
+}
+/* END FOOTER */
