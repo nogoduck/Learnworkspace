@@ -2,7 +2,7 @@
 // sha512추천
 
 const crypto = require("crypto");
-const { callbackify } = require("node:util");
+// const { callbackify } = require("node:util");
 console.log(
   "base64: ",
   crypto.createHash("sha512").update("비밀번호").digest("base64")
