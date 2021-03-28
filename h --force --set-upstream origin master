@@ -1,0 +1,943 @@
+[33mcommit 4a131623029174af9a297c499a48661356c892a5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 29 02:36:35 2021 +0900
+
+    12321312
+
+[33mcommit 1b83eb8e2e709f654036e138db6e676607fae4cb[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 29 02:34:51 2021 +0900
+
+    git test
+
+[33mcommit 12eb0ba57a17d17b033962d17e6d024edbf41480[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 29 02:34:03 2021 +0900
+
+    test commit
+
+[33mcommit fb95048ae9bdbc114b1b2bdd63a6780cfb403fd1[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 29 02:31:27 2021 +0900
+
+    don`t create big file
+
+[33mcommit da7d3403ad363d3afad938e9fbcbbad941749a73[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 29 02:29:52 2021 +0900
+
+    create big file
+
+[33mcommit 46875ffd0008c21abc03a8e31074a59c45564dee[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 29 01:01:03 2021 +0900
+
+    complete buffer
+
+[33mcommit e6e4702a963f00a062ce37527570bc5ee864bab3[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 28 22:42:30 2021 +0900
+
+    complete node_fs
+
+[33mcommit 5e9d6802b99415a8e94c460c35aaeb270c4f95fe[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 28 22:13:18 2021 +0900
+
+    learn sync_fs
+
+[33mcommit 956ee706c8f4a6f5363d55c65593f7229889c002[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 28 21:20:11 2021 +0900
+
+    learn exec
+
+[33mcommit 84fcda717a204b236378e948454f8905fa5b432b[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 28 21:03:54 2021 +0900
+
+    멀티스레드 학습 실패 : 에러 안잡음
+
+[33mcommit 7a6967f6de0f02f14b9bac227a25f4271a94b4e4[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 28 20:25:25 2021 +0900
+
+    multi threads learn failed
+
+[33mcommit 7688fb8eeb1ec67e5c2a2f671f5633d87d8df441[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 28 20:09:59 2021 +0900
+
+    complete crypto_util
+
+[33mcommit e981179de67a75d64f5c42cfe565e8bc2f3c25f4[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 28 19:57:10 2021 +0900
+
+    add crypto
+
+[33mcommit a394f6402530059bfcdeb4db077bae0f325e0007[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 28 07:48:11 2021 +0900
+
+    save
+
+[33mcommit 6afc3f1867ed8a849b80d3bce8665b8a11f6f1ab[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Mar 27 22:50:41 2021 +0900
+
+    add file url_queryString
+
+[33mcommit 572aaeeb4378a559e54a1bdb62ee0cf4bc2fb20a[m
+Merge: f9102a5 fa1dbd5
+Author: adx <nogo22@naver.com>
+Date:   Fri Mar 26 20:47:58 2021 +0900
+
+    Merge branch 'master' of https://github.com/nogoduck/Learnworkspace
+
+[33mcommit fa1dbd58f8e2c0d0ef669fc8a835ad967411a365[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Mar 25 23:36:57 2021 +0900
+
+    learn path, os, process
+
+[33mcommit 3297e9825871e8bfbd47e539ca7272b962e5349c[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 24 23:04:55 2021 +0900
+
+    learn module and using import, require
+
+[33mcommit b9713666cbefbe8ee3bfeccfefe475e890b548a6[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 24 18:14:55 2021 +0900
+
+    async & await learn complete
+
+[33mcommit dea42b020133bd53d53874d41d8cbeb370e55741[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 24 09:13:06 2021 +0900
+
+    13. 10:40
+
+[33mcommit af5c7f1063ab0ca9032029d0b7f8bbb7331484c0[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 24 01:34:57 2021 +0900
+
+    css_transition 공부시작
+
+[33mcommit d98d3f06d43e52727a6f0aa8367efd3ac9d5c20b[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Mar 23 00:14:49 2021 +0900
+
+    site "crispy cookie" CSS complete
+
+[33mcommit 78e7a210bda98cb509911d4d464e25ccbf8fdfd2[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 22 20:16:13 2021 +0900
+
+    stupid height
+
+[33mcommit 934d29a3a75f3a3a2d4cccb142e4e3c1e5ad36d6[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 22 20:02:32 2021 +0900
+
+    css helllllllllllllllllll save
+
+[33mcommit b23a22a24a66fa23e32d492f01db473b2fdd26d3[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 22 19:00:03 2021 +0900
+
+    Event Section complete
+
+[33mcommit f862f3a2186e5f02ac128a4c8d6a3292f84ef7fb[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 22 08:25:56 2021 +0900
+
+    210322 header save1
+
+[33mcommit 597fb4cf4bc6440aaf5ef4eece1d0d0cf9b703d6[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 22 00:39:19 2021 +0900
+
+    210322save1
+
+[33mcommit 5114ca3572207a8c73614a548d10fcc70c7fd2b6[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 21 21:59:49 2021 +0900
+
+    저장_210321
+
+[33mcommit 385a27acb92015398da7af58de3282140e904dca[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 21 21:33:18 2021 +0900
+
+    s
+
+[33mcommit 600a2a2e72aa95e814fde6dc9f3e3dbcec7e5d40[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Mar 19 12:51:12 2021 +0900
+
+    structor save2
+
+[33mcommit 67569296a388b731dd64cb98cefd00f48eddee65[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Mar 19 12:24:09 2021 +0900
+
+    structor save1
+
+[33mcommit 7daedf1a6df5c3a986dabb51bb4d5f2f0d77b5b8[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Mar 18 12:46:14 2021 +0900
+
+    fixed scroll bug
+
+[33mcommit db7306b2cc6a3089d3af93b8e405dca75ed92c72[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Mar 18 09:08:25 2021 +0900
+
+    scroll to background_img toggle
+
+[33mcommit 467129b43e515de358c13c37de26d98e3e2e98e0[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Mar 18 07:03:55 2021 +0900
+
+    add footer_button func
+
+[33mcommit 6f03cb767f2f8b3910ff8036933d4f5a1f9defa8[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 17 23:13:17 2021 +0900
+
+    add button:hover
+
+[33mcommit 52e27918b9866a2e8f649f0792538de2f6fc9cbd[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 17 22:53:57 2021 +0900
+
+    mtb_page click to scroll
+
+[33mcommit fac492bb6f8f304f43ff63bee535617bf18f9a08[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 17 21:44:20 2021 +0900
+
+    MTB_page practice
+
+[33mcommit b7d0a5194a728b012bbeed8f410772ce27dae6fd[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 17 19:39:11 2021 +0900
+
+    practice mtb page
+
+[33mcommit cba82da6618ef7374584a977e0329b3d097a209b[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 17 07:53:20 2021 +0900
+
+    save
+
+[33mcommit 3fb63ba5ef3678f64130cda14dfcd4afddbfd832[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 15 09:51:02 2021 +0900
+
+    Learn callback complete
+
+[33mcommit de0acbc77b5e0a83a63df23af9b5e676eb16e6fc[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 14 23:35:11 2021 +0900
+
+    JSON 공부 완료
+
+[33mcommit 17f5806bca0da8fc7ce7a97e9f487e14661f374d[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 14 23:16:39 2021 +0900
+
+    json 데이터 js로 가져오기 실패코드
+
+[33mcommit a8443f2052f7d6a2aa0f4d7f058e0dd751922cf9[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 14 21:57:27 2021 +0900
+
+    JSON 저장2
+
+[33mcommit 4075d06a068207f5dc8a09884a3fdac501016b43[m
+Author: ad <nogo22@naver.com>
+Date:   Sun Mar 14 21:35:11 2021 +0900
+
+    JSON 공부 중간저장1
+
+[33mcommit fb6bcaa83478dc568b1c376fe55fd3dac8d57a40[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Mar 11 21:49:31 2021 +0900
+
+    Except 3 / 4, 8:30
+
+[33mcommit 497e3eb2db8e602de022a6768dd5a4c40b373efa[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Mar 11 17:01:14 2021 +0900
+
+    !Practice Learn Closure
+
+[33mcommit 549de699aed3c7252b5be8d953270d8926508b1f[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Mar 11 16:47:42 2021 +0900
+
+    중간저장2
+
+[33mcommit 982a08435f8af2a3c60acab060595d734da5e4aa[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Mar 11 09:06:57 2021 +0900
+
+    프로토타입 중간저장1
+
+[33mcommit 97a47ead7b4582dceac5ae0d00ddf205c16618b0[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 10 20:30:32 2021 +0900
+
+    timer save
+
+[33mcommit 6525eb340d43683420ed10b8d5bdc7d64fd83e88[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 10 19:05:20 2021 +0900
+
+    this, closure practice
+
+[33mcommit 91d5d1ad45d5389931c620e7a4353e8c69024650[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 10 08:19:23 2021 +0900
+
+    카드 짝 맞추기 구현
+
+[33mcommit 1e1b761526baa7df0531fe833597b9d2ce1bd6a4[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Mar 9 08:12:55 2021 +0900
+
+    카드 색 부여 / 클릭방지
+
+[33mcommit ae5df5b121539dc5593abdad266ad067284a9927[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Mar 9 07:46:03 2021 +0900
+
+    랜덤 컬러 적용
+
+[33mcommit 3307db9cc50e8fae4669736b0bad4d613998e1b0[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 8 22:22:55 2021 +0900
+
+    카드 뒤집기 구현
+
+[33mcommit adff03b5d665be7ebb207e619a1d06021fd47de2[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 8 22:18:12 2021 +0900
+
+    card-flipped => card.flipped 수정
+
+[33mcommit 686d15d1f23bf351f4883f3742c99d8d151d6630[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 8 22:12:21 2021 +0900
+
+    카드 뒤집기 / 토글 작동안함
+
+[33mcommit f9102a5d9da533a7d5f5a9449e9af3c061f683c4[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Mar 7 10:32:42 2021 +0900
+
+    13-5 / 3:30
+
+[33mcommit 0603b6fd18aafb562d3742111b02d8a3236b942d[m
+Author: adx <nogo22@naver.com>
+Date:   Fri Mar 5 21:16:24 2021 +0900
+
+    this의 이해1
+
+[33mcommit 578bbce065999e2cba23082ac0f5ffefa4979769[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Mar 5 05:50:43 2021 +0900
+
+    중간저장2/13-5 / 2048
+
+[33mcommit ef024ad0969d029ea92d49d1f2e56705b0fd03c4[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Mar 5 05:13:10 2021 +0900
+
+    드래그로 데이터 밀어넣기
+
+[33mcommit 05fad8fa096d1140da1d51697ae362228ef5a6bb[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 05:42:43 2021 +0900
+
+    2048 중간저장1 / 13-4
+
+[33mcommit d1c1182fd2bbd451fb197d97d72bafca1d6d815b[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 05:31:55 2021 +0900
+
+    마우스 방향구현 수정
+
+[33mcommit 4e0b85d12a18c5d5f178eba6966da0d15f1a108f[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 05:28:42 2021 +0900
+
+    마우스 움직임 구현
+
+[33mcommit 69e79e6cc33636b53ebef6a0dd199b6bfb0265aa[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 04:54:38 2021 +0900
+
+    랜덤으로 값 삽입
+
+[33mcommit 5fd62e767ed49060781e1329fb69797885dfecab[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 04:45:06 2021 +0900
+
+    화면표시 함수
+
+[33mcommit 98455b940b5fbe1d3e74e24d6d644fef72e844be[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 04:38:21 2021 +0900
+
+    화면과 배열 매핑
+
+[33mcommit 6aaf0f61436ec724dfdcb433dd8f20b7b54eb0eb[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 04:32:13 2021 +0900
+
+    화면에 테이블 출력
+
+[33mcommit 1355d9f8001cdf120b51b873a4fd64443104ba94[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 04:31:15 2021 +0900
+
+    2048 행열 세팅
+
+[33mcommit abb32b4c15debedf1afe1f1a876575d07dc9d1ac[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 03:44:18 2021 +0900
+
+    2048 시작
+
+[33mcommit e789f96292ce493cc34fa111f49e66a55f1ec502[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Mar 3 03:42:26 2021 +0900
+
+    클릭반응테스트 성공
+
+[33mcommit 499effbe9275849817617f970db72b3ba248c6fe[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 1 06:13:30 2021 +0900
+
+    호출스택 / 중간저장1
+
+[33mcommit d40fed30626a620d95e8ad0ae8b445f3b6065245[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 1 03:35:14 2021 +0900
+
+    반응속도테스트 시작 (비동기 연습)
+
+[33mcommit 73d64eb8ea854082c01cc7791b9f09632cb74cf9[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 1 03:31:01 2021 +0900
+
+    지뢰찾기 일시중지
+
+[33mcommit c8bfd8ebcadce5fb16fe333375a6dcdaffb3b02d[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Mar 1 03:12:48 2021 +0900
+
+    재귀함수 => bfs알고리즘으로 변환시작
+
+[33mcommit 739031605d870c85e7ea969c6fdd655d5585ab68[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Feb 28 13:48:19 2021 +0900
+
+    8-13 / 빈칸열기 버그 + 학습에 실패한 강좌
+
+[33mcommit 44c3434ede2ce7d23ebe17c282c26ac5be905901[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Feb 28 13:18:48 2021 +0900
+
+    재귀 무한루프로 더이상 진행불가
+
+[33mcommit b1fb111f15fa0aa51819fd0ce3323d1ef5d28765[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Feb 28 13:03:15 2021 +0900
+
+    주변열기 / 재귀 오류
+
+[33mcommit 193c386a39d006a5ce8ede6e673b7e61b90fcf25[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Feb 28 11:26:45 2021 +0900
+
+    클로저 해결방법 학습
+
+[33mcommit 331aa089286f6d829e0a9ff4c585725639fcb0c7[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Feb 28 10:26:52 2021 +0900
+
+    스코프 학습
+
+[33mcommit 925a4adb79ddf924fe953c897997026184832ccd[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 27 21:36:49 2021 +0900
+
+    주변 지뢰 개수 표시 / 8 - 6 완료
+
+[33mcommit 3e158a35f65385116bd17e53ff7076a7cd85faf6[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 27 20:17:23 2021 +0900
+
+    버그1 해결
+
+[33mcommit beeeb5188b7b35ae78b7eb4b0a8b701a74d92afd[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 27 20:00:42 2021 +0900
+
+    지뢰버그1
+
+[33mcommit 07095460be5bffb26c44ae8c05133a328076f16c[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 27 18:32:33 2021 +0900
+
+    머리 에러
+
+[33mcommit e4e3bd615bca58060f25b719c6485281a8a2e361[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 27 18:02:51 2021 +0900
+
+    지뢰찾기 깃발심기
+
+[33mcommit 2124bf458579268a914e6bd0729def0fb00c0888[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Feb 26 05:04:12 2021 +0900
+
+    중간저장 + 에러상태
+
+[33mcommit 36f7d98fa1d4a8298e224125a3f16f7de8e2831a[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Feb 26 04:41:18 2021 +0900
+
+    지뢰심기
+
+[33mcommit d9c60969a363e0ecf1cc7a61ee6e928c084b4d09[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Feb 26 02:45:06 2021 +0900
+
+    지뢰 기본화면 구성
+
+[33mcommit 81307af28e5c708f2765d4e73fd9e3f9db75bf63[m
+Author: adx <nogo22@naver.com>
+Date:   Thu Feb 25 14:11:58 2021 +0900
+
+    지뢰찾기 시작 / 8-1, 7:30
+
+[33mcommit aa0bad91ba783147137db327d650f5c8c15df989[m
+Author: adx <nogo22@naver.com>
+Date:   Thu Feb 25 13:35:47 2021 +0900
+
+    가위바위보 완성 / 리팩토링
+
+[33mcommit 3bc61b90ce24262db78fd6f27bd7e4fb9627fcea[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Feb 25 05:37:35 2021 +0900
+
+    7-4 save
+
+[33mcommit 85e3d12a596398e61cb8993a6aa4384a1d26a4ba[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Feb 25 03:04:40 2021 +0900
+
+    클릭함수 + 화살표함수 재 학습필요
+
+[33mcommit b822e20b2ba5487f7c511614b82f5de3ac3b7cc0[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Feb 25 02:24:57 2021 +0900
+
+    이미지 스프라이트 + 전환
+
+[33mcommit 981fb096eb60556d839bdcbd77f3aea91ae4effd[m
+Author: adx <nogo22@naver.com>
+Date:   Wed Feb 24 15:12:15 2021 +0900
+
+    JS 오목 구현 성공
+
+[33mcommit 744d0fee708ab40abe6f97287930068458b1aa8f[m
+Author: adx <nogo22@naver.com>
+Date:   Wed Feb 24 14:33:25 2021 +0900
+
+    JS 오목 승패 알고리즘 구현
+
+[33mcommit 89505be87a317f84c0316ab2c5882399f7ca19bd[m
+Author: adx <nogo22@naver.com>
+Date:   Wed Feb 24 13:20:29 2021 +0900
+
+    folder structor change
+
+[33mcommit e1cc496aa80251b780435c8849a301d4231acad0[m
+Author: adx <nogo22@naver.com>
+Date:   Tue Feb 23 13:16:21 2021 +0900
+
+    그림 삽입
+
+[33mcommit 3c60b20461a680ae792df15a6c2d085eeb0942d6[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 04:56:37 2021 +0900
+
+    7-1 중간저장
+
+[33mcommit a94eb73330cb2fc704c947b190b9c209cbab5775[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 04:52:00 2021 +0900
+
+    가위바위보 시작
+
+[33mcommit bbc9c3fab5766aa10a7465526d0852b02e6afe58[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 04:41:20 2021 +0900
+
+    파일명 일괄변경
+
+[33mcommit 44e3835c501290b6e942deb9ae6abfb6da2922fc[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 04:30:18 2021 +0900
+
+    lotto 화면 완성
+
+[33mcommit e54d41051373d174ecd79e612cb89841b5d67fa4[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 03:37:55 2021 +0900
+
+    함수 정리 전 저장
+
+[33mcommit 55d9a67b936a426106be3aeb2e601a3712fc07a8[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 02:32:05 2021 +0900
+
+    오름차순 정렬
+
+[33mcommit e5d9e90eee1162e0ff8693e5b20b510a209e9b4f[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 01:52:47 2021 +0900
+
+    랜덤 배열 생성
+
+[33mcommit e7e23998c5f445989350957760385ff3bf6bd798[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 01:41:43 2021 +0900
+
+    lotto map 학습
+
+[33mcommit 5aab97865e2e17906af505cebef4610da51dac41[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 23 01:29:40 2021 +0900
+
+    로또 추첨기 시작
+
+[33mcommit c346872d45bf613eafac65b4d19b4885a96d60cc[m
+Author: adx <nogo22@naver.com>
+Date:   Mon Feb 22 14:44:08 2021 +0900
+
+    틱택토 화면 완성, 테이블 복습필요
+
+[33mcommit d3ccd5cad3b6258b5636c97344dad82a652b51f0[m
+Author: adx <nogo22@naver.com>
+Date:   Mon Feb 22 13:30:56 2021 +0900
+
+    틱택토 클릭이벤트 구현
+
+[33mcommit 1a0c34c951f8281c49bb8a6a9958e71220e0c42f[m
+Author: adx <nogo22@naver.com>
+Date:   Mon Feb 22 13:10:27 2021 +0900
+
+    클릭시 인덱스 찾는 이벤트 구현 복습 매우 필요함
+
+[33mcommit 72f9b056359102746ad57852f8fab48d30d01d48[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 22 05:22:44 2021 +0900
+
+    중간저장1 / 5-3
+
+[33mcommit ebc10d5a4913bc7190eb00c617b420ea0af56975[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 22 04:59:24 2021 +0900
+
+    틱택토 시작
+
+[33mcommit 26fc0152390d93a1f1e5294a0dc7f334b064c11a[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 22 03:54:33 2021 +0900
+
+    숫자야구 리팩토링
+
+[33mcommit f425442ed2724a692552fe246c24d469c8949599[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 22 03:33:16 2021 +0900
+
+    숫자야구 완성
+
+[33mcommit 423f2670960710bf77287bf1a70b1f2975d2239d[m
+Merge: 1cd9c81 e7d1d07
+Author: ad <nogo22@naver.com>
+Date:   Sun Feb 21 23:28:42 2021 +0900
+
+    Merge branch 'master' of https://github.com/nogoduck/Learnworkspace
+
+[33mcommit e7d1d07f3e10a54ad468935d85a4ffb6bfd31c4c[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Feb 21 22:20:52 2021 +0900
+
+    숫자야구 중간저장1
+
+[33mcommit fbe07f0583245857fc2f7a6ad2f71928d5fa2536[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Feb 21 11:24:33 2021 +0900
+
+    구구단 화면 완성
+
+[33mcommit 78f9fe2bb3fad6043c9896d2a54d44160d8ed2a5[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Feb 21 10:12:49 2021 +0900
+
+    끝말잇기 화면 완성
+
+[33mcommit 2534bfd36248a369200094a765b3eef956407bc0[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 20 19:44:51 2021 +0900
+
+    끝말잇기 화면 완성
+
+[33mcommit 22e2fb749752b4a5f429104b0a1e8d4d0410a953[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 20 16:16:48 2021 +0900
+
+    99단 프롬프트
+
+[33mcommit 048fe8dff16f72c300f8206b85045df1d6c77a76[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 20 15:43:13 2021 +0900
+
+    객체 학습
+
+[33mcommit 5d96a39a6444724ce27b36968b430e0c6e057b55[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 20 14:59:59 2021 +0900
+
+    끝말잇기
+
+[33mcommit ea3efae2b3953eb1217c63205ebddc9c5255d0a8[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 20 11:31:34 2021 +0900
+
+    구구단 과제 수정
+
+[33mcommit 32399cff9b2f6dbb30b56ba38f4177689ada693e[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 20 11:27:10 2021 +0900
+
+    구구단 성공 / 자바스크립트 상관관계 재학습 필요
+
+[33mcommit e48d88bf3d76a15b0a7121490a7585adcb1f4049[m
+Author: adx <nogo22@naver.com>
+Date:   Fri Feb 19 23:16:34 2021 +0900
+
+    gugudan start
+
+[33mcommit f4071fb19eb48500b6b664e7e49756ad1c1b6a66[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 13 14:50:25 2021 +0900
+
+    save1
+
+[33mcommit a91dd9a9939d024f5116200349a004fc9217aefe[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 13 13:01:42 2021 +0900
+
+    change toggle
+
+[33mcommit e96bcc0394a149d2b97ade9604f7bcd7ae38d65a[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 13 12:58:37 2021 +0900
+
+    like state
+
+[33mcommit 5a4af0ccfbbb2f4307155efc0cc9afb324911380[m
+Author: adx <nogo22@naver.com>
+Date:   Sat Feb 13 12:34:52 2021 +0900
+
+    add like Button
+
+[33mcommit 516ae4108b7f376cd556b8de5ef83a0068a3606d[m
+Author: adx <nogo22@naver.com>
+Date:   Fri Feb 12 17:50:07 2021 +0900
+
+    default flexbox practice
+
+[33mcommit e1a6ab6593c4bfdf128218e3d0a152884b3d1f7a[m
+Author: adx <nogo22@naver.com>
+Date:   Fri Feb 12 17:01:24 2021 +0900
+
+    구조설계 실패
+
+[33mcommit 1cd9c81bf72bd99fd4c080f623fffde5decbb612[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Feb 11 04:55:10 2021 +0900
+
+    array func1
+
+[33mcommit 7b5212199fd2df6bf2df7a54ff3d2f3eaf724314[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Feb 11 03:20:43 2021 +0900
+
+    success array
+
+[33mcommit 9657fc34a3df7f231b99522f0e620d21f83ce73a[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Feb 11 02:57:28 2021 +0900
+
+    learn JS array
+
+[33mcommit 143d59c625ed69156de7cc0f0cf08a767c1fba48[m
+Author: adx <nogo22@naver.com>
+Date:   Wed Feb 10 11:47:47 2021 +0900
+
+    practice css
+
+[33mcommit 723b5a91afaedc1ef95099809691f3250b60c57d[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Feb 10 05:24:13 2021 +0900
+
+    arrow func
+
+[33mcommit 9f6bdf35598712b5d0434dc3d229be1148cb5859[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 9 05:31:46 2021 +0900
+
+    complete flexbox
+
+[33mcommit 7274c54a6d41a736189029261237acaddbaea8dc[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 9 05:07:58 2021 +0900
+
+    Flexbox 학습완료
+
+[33mcommit f913f698fc0fea46cd7e71e2257dffb47226a2f1[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 9 03:58:13 2021 +0900
+
+    flexbox1
+
+[33mcommit 16ebd9f06664221b2699ec13d39b1c6cb58e8b21[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 9 03:09:07 2021 +0900
+
+    position 공부완료
+
+[33mcommit bd63050fedfb792afe132088b8fc2b0ad1c5533a[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 9 02:42:49 2021 +0900
+
+    div, span의 차이
+
+[33mcommit 9ef37b107fc724e041933ef397512757cfb4b7bc[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 9 02:37:26 2021 +0900
+
+    CSS 공부 시작, position / display
+
+[33mcommit 1fa0d716d34209f2910e6dc2c661daef78896f52[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 8 02:36:44 2021 +0900
+
+    변수 학습
+
+[33mcommit f7967fab45ccd282bdec2118bcc743ade4697ef3[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 8 01:53:05 2021 +0900
+
+    js 학습 시작
+
+[33mcommit 2e7e105d9971c0e4f43eba828b682e2883cc5212[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Feb 5 03:18:30 2021 +0900
+
+    mongodb connect / review boiler
+
+[33mcommit 71ffb0b241bd7f53a41da3b150a755407c203fb5[m
+Author: ad <nogo22@naver.com>
+Date:   Fri Feb 5 01:01:21 2021 +0900
+
+    add temp1 folder
+
+[33mcommit bb807b2c489eed417e09b045b3507ba406e513a0[m
+Author: ad <nogo22@naver.com>
+Date:   Thu Feb 4 02:49:41 2021 +0900
+
+    5:24 / 4.1 Rendering the Movies
+
+[33mcommit d46836686ca0cc3f7c7e9280aeed8ed6798e7d12[m
+Author: ad <nogo22@naver.com>
+Date:   Wed Feb 3 05:16:39 2021 +0900
+
+    learning comp lifecycle
+
+[33mcommit bd28fa09ea1fe1eb642f374bff993f426f94c954[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 2 05:23:17 2021 +0900
+
+    using setState
+
+[33mcommit c67611817ae85a441a20d16c606816e3493d0f79[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 2 04:44:15 2021 +0900
+
+    food save2
+
+[33mcommit b78b56d770484852497e3c98f788ec69115087a3[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 2 03:36:10 2021 +0900
+
+    movie save1
+
+[33mcommit 88e6d1da53044b49e0030c55efad746f004627ad[m
+Author: ad <nogo22@naver.com>
+Date:   Tue Feb 2 02:30:59 2021 +0900
+
+    cleaning react
+
+[33mcommit 863428646f9ceea6fbdcd060dba6737638e87ac2[m
+Author: adx <nogo22@naver.com>
+Date:   Mon Feb 1 22:18:15 2021 +0900
+
+    add 2 folder (project1, test1)
+
+[33mcommit be0087e5467fcdc6d463d6ca8fb2776f3c1b1d5a[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 1 07:48:35 2021 +0900
+
+    save1
+
+[33mcommit 2a3d87de7e0a7998ebfdcbd05dd3039348d641c9[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 1 03:05:00 2021 +0900
+
+    set learning nodejs
+
+[33mcommit 12e8b4eb3c63583c8b0194662cffd9d037f4a1f6[m
+Author: ad <nogo22@naver.com>
+Date:   Mon Feb 1 02:57:24 2021 +0900
+
+    start learning express
+
+[33mcommit b55ae40be01201af852e664bb2cf4dcf301ec112[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Jan 31 13:37:25 2021 +0900
+
+    Class and Func learning completed!
+
+[33mcommit 55289ede96e3af859e451530807280366c791c01[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Jan 31 10:26:44 2021 +0900
+
+    Router learning completed!
+
+[33mcommit 05ea8c53f207a01b1847d28567b4ebeb0174b96e[m
+Author: adx <nogo22@naver.com>
+Date:   Sun Jan 31 10:24:04 2021 +0900
+
+    RESET learn workspace
