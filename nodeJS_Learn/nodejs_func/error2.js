@@ -12,7 +12,7 @@ setInterval(() => {
   console.log("===== START");
   try {
     //throw : 에러를 낸다
-    throw new Error("버그버그버그버그버그");
+    throw new Error("bugbugbugbugbugbugbugbgubguub");
   } catch (err) {
     console.error(err);
   }
@@ -28,3 +28,8 @@ setInterval(() => {
     }
   });
 }, 1000);
+
+//비동기의 callback error는 node process를 멈추게 하지 않는다
+//하지만 promise를 사용할때는 무조건 catch를 붙여주어야 한다
+// + 노드14까지는 아직 고장이 나지 않았지만 노드 버전이 올라가면서
+//에러 발생시 노드 프로세스를 강제종료 할 수도 있기 때문이다
