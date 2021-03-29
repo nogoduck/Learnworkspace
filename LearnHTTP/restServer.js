@@ -5,6 +5,7 @@ const fs = require("fs").promises;
 
 const users = {}; // 데이터 저장용
 
+const myUsers = {};
 http
   .createServer(async (req, res) => {
     try {
@@ -18,6 +19,10 @@ http
         } else if (req.url === "/about") {
           const data = await fs.readFile("./about.html");
           res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+          return res.end(data);
+        } else if (req.url === "/information") {
+          const data = await fs.readFile("./information.html");
+          res.writeHead(200, { "Content-type": "text/html; charset=utf-8" });
           return res.end(data);
         } else if (req.url === "/users") {
           res.writeHead(200, {
