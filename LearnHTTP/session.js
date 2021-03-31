@@ -1,3 +1,7 @@
+// 아래의 코드는 학습을 위해 세션을 편하게 구현한 코드이며 실무에서 사용시 보안의 문제가 있고
+// 6장에서 실무에서 사용할 세션을 실제로 만든다
+//아래 코드는 이해만 하고 넘어가도 좋다
+
 const http = require("http");
 const fs = require("fs").promises;
 const url = require("url");
