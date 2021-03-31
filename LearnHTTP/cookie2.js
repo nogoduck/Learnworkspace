@@ -42,6 +42,9 @@ http
       //로그인을 위한 쿠키는 필수로 넣어야 하는 조건이다
 
       //path=/ : / 아래의 주소들에서는 현재 쿠키가 유효함을 나타냄
+      //쿠키 탭읇면 httpOnly이외에 Secure등 여러 안전장치가 있다 로그인할 때 사용하기 좋다
+      // Domain과 path도 일치해야 한다
+      //쿠키를 사용하지 않으면 안전장치를 직접 구현해야한다 (시간을 갈아넣는 예술 행위로 추측됌)
       res.writeHead(302, {
         Location: "/",
         "Set-Cookie": `name=${encodeURIComponent(
