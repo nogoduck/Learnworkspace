@@ -1,4 +1,6 @@
-import math
+import sys, time, math
+start = time.time()
+input = 
 
 n, m = map(int, input().split()) #n: 나무의 갯수/ m: 필요한 나무의 길이(m)
 h = list(map(int, input().split())) #h: 각 나무의 길이
@@ -7,30 +9,22 @@ h = list(map(int, input().split())) #h: 각 나무의 길이
 # n, m = 4, 7
 # h = [20, 15, 10, 17]
 
-# testCase2 / res : 8
+#testCase2 / res : 8
 # n, m = 4, 4
 # h = [7, 9, 13, 11]
 
+#testCase3
+# n, m
 
 MAXTREE = max(h)
 MINTREE = min(h)
-# print("MAXTREE, MINTREE: ", MAXTREE, MINTREE)
 
-#모든 나무의 길이
-totalTree = sum(h) 
-# print("totalTree: ",totalTree)
-
-#제일 작은나무를 기준으로 모든 나무를 자르고 챙겨갈 수 있는 나무의 길이의 합
+# 작은나무를 기준으로 모든 나무를 자르고 챙겨갈 수 있는 나무의 길이의 합
 sumMINTREE = sum(list(map(lambda x : x - MINTREE, h))) 
 # print("sumMINTREE: ", sumMINTREE)
 
 #제일 작은나무 기준으로 자른 나무의 길이
 topTreeLength = MAXTREE - MINTREE
-
-#제일 작은 나무를 기준으로 자르고 남은 나무의 길이
-restTree = totalTree - sumMINTREE
-# print("restTree: ", restTree)
-
 
 def sumTreeArray(treeArr, cutValue):
     sum = 0
@@ -60,3 +54,4 @@ else:
     bottomTreeLength = math.ceil((m - sumMINTREE) / n)
     # print("result: ", MAXTREE - (topTreeLength + bottomTreeLength))
     print(MAXTREE - (topTreeLength + bottomTreeLength))
+print("time: ", time.time() - start)
