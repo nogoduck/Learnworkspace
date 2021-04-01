@@ -37,18 +37,24 @@ def sumTreeArray(treeArr, cutValue):
     sum = 0
     for i in range(0, len(treeArr)):
        if treeArr[i] - cutValue > 0:
-            print(treeArr, cutValue)
             sum += treeArr[i] - cutValue
     return sum
 
 if sumMINTREE >= m:
     h = (list(map(lambda x : x - MINTREE, h)))
     MAXTOPTREE = max(h)
-    for i in range(0, MAXTOPTREE +  1):
-        print(sumTreeArray(h, i), m)
-        # if sumTreeArray(h, i) <= m:
-        #     print("나무길이: ", MAXTOPTREE - i)
-            # break
+    for i in range(MAXTOPTREE, -1, -1):
+        print("나무길이 반환: ", sumTreeArray(h, i))
+        print("M: ", m)
+
+        print("out I", i)
+
+        if sumTreeArray(h, i) >= m:
+            print("in I", i)
+            print("나무가 존재함")
+            print("나무길이: ",  MINTREE + i)
+            break
+        print()
     
         
 else: 
