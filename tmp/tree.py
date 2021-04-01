@@ -1,36 +1,35 @@
 import math
 
-# n, m = map(int, input().split()) #n: 나무의 갯수/ m: 필요한 나무의 길이(m)
-# h = list(map(int, input().split())) #h: 각 나무의 길이
+n, m = map(int, input().split()) #n: 나무의 갯수/ m: 필요한 나무의 길이(m)
+h = list(map(int, input().split())) #h: 각 나무의 길이
 
 #testCase1
-# n, m = 4, 20
+# n, m = 4, 7
 # h = [20, 15, 10, 17]
 
 # testCase2 / res : 8
-n, m = 4, 5
-h = [7, 9, 13, 11]
+# n, m = 4, 4
+# h = [7, 9, 13, 11]
 
 
 MAXTREE = max(h)
 MINTREE = min(h)
-print("MAXTREE, MINTREE: ", MAXTREE, MINTREE)
+# print("MAXTREE, MINTREE: ", MAXTREE, MINTREE)
 
 #모든 나무의 길이
 totalTree = sum(h) 
-print("totalTree: ",totalTree)
+# print("totalTree: ",totalTree)
 
 #제일 작은나무를 기준으로 모든 나무를 자르고 챙겨갈 수 있는 나무의 길이의 합
 sumMINTREE = sum(list(map(lambda x : x - MINTREE, h))) 
-print("sumMINTREE: ", sumMINTREE)
+# print("sumMINTREE: ", sumMINTREE)
 
 #제일 작은나무 기준으로 자른 나무의 길이
 topTreeLength = MAXTREE - MINTREE
 
 #제일 작은 나무를 기준으로 자르고 남은 나무의 길이
 restTree = totalTree - sumMINTREE
-print("restTree: ", restTree)
-
+# print("restTree: ", restTree)
 
 
 def sumTreeArray(treeArr, cutValue):
@@ -41,23 +40,23 @@ def sumTreeArray(treeArr, cutValue):
     return sum
 
 if sumMINTREE >= m:
+    # print("SMALL TREE")
     h = (list(map(lambda x : x - MINTREE, h)))
     MAXTOPTREE = max(h)
-    for i in range(MAXTOPTREE, -1, -1):
-        print("나무길이 반환: ", sumTreeArray(h, i))
-        print("M: ", m)
-
-        print("out I", i)
-
+    # MINTOPTREE = min(h)
+    # print("M ", m)
+    idx = False
+    for i in range(MAXTOPTREE, -1 ,-1):
+        processTree = sumTreeArray(h, i)
+        # print(processTree , i, bool(sumTreeArray(h, i) >= m))
         if sumTreeArray(h, i) >= m:
-            print("in I", i)
-            print("나무가 존재함")
-            print("나무길이: ",  MINTREE + i)
+            idx = i
             break
-        print()
+    print(MINTREE + idx)
+ 
     
-        
 else: 
-    print("topTree BIG")
+    # print("topTree BIG")
     bottomTreeLength = math.ceil((m - sumMINTREE) / n)
-    print("result: ", MAXTREE - (topTreeLength + bottomTreeLength))
+    # print("result: ", MAXTREE - (topTreeLength + bottomTreeLength))
+    print(MAXTREE - (topTreeLength + bottomTreeLength))
