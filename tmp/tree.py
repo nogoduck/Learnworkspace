@@ -8,7 +8,7 @@ import math
 # h = [20, 15, 10, 17]
 
 # testCase2 / res : 8
-n, m = 4, 12
+n, m = 4, 5
 h = [7, 9, 13, 11]
 
 
@@ -31,25 +31,27 @@ topTreeLength = MAXTREE - MINTREE
 restTree = totalTree - sumMINTREE
 print("restTree: ", restTree)
 
-def sumTreeArray(treeArr):
-    sum = 0
-    for i in range(0, len(treeArr) + 1):
-        print(i)
 
-    return 0
+
+def sumTreeArray(treeArr, cutValue):
+    sum = 0
+    for i in range(0, len(treeArr)):
+       if treeArr[i] - cutValue > 0:
+            print(treeArr, cutValue)
+            sum += treeArr[i] - cutValue
+    return sum
 
 if sumMINTREE >= m:
-    print("topTree small")
-    print(sumTreeArray(h))
+    h = (list(map(lambda x : x - MINTREE, h)))
+    MAXTOPTREE = max(h)
+    for i in range(0, MAXTOPTREE +  1):
+        print(sumTreeArray(h, i), m)
+        # if sumTreeArray(h, i) <= m:
+        #     print("나무길이: ", MAXTOPTREE - i)
+            # break
+    
         
-        # print(list(map(lambda x : 0 < x - i , h)))
-
-        # sumMINTREE = sum(list(map(lambda x : 0 < x - i, h)))
-        # print(i, sumMINTREE, h)
-        # if sumMINTREE >= m:
-        #     print("나무의 길이 : ", i)
-        #     break
 else: 
     print("topTree BIG")
     bottomTreeLength = math.ceil((m - sumMINTREE) / n)
-    print("result: ", topTreeLength + bottomTreeLength)
+    print("result: ", MAXTREE - (topTreeLength + bottomTreeLength))
