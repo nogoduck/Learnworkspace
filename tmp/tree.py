@@ -1,9 +1,8 @@
 import sys, time, math
 start = time.time()
-input = 
-
-n, m = map(int, input().split()) #n: 나무의 갯수/ m: 필요한 나무의 길이(m)
-h = list(map(int, input().split())) #h: 각 나무의 길이
+# input = sys.stdin.readline()
+# n, m = map(int, input().split()) #n: 나무의 갯수/ m: 필요한 나무의 길이(m)
+# h = list(map(int, input().split())) #h: 각 나무의 길이
 
 #testCase1
 # n, m = 4, 7
@@ -16,6 +15,9 @@ h = list(map(int, input().split())) #h: 각 나무의 길이
 #testCase3
 # n, m
 
+#testCase4
+n, m = 4, 15
+h = [20, 15, 10, 17] 
 MAXTREE = max(h)
 MINTREE = min(h)
 
@@ -54,4 +56,4 @@ else:
     bottomTreeLength = math.ceil((m - sumMINTREE) / n)
     # print("result: ", MAXTREE - (topTreeLength + bottomTreeLength))
     print(MAXTREE - (topTreeLength + bottomTreeLength))
-print("time: ", time.time() - start)
+# print("time: ", time.time() - start)
