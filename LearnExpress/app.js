@@ -7,11 +7,16 @@
 const express = require("express");
 const app = express();
 
+//경로를 확실히 표현해 주기 위해 사용
+const path = require("path");
+
 //서버에 속성을 넣는다
 app.set("port", process.env.PORT || 8004);
 
 app.get("/", (req, res) => {
-  res.send("response : helloss express");
+  //html을 가져오기 위해선(서빙) express에서는 fs를 사용하지 않고 sendFile을 사용해서 가져올 수 있다
+  // res.send("response : helloss express");
+  res.sendFile(path.join(__dirname, "./index.html"));
 });
 
 app.post("/", (req, res) => {
