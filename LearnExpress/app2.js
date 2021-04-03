@@ -18,14 +18,42 @@ app.use("/", express.static(path.join(__dirname, "public"))); //정적인 파일
 // ex)요청경로, 실제경로
 // localhost:3000/test.html => /public/web/test.html
 // localhost:3000/test.css => /public/web/test.css
-app.use(cookieParser("parsing"));
 app.use(express.json()); //json 해석
 app.use(express.urlencoded({ extended: true })); //문자열 해석, 이미지는 해석할 수 없어서 multer라는 api를사용한다
 //static 사용법 : app.use("요청경로", path.join(express.staic("실제경로")))
-app.use(session());
+app.use(cookieParser("parsing"));
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: "parsing",
+    cookie: {
+      httpOnly: true, //세션을 설정하기 위해 자바스크립트로부터 공격을 안당하기 위해 true 설정
+    },
+    name: "connect.sid", //기본적으로 설정된 이름 coonect.sid => 서명되있어서 읽을 수 없는 문자열로 되어 있다
+  })
+);
 app.use(multer().array());
 
+// let ban;
+//(1)에서 (2)로 데이터를 전송하고 싶을때 전역변수를 사용하면 안된다 보안에 취약함
+app.use((req, res, next) => {
+  // ban = banana;
+  // app.set('hi', 'bye') 이 또한 금지
+  // 세션에 넣어준다, 단점 : 세션에 저장되어 있어서 다음요청에도 남아 있다
+  // req.session.data; // 불러오기
+  //session을 사용하지 않으면 일회성 데이터로 사용 할 수 있다
+  // req.data =  'pw'
+});
+
+// (2)
 app.get("/", (req, res, next) => {
+  // req.session.data; // 불러오기
+  // req.data; // 불러오기
+  // console.log(ban);
+  // app.get(hi);
+  // req.session.id = "hello"; //사용자에 대한 고유한 세션
+
   // req.body
   // req.cookies; // {mycookie:'test}
   // req.signedCookies; //서명된 쿠키(암호화)
