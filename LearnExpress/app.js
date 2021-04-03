@@ -11,7 +11,7 @@ const app = express();
 const path = require("path");
 
 //서버에 속성을 넣는다
-app.set("port", process.env.PORT || 8004);
+app.set("port", process.env.PORT || 8005);
 
 // 모든 요청에 응답해준다
 // 미들웨어(안에서 사용하는 함수를 의미함), app.use가 미들웨어가 아님
@@ -29,6 +29,13 @@ app.use(
   (req, res, next) => {
     //익스프레스에서 에러를 처리해서 어디에 발생했는지 알려주긴하는데 웹 사용자가 이를 알 필요는 없고 경로가 유출된다
     // throw new Error("Oops");
+
+    // try {
+    //   console.log(nothingerror);
+    // } catch (error) {
+    //   //next에 인수가 들어 있으면 바로 에러처리 미들웨어로 넘어간다
+    //   next(error);
+    // }
 
     console.log("MIDDLE WARE1");
     next();
