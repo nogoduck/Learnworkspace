@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap");
 
 body {
+  background-color: bisque;
   margin: 0px;
   padding: 0px;
 }
@@ -14,14 +15,30 @@ body {
 
 header .logo {
   font-family: "Josefin Sans", sans-serif;
+  /* grid-column: ; */
+  grid-row: 1/3;
+  margin: 20px;
 }
 
 header .logo .title {
-  font-size: 3em;
+  font-size: 6em;
 }
 header .logo .title span {
+  font-size: 3rem;
+  /* border: 1px solid black; */
+  position: relative;
+  bottom: 25px;
+}
+
+header .logo .title__add {
+  position: relative;
+  bottom: 42px;
+  left: 70px;
+  font-size: 1.5em;
+}
+
+header .logo .title__add span {
   font-size: 2em;
-  border: 1px solid black;
 }
 
 header ul {
@@ -35,11 +52,12 @@ header ul li {
 .header__container {
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 200px 1fr 1fr;
 }
 
 header .intro {
   background-color: aqua;
+  grid-column: 2/4;
 }
 
 header .email {
@@ -51,3 +69,64 @@ header .login__state {
 }
 
 /* END HEADER */
+
+/* ##########[ TEST SECTION ] ########## */
+
+.con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.test {
+  display: flex;
+  border: 1px solid black;
+}
+
+.item1 {
+  flex: 1;
+  border: 1px solid black;
+}
+.item2 {
+  border: 1px solid black;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.tiem2__TOP {
+  border: 1px solid black;
+  margin: 20px;
+  flex: 1;
+}
+.item2__BOTTOM {
+  border: 1px solid black;
+  flex: 3;
+  display: flex;
+}
+
+.item2__BOTTOM .item3 {
+  border: 1px solid black;
+  flex: 1;
+  /* margin: 50%; */
+  height: 50px;
+}
+.item2__BOTTOM .item4 {
+  border: 1px solid black;
+  /* margin: 100%; */
+  flex: 3;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 00px 30px;
+  margin: 5px 0px;
+}
+
+li {
+  list-style: none;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}

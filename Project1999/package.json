@@ -4,8 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "npm run app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ad",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
