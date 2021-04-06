@@ -24,24 +24,56 @@
         </div>
         <div class="header logo right">
           <div class="header item top">
-            <div class="header intro">A Story Of Development</div>
-            <div class="header link">
+            <div class="intro">A Story Of Development</div>
+            <div class="link">
               <i class="fab fa-github"></i>
               <a href="https://github.com/nogoduck">Github</a>
             </div>
-            <div class="header time">00 : 00</div>
+            <div class="time">00 : 00 : 00</div>
           </div>
           <div class="header bottom">
             <div class="header bottom__left">
-              <div class="header email">nogo00ov1@gmail.com</div>
+              <div class="header email">
+                <div class="email__title">E-Mail</div>
+                <div class="email__content">
+                  nogo00ov1<br />
+                  <span>@gmail</span>
+                  <br /><span id="e">.com📧</span>
+                </div>
+              </div>
             </div>
             <div class="header bottom__right">
-              <div class="state">NULL, not a function</div>
+              <h3>Login</h3>
+              <div class="state">Welcome</div>
+              <div class="login">
+                <div class="login__id">
+                  <span>E-mail</span>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your e-mail"
+                  />
+                </div>
+                <div class="login__pw">
+                  <span>Password</span>
+                  <input
+                    type="email"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                  />
+                </div>
+                <div class="login__etc">
+                  <a href="#">Forgot Password?</a>
+                </div>
+                <div class="login__sns"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="header__menu">
+      <div class="header__navbar">
         <ul>
           <li>Func1</li>
           <li>Func2</li>
@@ -57,5 +89,7 @@
       </div>
     </header>
     <!-- End Header -->
+
+    <script src="header_clock.js"></script>
   </body>
 </html>
