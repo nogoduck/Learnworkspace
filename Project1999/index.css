@@ -2,7 +2,7 @@
 
 body {
   background-color: bisque;
-  margin: 0px;
+  margin: 5px 300px 10px 300px;
   padding: 0px;
 }
 
@@ -10,6 +10,8 @@ body {
 .header {
   border: 1px solid black;
   display: flex;
+  padding: 0px;
+  margin: 0px;
 }
 .header__container {
   display: flex;
@@ -17,7 +19,12 @@ body {
 .header__container .left {
   font-family: "Josefin Sans", sans-serif;
   flex-direction: column;
-  flex: 1;
+  flex: 2;
+  text-align: center;
+  color: red;
+  justify-content: center;
+  align-self: center;
+  padding: 30px 10px 20px 30px;
 }
 .header__container .logo .title {
   font-size: 6em;
@@ -39,30 +46,53 @@ body {
   bottom: 18px;
 }
 .header__container .right {
-  flex: 5;
+  flex: 7;
   flex-direction: column;
+  margin: 0px;
+  padding: 0px;
 }
 .header__container .top {
+  flex: 2;
+  margin: 0px;
+  padding: 0px;
+}
+.header__container .top .intro {
+  flex: 1;
+}
+.header__container .top .link {
+  flex: 1;
+}
+.header__container .top .time {
   flex: 1;
 }
 .header__container .bottom {
-  flex: 3;
+  flex: 5;
 }
 .header__container .bottom__left {
-  flex: 1;
+  flex: 2;
 }
 .header__container .bottom__right {
   flex: 5;
 }
+.header__menu {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 .header__menu ul {
   margin: 0px;
+  padding: 0px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .header__menu li {
+  align-self: center;
   border-left: 1px solid black;
   list-style: none;
-  padding: 0px 10px;
+  padding: 2px 10px;
+  text-align: center;
+  width: 100%;
+  /* margin: 10px; */
 }
 .header__menu li:nth-child(1) {
   border: none;
