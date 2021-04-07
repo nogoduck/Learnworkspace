@@ -1,8 +1,10 @@
 const express = require("express");
-const { appendFile } = require("fs");
-const { dirname } = require("path");
+const fs = require("fs");
 const path = require("path");
 const app = express();
+
+console.log(__dirname);
+app.use(express.static(path.join(__dirname, "./css")));
 
 app.set("port", process.env.PORT || 8004);
 
@@ -19,9 +21,9 @@ app.get("/info", (req, res) => {
 
 app.use((err, req, res, next) => {
   console.error(err);
-  appendFile;
-  AudioBufferSourceNode;
-  sfewfa * 120;
+  // appendFile;
+  // AudioBufferSourceNode;
+  // sfewfa * 120;
   res.status(500).sendFile(path.join(__dirname, "./error.html"));
 });
 
