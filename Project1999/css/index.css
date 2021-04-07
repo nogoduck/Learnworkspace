@@ -199,13 +199,17 @@ body {
   border-radius: 5px;
   height: 28px;
   width: 100%;
+  background-color: #4285f4;
 }
 .login #kakao__account {
   border-radius: 5px;
   height: 27px;
   width: 100%;
+  background-color: #fee100;
 }
-
+i {
+  color: #391b1b;
+}
 @keyframes bounce {
   0%,
   20%,
