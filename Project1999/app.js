@@ -7,6 +7,7 @@ const router = express.Router();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
 console.log(__dirname);
 
@@ -15,7 +16,6 @@ router.post("/login", (req, res) => {
   console.log(req.body.id);
   res.send(req.body);
 });
-app.use(express.static(path.join(__dirname, "./css")));
 
 app.set("port", process.env.PORT || 8004);
 
