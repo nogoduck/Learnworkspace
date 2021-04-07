@@ -43,31 +43,64 @@
               </div>
             </div>
             <div class="header bottom__right">
-              <h3>Login</h3>
-              <div class="state">Welcome</div>
-              <div class="login">
-                <div class="login__id">
-                  <span>E-mail</span>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your e-mail"
-                  />
-                </div>
-                <div class="login__pw">
-                  <span>Password</span>
-                  <input
-                    type="email"
-                    id="password"
-                    name="password"
-                    placeholder="Enter your password"
-                  />
-                </div>
-                <div class="login__etc">
-                  <a href="#">Forgot Password?</a>
-                </div>
-                <div class="login__sns"></div>
+              <div class="state"></div>
+              <form id="loginform">
+
+                <div class="login">
+                  <div class="login__id">
+                    <table>
+                    <tr>
+                      <td><span><i class="fas fa-id-card"></i></span>
+                        &nbsp;</td>
+                      <td>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          placeholder="Enter your e-mail"
+                          />
+                        </td>
+                        <td rowspan="2">
+                          
+                          <button id="submit" type="submit">LOGIN</button>
+                        &nbsp;&nbsp;
+                        </td>
+                        <td>
+                          
+                          <button id="google__account">
+                            <i class="fab fa-google"></i>
+                            Login with Google</button>
+                        </td>
+                        </tr>
+                    </div>
+                    <div class="login__pw">
+                      <tr>
+                        <td>
+                          <span><i class="fas fa-key"></i></span>
+                        </td>
+                        <td>
+                          <input
+                          type="email"
+                          id="password"
+                          name="password"
+                          placeholder="Enter your password"
+                          />
+                        </td>
+                        <td>
+                        <button id="kakao__account">
+                          <i class="fad fa-comments"></i>
+                          Login with Kakao</button>
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                  </div>
+                  <div class="login__etc">
+                    <a href="#" id="forgot__password">Forgot Password?</a> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#" id="register">Create an account</a>
+                  </div>
+                  <div class="login__sns"></div>
               </div>
             </div>
           </div>
