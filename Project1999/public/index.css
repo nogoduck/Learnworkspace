@@ -2,8 +2,10 @@
 
 body {
   background-color: bisque;
-  margin: 5px 300px 10px 300px;
+  /* margin: 5px 300px 10px 300p/; */
   padding: 0px;
+  display: flex;
+  justify-content: center;
 }
 
 header {
