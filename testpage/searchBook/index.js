@@ -5,7 +5,6 @@ const { PythonShell } = require("python-shell");
 let bookname = "죽음의 수용소에서";
 let bookcode = 30041;
 
-console.log(bookname);
 const option = {
   mode: "text",
   pythonPath: "",
