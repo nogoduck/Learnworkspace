@@ -11,7 +11,7 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
-    <title>도서 검색</title>
+    <title>도서 도우미</title>
   </head>
   <body>
     <!-- Header -->
@@ -25,10 +25,13 @@
     <section id="search">
       <form action="#">
         <div class="selectBox">
-          도서명
+          <select class="selectList">
+            <option>도서명</option>
+            <option>저자명</option>
+            <option>출판사</option>
+          </select>
           <i class="fas fa-caret-down"></i>
         </div>
-
         <input type="text" placeholder="키워드를 입력하세요." />
         <button type="submit">
           <i class="fas fa-search"></i>
