@@ -50,19 +50,21 @@ header i {
   font-size: 1.5em;
   border: none;
   border-radius: 7px 7px 0 0;
-  /* -webkit-appearance: none; */
-  /* -moz-appearance: none; */
-  /* appearance: none; */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   padding: 22px 70px 0px 30px;
-  /* padding: 5px 5px; */
   width: 100%;
+  position: relative;
+  top: 3px;
 }
 #search .selectBox i {
   color: #e5e5e5;
   position: relative;
-  left: 44px;
-  bottom: 3px;
+  left: 150px;
+  bottom: 25px;
   transition: all ease 0.5s;
+  font-size: 2em;
 }
 #search .selectBox:hover i {
   transform: rotate(-180deg);
@@ -102,7 +104,7 @@ button:focus {
 
 @media screen and (max-width: 768px) {
   header {
-    font-size: 2.5em;
+    font-size: 7vw;
     bottom: 50px;
   }
   #search form {
@@ -120,10 +122,10 @@ button:focus {
   }
   #search .selectList {
     position: relative;
-    right: 4%;
+    right: 3%;
   }
   #search .selectBox i {
-    left: 85%;
+    left: 90%;
   }
   #search button {
     border-radius: 3px;
