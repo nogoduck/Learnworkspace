@@ -1,32 +1,36 @@
 // const spawn = require("child_process").spawn;
 const { PythonShell } = require("python-shell");
-let pyshell = new PythonShell("data.py");
+// let pyshell = new PythonShell("data.py");
+
+let bookname = "in the death camp";
+let bookcode = 30041;
 
 const option = {
   mode: "text",
   pythonPath: "",
   pythonOption: ["-u"],
   scriptPath: "",
-  args: ["val1", "val2", "val3"],
+  args: [bookname, bookcode],
 };
 
 PythonShell.run("data.py", option, (err, res) => {
   if (err) throw err;
-  console.log("SUCCESS : ", res);
+  console.log(res[0]);
+  console.log(res[1]);
 });
 
-pyshell.send("in the death camp", 3034);
+// pyshell.send("in the death camp", 3034);
 
-pyshell.on("message", (message) => {
-  console.log(message);
-});
+// pyshell.on("message", (message) => {
+//   console.log(message);
+// });
 
-pyshell.end((err, code, signal) => {
-  // if (err) throw err;
-  console.log("CODE : ", code);
-  console.log("Signal : ", signal);
-  console.log("Sueecss");
-});
+// pyshell.end((err, code, signal) => {
+//   // if (err) throw err;
+//   console.log("CODE : ", code);
+//   console.log("Signal : ", signal);
+//   console.log("Sueecss");
+// });
 
 // PythonShell.run("data.py", null, (err, result) => {
 //   if (err) throw err;

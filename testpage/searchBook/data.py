@@ -1,13 +1,5 @@
 import sys
 
-
-# print("BMC")
-# print("Yeti")
-# print("Kona")
-# print("Trek")
-
-print(sys.argv[1])
-
 def sendBookInfo(book, bookcode):
     print("Book : ", book, "\nBook-code : ", bookcode)
 
