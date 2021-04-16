@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./public/index.css" />
+    <link rel="stylesheet" href="../public/index.css" />
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -23,21 +23,31 @@
 
     <!-- Search Section -->
     <section id="search">
-      <form action="#">
+      <form action="/search" method="GET">
         <div class="selectBox">
-          <select class="selectList">
+          <select class="selectList" id="option">
             <option>도서명</option>
             <option>저자명</option>
             <option>출판사</option>
           </select>
           <i class="fas fa-caret-down"></i>
         </div>
-        <input type="text" placeholder="키워드를 입력하세요." />
+        <input type="text" name="id" placeholder="키워드를 입력하세요." />
         <button type="submit">
           <i class="fas fa-search"></i>
         </button>
       </form>
     </section>
     <!-- End Search Section -->
+
+    <script>
+      // console.log("load index.html - script");
+      // const form = document.querySelector("form");
+      // form.addEventListener("submit", (e) => {
+      //   console.log("click search btn");
+      //   location.href = "/search";
+      //   e.preventDefault();
+      // });
+    </script>
   </body>
 </html>
