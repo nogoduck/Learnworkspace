@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 app.set("port", process.env.PORT || 8004);
+app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
 
