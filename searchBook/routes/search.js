@@ -7,8 +7,8 @@ const publisher = "민음사";
 const date = 2003;
 
 router.get("/", (req, res, next) => {
-  res.render("index", {
-    title: title,
+  res.render("search", {
+    title: "TITLE",
     writer: writer,
     publisher: publisher,
     date: date,
