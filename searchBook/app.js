@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const express = require("express");
 const app = express();
 const router = express.Router();
+const nunjucks = require("nunjucks");
 
 const indexRouter = require("./routes/index");
 const searchRouter = require("./routes/search");
@@ -11,9 +12,13 @@ console.log(path.join(__dirname, "public"));
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "/")));
 app.set("port", process.env.PORT || 8004);
-app.set("views", __dirname + "/views");
-app.set("view engine", "ejs");
-app.engine("html", require("ejs").renderFile);
+// app.set("views", __dirname + "/views");
+app.set("view engine", "html");
+nunjucks.configure("views", {
+  express: app,
+  watch: true,
+});
+// app.engine("html", require("ejs").renderFile);
 
 router.get("/", (req, res, next) => {
   res.render("index", { title: "ddd2" });
