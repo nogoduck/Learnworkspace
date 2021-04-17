@@ -17,7 +17,7 @@
     <!-- Header -->
     <header>
       <i class="fas fa-book"></i>
-      <div class="title">호남대 도서 검색결과</div>
+      <div class="title">도서 검색결과</div>
     </header>
     <!-- End Header -->
 
@@ -43,13 +43,16 @@
     <section id="result">
       <table class="table__result">
         <tr>
-          <td></td>
+          <td rowspan="3"><img src="http://placehold.it/100x150" /></td>
+          <td>도서명 : {{title}}</td>
+          <td>작가명 : {{writer}}</td>
         </tr>
         <tr>
-          <td></td>
+          <td>출판사 : {{publisher}}</td>
+          <td>출판일 : {{date}}</td>
         </tr>
         <tr>
-          <td></td>
+          <td colspan="2">미정 :</td>
         </tr>
       </table>
     </section>
