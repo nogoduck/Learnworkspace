@@ -8,7 +8,7 @@ const date = 2003;
 
 router.get("/", (req, res, next) => {
   res.render("search", {
-    title: "TITLE",
+    title: title,
     writer: writer,
     publisher: publisher,
     date: date,

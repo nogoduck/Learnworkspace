@@ -3,7 +3,7 @@
 body {
   background-color: #a598ee;
   padding: 0px;
-  margin: 0px;
+  margin: 0 0px;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -37,6 +37,7 @@ header i {
   border-radius: 7px;
   box-shadow: 0 0 15px #555555;
   transition: all ease 0.3s;
+  margin-bottom: 15px;
 }
 #search .selectBox {
   color: #555555;
@@ -101,6 +102,24 @@ button:focus {
   outline: none;
 }
 /* End Search Section */
+
+/* Result Section */
+
+.table__result {
+  background-color: #fff;
+  border-radius: 7px;
+  width: 85vw;
+  padding: 10px;
+  margin: 30px;
+}
+.table__result table {
+}
+
+.table__result img {
+  padding: 5px 30px 5px 5px;
+}
+
+/* End Result Section */
 
 @media screen and (max-width: 550px) {
   header {
