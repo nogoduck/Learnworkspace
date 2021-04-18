@@ -9,6 +9,8 @@ const searchRouter = require("./routes/search");
 
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "/")));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.set("port", process.env.PORT || 8004);
 app.set("view engine", "html");
 
