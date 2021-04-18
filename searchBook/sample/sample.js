@@ -14,7 +14,7 @@ const option = {
   args: [bookname, bookcode],
 };
 
-PythonShell.run("data.py", option, (err, res) => {
+PythonShell.run("sample.py", option, (err, res) => {
   if (err) throw err;
   console.log(res[0]);
   console.log(res[1]);
