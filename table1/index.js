@@ -4,8 +4,9 @@ const app = express();
 const port = 8004;
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
-const { User } = require("./models/User");
 const config = require("./config/key");
+const { User } = require("./models/User");
+const { auth } = require("./middleware/auth");
 
 app.use(morgan("dev"));
 app.use(express.json());
@@ -27,7 +28,7 @@ app.get("/", (req, res) => {
   res.send("response");
 });
 
-app.post("/register", (req, res) => {
+app.post("/api/users/register", (req, res) => {
   const user = new User(req.body);
 
   user.save((err, userInfo) => {
@@ -38,7 +39,7 @@ app.post("/register", (req, res) => {
   });
 });
 
-app.post("/login", (req, res) => {
+app.post("/api/users/login", (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     console.log("USER: ", user);
     if (!user) {
@@ -66,6 +67,13 @@ app.post("/login", (req, res) => {
     });
   });
 });
+
+app.get("/api/users", auth, (req, res) => {
+  res
+    .status(200)
+    .json({ _id: req.user._id, isAdmin: req.user.role === 0 ? false : true });
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
