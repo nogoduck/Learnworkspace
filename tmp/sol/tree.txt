@@ -1,0 +1,27 @@
+testCase1
+5 20
+25 21 22 23 24
+
+나무길이 20m : 5 + 1 + 2 + 3 + 4 >> 15
+나무길이 19m : 6 + 2 + 3 + 4 + 5 >> 20
+
+max(25) - 6 : 19
+res >> 19
+--- 
+testCase2
+3 6
+4 5 6
+나무길이 3m : 1 + 2 + 3 >> 6
+res >> 3
+
+if sum(treeArr) <= useTree:
+T :
+
+F : 
+min(treeArr) + (treeCnt * 
+
+maxTree = max(h)
+minTree = min(h)
+if min*n > m:
+	for i in range(n, maxTree+1):
+		 map(lambda(x: x > minTree, h)
