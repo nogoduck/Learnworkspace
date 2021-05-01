@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/hello", (req, res) => {
-  res.send("response Hello");
+  res.send("response Hello from backend");
 });
 
 app.post("/api/users/register", (req, res) => {
