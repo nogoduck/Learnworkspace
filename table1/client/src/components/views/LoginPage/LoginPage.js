@@ -1,5 +1,6 @@
 import "./LoginPage.css";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
 
@@ -34,15 +35,25 @@ function LoginPage(props) {
 
   return (
     <div className="main">
-      <h2>Login</h2>
-
+      <Link to="/">
+        <button className="home_btn">←</button>
+      </Link>
+      <h2>로그인</h2>
       <form className="loginForm" onSubmit={onSubmitHandler}>
-        <label>Email</label>
-        <input type="email" value={Email} onChange={onEmailHandler} />
-        <label>Password</label>
-        <input type="password" value={Password} onChange={onPasswordHandler} />
+        <input
+          type="email"
+          placeholder="이메일"
+          value={Email}
+          onChange={onEmailHandler}
+        />
+        <input
+          type="password"
+          placeholder="비밀번호"
+          value={Password}
+          onChange={onPasswordHandler}
+        />
         <br />
-        <button>확인</button>
+        <button type="submit">다음</button>
       </form>
     </div>
   );
