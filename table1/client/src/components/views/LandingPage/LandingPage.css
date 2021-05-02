@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Nanum Gothic", sans-serif;
+  font-size: 1.5em;
 }
 
 a:link,
@@ -33,4 +34,8 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.loginMent {
+  margin-bottom: 10px;
 }

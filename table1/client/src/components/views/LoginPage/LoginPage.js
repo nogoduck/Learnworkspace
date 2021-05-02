@@ -1,5 +1,6 @@
-import React, { useState } from "react";
 import "./LoginPage.css";
+import React, { useState } from "react";
+import Axios from "axios";
 function LoginPage() {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
@@ -16,6 +17,18 @@ function LoginPage() {
     e.preventDefault();
     console.log("EMAIL: ", Email);
     console.log("PASSWORD: ", Password);
+    let body = {
+      email: Email,
+      password: Password,
+    };
+
+    console.log(body);
+    console.log(body.email);
+
+    Axios.post("/api/users/login", body).then((res) => {
+      console.log("SUCCESS");
+      console.log(res);
+    });
   };
 
   return (
