@@ -2,6 +2,8 @@ import "./LandingPage.css";
 import React, { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+
 function LandingPage(props) {
   useEffect(() => {
     axios.get("/api/test").then((res) => console.log(res.data));
@@ -31,4 +33,4 @@ function LandingPage(props) {
   );
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);

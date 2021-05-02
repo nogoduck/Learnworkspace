@@ -11,7 +11,7 @@ const createStoreWithMiddleware = applyMiddleware(
   PromiseMiddleware,
   ReduxThunk
 )(createStore);
-ReactDOM.render(
+ReactDOM.render(k
   <React.StrictMode>
     <Provider
       store={createStoreWithMiddleware(
