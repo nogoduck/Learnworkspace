@@ -28,8 +28,8 @@ app.get("/", (req, res) => {
   res.send("response");
 });
 
-app.get("/api/hello", (req, res) => {
-  res.send("response Hello from backend");
+app.get("/api/test", (req, res) => {
+  res.send("response from server");
 });
 
 app.post("/api/users/register", (req, res) => {
