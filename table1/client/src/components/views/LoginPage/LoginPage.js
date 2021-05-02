@@ -1,7 +1,11 @@
 import "./LoginPage.css";
 import React, { useState } from "react";
-import Axios from "axios";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+
 function LoginPage() {
+  const dispatch = useDispatch();
+
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
 
@@ -15,19 +19,16 @@ function LoginPage() {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("EMAIL: ", Email);
-    console.log("PASSWORD: ", Password);
+
     let body = {
       email: Email,
       password: Password,
     };
 
-    console.log(body);
-    console.log(body.email);
+    // dispatch(loginUser(body));
 
-    Axios.post("/api/users/login", body).then((res) => {
-      console.log("SUCCESS");
-      console.log(res);
+    axios.post("/api/users/login", body).then((res) => {
+      console.log("SUCCEED");
     });
   };
 
