@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../../_actions/user_action";
 
-function RegisterPage() {
+function RegisterPage(props) {
   const dispatch = useDispatch();
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
@@ -35,7 +35,13 @@ function RegisterPage() {
       password: Password,
     };
 
-    dispatch(registerUser(body));
+    dispatch(registerUser(body)).then((res) => {
+      if (res.payload.success) {
+        props.history.push("/login");
+      } else {
+        alert("회원가입에 실패했습니다");
+      }
+    });
   };
 
   return (
