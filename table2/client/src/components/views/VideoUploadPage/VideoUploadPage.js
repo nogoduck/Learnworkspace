@@ -73,66 +73,67 @@ function VideoUploadPage() {
     });
   };
   return (
-    <div
-      className="main"
-      style={{ height: "100vh", width: "90vw", borderRadius: "0px" }}
-    >
+    <div className="main">
       <Link to="/">
         <button className="home_btn">←</button>
       </Link>
       <h2>비디오 업로드</h2>
-      <form className="FORM" onSubmit>
-        <Dropzone onDrop={onDrop} multiple={false} maxSize={10_0000_0000}>
-          {({ getRootProps, getInputProps }) => (
-            <div className="DROPZONE" {...getRootProps()}>
-              <input {...getInputProps()} />
-              <div className="icon">╋</div>
+      <form className="uploadForm" onSubmit>
+        <div className="DROPANDTHUMBNAIL">
+          <Dropzone onDrop={onDrop} multiple={false} maxSize={10_0000_0000}>
+            {({ getRootProps, getInputProps }) => (
+              <div className="DROPZONE" {...getRootProps()}>
+                <input {...getInputProps()} />
+                <div className="icon">╋</div>
+              </div>
+            )}
+          </Dropzone>
+          {ThumbnailPath && (
+            <div className="IMG">
+              <img
+                src={`http://localhost:8004/${ThumbnailPath}`}
+                alt="video_thumbnail"
+              />
             </div>
           )}
-        </Dropzone>
-        {ThumbnailPath && (
-          <div className="IMG">
-            <img
-              src={`http://localhost:8004/${ThumbnailPath}`}
-              alt="video_thumbnail"
-            />
-          </div>
-        )}
-        <img src="ad01.png" alt="dsfg" />
-        <img src="http://localhost:8004/ad01.png" alt="dsfg" />
-        <img src="http://placehold.it/300x100" alt="dsfg" />
+        </div>
         <br />
-        <label>제목</label>
-        <input
-          type="text"
-          placeholder="제목"
-          value={VideoTitle}
-          onChange={onVideoTitleHandler}
-        />
+        <fieldset>
+          <legend>제목</legend>
+          <input
+            type="text"
+            placeholder="동영상을 설명하는 제목을 추가하세요"
+            value={VideoTitle}
+            onChange={onVideoTitleHandler}
+          />
+        </fieldset>
+        <fieldset>
+          <legend>설명</legend>
+          <label></label>
+          <textarea
+            placeholder="시청자에게 동영상에 대해 알려주세요"
+            value={VideoDesc}
+            onChange={onVideoDescHandler}
+          />
+        </fieldset>
+        <fieldset className="SELECTBOX">
+          <legend>필수 선택</legend>
+          공개범위
+          <select onChange={onPrivateHandler}>
+            <option value="Private">Private</option>
+            <option value="Public">Public</option>
+          </select>
+          <span className="SELECT_ICON">|</span> 카테고리
+          <select onChange={onCategoryHandler}>
+            {CategoryOptions.map((item, index) => (
+              <option key={index} value={item.value}>
+                {item.label}
+              </option>
+            ))}
+          </select>
+        </fieldset>
         <br />
-        <label>설명</label>
-        <textarea
-          placeholder="설명"
-          value={VideoDesc}
-          onChange={onVideoDescHandler}
-        />
-        <br />
-        <label>공개범위</label>
-        <select onChange={onPrivateHandler}>
-          <option value="Private">Private</option>
-          <option value="Public">Public</option>
-        </select>
-        <br />
-        <label>카테고리</label>
-        <select onChange={onCategoryHandler}>
-          {CategoryOptions.map((item, index) => (
-            <option key={index} value={item.value}>
-              {item.label}
-            </option>
-          ))}
-        </select>
-        <br />
-        <button className="BUTTON" type="submit">
+        <button className="BUTTON UPLOAD_BTN" type="submit">
           업로드
         </button>
       </form>
