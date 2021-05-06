@@ -1,6 +1,8 @@
 import "./VideoUploadPage.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Dropzone from "react-dropzone";
+import Axios from "axios";
 
 function VideoUploadPage() {
   const [VideoTitle, setVideoTitle] = useState("");
@@ -30,6 +32,15 @@ function VideoUploadPage() {
   const onCategoryHandler = (e) => {
     setCategory(e.currentTarget.value);
     console.log(e.currentTarget.value);
+  };
+  const onDrop = (files) => {
+    console.log(files);
+    let formData = new FormData();
+    const config = {
+      header: { "content-type": "multipart/form-data" },
+    };
+    formData.append("file", files[0]);
+    Axios.post("/api");
   };
   return (
     <div
