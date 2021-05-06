@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropzone from "react-dropzone";
 import Axios from "axios";
+import { useSelector } from "reaxt-redux";
 
 function VideoUploadPage() {
+  const user = useSelector((state) => state.user);
   const [VideoTitle, setVideoTitle] = useState("");
   const [VideoDesc, setVideoDesc] = useState("");
   const [Private, setPrivate] = useState("");
@@ -72,13 +74,36 @@ function VideoUploadPage() {
       }
     });
   };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const variables = {
+      writer: user.userData._id,
+      title: videoTitle,
+      description: VideoDesc,
+      privacy: Private,
+      filePath: FilePath,
+      category: Category,
+      duration: Duration,
+      thumbnail: ThumbnailPath,
+    };
+
+    Axios.post("/api/video/uploadVideo", variables).then((res) => {
+      if (res.data.success) {
+      } else {
+        alert("비디오 업로드에 실패했습니다.");
+      }
+    });
+  };
+
   return (
     <div className="main">
       <Link to="/">
         <button className="home_btn">←</button>
       </Link>
       <h2>비디오 업로드</h2>
-      <form className="uploadForm" onSubmit>
+      <form className="uploadForm" onSubmit={onSubmit}>
         <div className="DROPANDTHUMBNAIL">
           <Dropzone onDrop={onDrop} multiple={false} maxSize={10_0000_0000}>
             {({ getRootProps, getInputProps }) => (
@@ -131,7 +156,7 @@ function VideoUploadPage() {
             ))}
           </select>
         </fieldset>
-        <button className="BUTTON UPLOAD_BTN" type="submit">
+        <button className="BUTTON UPLOAD_BTN" type="submit" onClick={onSubmit}>
           업로드
         </button>
       </form>
