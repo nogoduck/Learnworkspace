@@ -41,3 +41,19 @@ a:hover {
 .loginMent {
   margin-bottom: 10px;
 }
+
+.BUTTON {
+  margin-top: 10px;
+  font-size: 0.8em;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #3498db;
+  width: 100px;
+}
+.BUTTON:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 1px #b2bec3;
+}

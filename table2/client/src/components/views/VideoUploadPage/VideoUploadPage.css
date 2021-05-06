@@ -1,0 +1,22 @@
+.FILE {
+  border: 5px solid red;
+  font-size: 100px;
+  font-weight: 800;
+  color: red;
+  display: flex;
+  width: 250px;
+  height: 250px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+.FILE_ICON {
+  position: relative;
+  left: 80px;
+}
+.FILE_HIDDEN {
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  opacity: 0;
+}

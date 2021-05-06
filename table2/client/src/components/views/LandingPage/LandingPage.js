@@ -28,7 +28,12 @@ function LandingPage(props) {
       <div className="registerMent">
         계정이 없으시다면 <Link to="/register">회원가입</Link>도 가능합니다
       </div>
-      <button onClick={onLogoutHandler}>로그아웃</button>
+      <button className="BUTTON" onClick={onLogoutHandler}>
+        로그아웃
+      </button>
+      <Link to="/video/upload">
+        <button className="BUTTON">업로드</button>
+      </Link>
     </div>
   );
 }
