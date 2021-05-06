@@ -7,8 +7,11 @@ import Axios from "axios";
 function VideoUploadPage() {
   const [VideoTitle, setVideoTitle] = useState("");
   const [VideoDesc, setVideoDesc] = useState("");
-  const [Private, setPrivate] = useState(0);
-  const [Category, setCategory] = useState("Cars");
+  const [Private, setPrivate] = useState("");
+  const [Category, setCategory] = useState("");
+  const [FilePath, setFilePath] = useState("");
+  const [Duration, setDuration] = useState("");
+  const [ThumbnailPath, setThumbnailPath] = useState("");
 
   const CategoryOptions = [
     { value: 0, label: "Animals" },
@@ -43,8 +46,29 @@ function VideoUploadPage() {
       if (res.data.success) {
         console.log("RES.DATA:", res.data);
         console.log("File Upload State : Succeed");
+
+        let variable = {
+          url: res.data.url,
+          fileName: res.data.fileName,
+        };
+
+        setFilePath(res.data.url);
+
+        Axios.post("/api/video/thumbnail", variable).then((res) => {
+          if (res.data.success) {
+            console.log("Create Video Thumbnail : Succeed");
+            console.log(res.data);
+
+            setDuration(res.data.fileDuration);
+            setThumbnailPath(res.data.url);
+          } else {
+            console.log("Create Video Thumbnail : Failed");
+            alert("썸네일 생성을 실패했습니다.");
+          }
+        });
       } else {
         console.log("File Upload State : Failed");
+        alert("비디오 업로드를 실패했습니다");
       }
     });
   };
@@ -66,6 +90,17 @@ function VideoUploadPage() {
             </div>
           )}
         </Dropzone>
+        {ThumbnailPath && (
+          <div className="IMG">
+            <img
+              src={`http://localhost:8004/${ThumbnailPath}`}
+              alt="video_thumbnail"
+            />
+          </div>
+        )}
+        <img src="ad01.png" alt="dsfg" />
+        <img src="http://localhost:8004/ad01.png" alt="dsfg" />
+        <img src="http://placehold.it/300x100" alt="dsfg" />
         <br />
         <label>제목</label>
         <input

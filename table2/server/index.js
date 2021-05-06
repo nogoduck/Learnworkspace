@@ -13,7 +13,10 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
+app.use("/uploads", express.static("uploads"));
+app.get("/", (req, res) => {
+  res.send("SERVER RESPONSE");
+});
 app.get("/api", (req, res) => {
   res.send("Response");
 });
