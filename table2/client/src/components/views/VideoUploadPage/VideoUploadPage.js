@@ -97,7 +97,6 @@ function VideoUploadPage() {
             </div>
           )}
         </div>
-        <br />
         <fieldset>
           <legend>제목</legend>
           <input
@@ -132,7 +131,6 @@ function VideoUploadPage() {
             ))}
           </select>
         </fieldset>
-        <br />
         <button className="BUTTON UPLOAD_BTN" type="submit">
           업로드
         </button>
