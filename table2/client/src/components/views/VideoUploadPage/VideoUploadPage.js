@@ -40,7 +40,13 @@ function VideoUploadPage() {
       header: { "content-type": "multipart/form-data" },
     };
     formData.append("file", files[0]);
-    Axios.post("/api");
+    // Axios.post("/api/video/uploadfiles", formData, config).then((res) => {
+    //   if (res.data.success) {
+    //     console.log("File Upload State : Succeed");
+    //   } else {
+    //     console.log("File Upload State : Failed");
+    //   }
+    // });
   };
 
   return (
@@ -52,8 +58,8 @@ function VideoUploadPage() {
         <button className="home_btn">←</button>
       </Link>
       <h2>비디오 업로드</h2>
-      <form className="FORM" onsubmit>
-        <Dropzone onDrop multiple maxSize>
+      <form className="FORM" onSubmit>
+        <Dropzone onDrop={onDrop} multiple={false} maxSize={10_0000_0000}>
           {({ getRootProps, getInputProps }) => (
             <div className="DROPZONE" {...getRootProps()}>
               <input {...getInputProps()} />

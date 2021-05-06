@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 function LandingPage(props) {
   useEffect(() => {
-    axios.get("/api/test").then((res) => console.log(res.data));
+    axios.get("/api").then((res) => console.log("Status: ", res.data));
   }, []);
 
   const onLogoutHandler = () => {
