@@ -7,4 +7,9 @@
   color: lightgray;
   align-items: center;
   font-size: 4em;
+  outline: none;
+}
+.DROPZONE:hover {
+  cursor: pointer;
+  border: 1px solid black;
 }

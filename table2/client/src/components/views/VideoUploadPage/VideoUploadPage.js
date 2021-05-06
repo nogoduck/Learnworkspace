@@ -34,21 +34,20 @@ function VideoUploadPage() {
     console.log(e.currentTarget.value);
   };
   const onDrop = (files) => {
-    console.log(files);
     let formData = new FormData();
     const config = {
       header: { "content-type": "multipart/form-data" },
     };
     formData.append("file", files[0]);
-    // Axios.post("/api/video/uploadfiles", formData, config).then((res) => {
-    //   if (res.data.success) {
-    //     console.log("File Upload State : Succeed");
-    //   } else {
-    //     console.log("File Upload State : Failed");
-    //   }
-    // });
+    Axios.post("/api/video/uploadfiles", formData, config).then((res) => {
+      if (res.data.success) {
+        console.log("RES.DATA:", res.data);
+        console.log("File Upload State : Succeed");
+      } else {
+        console.log("File Upload State : Failed");
+      }
+    });
   };
-
   return (
     <div
       className="main"

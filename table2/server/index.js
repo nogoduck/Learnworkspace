@@ -6,7 +6,8 @@ const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const config = require("./config/key");
-
+const userRouter = require("./routes/users");
+const videoRouter = require("./routes/video");
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
@@ -29,7 +30,8 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.use("/api/users", require("./routes/users"));
+app.use("/api/users", userRouter);
+app.use("/api/video", videoRouter);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
