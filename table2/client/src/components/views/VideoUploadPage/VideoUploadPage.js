@@ -42,6 +42,7 @@ function VideoUploadPage() {
     formData.append("file", files[0]);
     Axios.post("/api");
   };
+
   return (
     <div
       className="main"
@@ -52,10 +53,14 @@ function VideoUploadPage() {
       </Link>
       <h2>비디오 업로드</h2>
       <form className="FORM" onsubmit>
-        <div className="FILE">
-          <div className="FILE_ICON">╋</div>
-          <input type="file" className="FILE_HIDDEN" />
-        </div>
+        <Dropzone onDrop multiple maxSize>
+          {({ getRootProps, getInputProps }) => (
+            <div className="DROPZONE" {...getRootProps()}>
+              <input {...getInputProps()} />
+              <div className="icon">╋</div>
+            </div>
+          )}
+        </Dropzone>
         <br />
         <label>제목</label>
         <input
