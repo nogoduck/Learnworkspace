@@ -1,0 +1,43 @@
+.home_btn {
+  position: relative;
+  /* bottom: 250%; */
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #3498db;
+  font-size: 1em;
+  font-weight: 800;
+  width: 50px;
+  height: 50px;
+}
+.home_btn:hover {
+  cursor: pointer;
+}
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+}
+.registerForm input {
+  font-size: 0.8em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin: 5px 0px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px 1px #bdc3c7;
+}
+.registerForm button {
+  font-size: 0.8em;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #3498db;
+}
+.registerForm button:hover {
+  cursor: pointer;
+}
