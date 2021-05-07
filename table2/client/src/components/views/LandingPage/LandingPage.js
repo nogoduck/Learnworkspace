@@ -1,12 +1,26 @@
 import "./LandingPage.css";
-import React from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function LandingPage(props) {
+  const [Video, setVideo] = useState([]);
+
+  useEffect(() => {
+    Axios.get("/api/video/getVideos").then((res) => {
+      if (res.data.success) {
+        console.log("Get Videos : Succeed");
+        console.log("DB List : ", res.data);
+        setVideo(res.data.videos);
+      } else {
+        console.log("Get Videos : Failed");
+      }
+    });
+  }, []);
+
   const onLogoutHandler = () => {
-    axios.get("/api/users/logout").then((res) => {
+    Axios.get("/api/users/logout").then((res) => {
       if (res.data.success) {
         props.history.push("/login");
         props.history.push("/");
@@ -16,11 +30,21 @@ function LandingPage(props) {
     });
   };
 
+  const renderCards = Video.map((video, index) => {
+    return (
+      <a href={`/video/post${video._id}`}>
+        <img
+          src={`http://localhost:8004/${video.thumbnail}`}
+          alt="thumbnail_IMG"
+        />
+      </a>
+    );
+  });
+
   const user = useSelector((state) => state.user);
   console.log("isLOGIN: ", user.userData);
 
-  if (user.userData.isAuth && user.userData) {
-    console.log(user.userData.name);
+  if (user.userData && user.userData.isAuth) {
     return (
       <div className="main">
         <h3>{user.userData.name}님 방문을 환영합니다 😁</h3>
@@ -39,6 +63,9 @@ function LandingPage(props) {
         <Link to="/video/upload">
           <button className="BUTTON">업로드</button>
         </Link>
+        <div className="card" style={{ display: "flex" }}>
+          {renderCards}
+        </div>
       </div>
     );
   } else {
