@@ -1,7 +1,9 @@
-body {
+/* body {
   margin: 0px;
   padding: 0px;
-}
+  height: 100%;
+  width: 100%;
+} */
 .uploadMain {
   border: 1px solid #fff;
   background-color: #fff;
@@ -12,7 +14,7 @@ body {
   flex-direction: column;
   margin: 0px;
   padding: 0 50px;
-  height: 100vh;
+  height: 100%;
   width: 75vw;
   border-radius: 0px;
 }

@@ -39,7 +39,7 @@ function VideoCardPage() {
             <span className="profile__img">
               <img
                 src="http://placehold.it/50x50"
-                style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+                style={{ width: "45px", height: "45px", borderRadius: "50%" }}
               />
             </span>
             <span className=" video__title">{video.title}</span>
@@ -57,6 +57,9 @@ function VideoCardPage() {
 
   return (
     <div className="cardMain">
+      <Link to="/">
+        <button className="home_btn">←</button>
+      </Link>
       <div className="card" style={{ display: "flex", flexWrap: "wrap" }}>
         {renderCards}
       </div>

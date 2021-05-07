@@ -35,9 +35,19 @@ function LandingPage(props) {
           을 해주세요
         </div>
         <br />
-        <Link to="/video/upload">
-          <button className="BUTTON">업로드</button>
-        </Link>
+        <div className="Link_Section">
+          <Link to="/video/upload">
+            <button className="BUTTON Upload_Btn">업로드</button>
+          </Link>
+          <Link to="/video/explore">
+            <button
+              className="BUTTON Storage_Btn"
+              style={{ backgroundColor: "#20bf6b" }}
+            >
+              저장소
+            </button>
+          </Link>
+        </div>
       </div>
     );
   } else {
