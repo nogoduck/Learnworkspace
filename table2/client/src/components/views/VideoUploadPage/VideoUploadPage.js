@@ -1,16 +1,16 @@
 import "./VideoUploadPage.css";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Dropzone from "react-dropzone";
 import Axios from "axios";
-import { useSelector } from "reaxt-redux";
+import { useSelector } from "react-redux";
 
-function VideoUploadPage() {
+function VideoUploadPage(props) {
   const user = useSelector((state) => state.user);
   const [VideoTitle, setVideoTitle] = useState("");
   const [VideoDesc, setVideoDesc] = useState("");
-  const [Private, setPrivate] = useState("");
-  const [Category, setCategory] = useState("");
+  const [Private, setPrivate] = useState("0");
+  const [Category, setCategory] = useState("0");
   const [FilePath, setFilePath] = useState("");
   const [Duration, setDuration] = useState("");
   const [ThumbnailPath, setThumbnailPath] = useState("");
@@ -22,7 +22,7 @@ function VideoUploadPage() {
     { value: 3, label: "Music" },
     { value: 4, label: "Picture" },
     { value: 5, label: "Sport" },
-    { value: 6, label: "Sport" },
+    { value: 6, label: "Game" },
   ];
   const onVideoTitleHandler = (e) => {
     setVideoTitle(e.currentTarget.value);
@@ -80,7 +80,7 @@ function VideoUploadPage() {
 
     const variables = {
       writer: user.userData._id,
-      title: videoTitle,
+      title: VideoTitle,
       description: VideoDesc,
       privacy: Private,
       filePath: FilePath,
@@ -91,14 +91,20 @@ function VideoUploadPage() {
 
     Axios.post("/api/video/uploadVideo", variables).then((res) => {
       if (res.data.success) {
+        alert("성공적으로 업로드를 했습니다.");
+        setTimeout(() => {
+          props.history.push("/");
+        }, 200);
+        console.log("Data =>  DB : Succeed");
       } else {
+        console.log("Data =>  DB : Failed");
         alert("비디오 업로드에 실패했습니다.");
       }
     });
   };
 
   return (
-    <div className="main">
+    <div className="uploadMain">
       <Link to="/">
         <button className="home_btn">←</button>
       </Link>
@@ -144,8 +150,8 @@ function VideoUploadPage() {
           <legend>필수 선택</legend>
           공개범위
           <select onChange={onPrivateHandler}>
-            <option value="Private">Private</option>
-            <option value="Public">Public</option>
+            <option value="0">Private</option>
+            <option value="1">Public</option>
           </select>
           <span className="SELECT_ICON">|</span> 카테고리
           <select onChange={onCategoryHandler}>
@@ -163,4 +169,4 @@ function VideoUploadPage() {
     </div>
   );
 }
-export default VideoUploadPage;
+export default withRouter(VideoUploadPage);

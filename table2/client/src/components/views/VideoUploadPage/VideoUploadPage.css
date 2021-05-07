@@ -2,7 +2,14 @@ body {
   margin: 0px;
   padding: 0px;
 }
-.main {
+.uploadMain {
+  border: 1px solid #fff;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 2px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 0px;
   padding: 0 50px;
   height: 100vh;
@@ -57,6 +64,7 @@ body {
   height: 150px;
 }
 select {
+  text-align: center;
   border-radius: 3px;
   font-size: 1em;
   appearance: none;
