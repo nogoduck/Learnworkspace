@@ -1,9 +1,17 @@
 /* body {
   margin: 0px;
   padding: 0px;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 } */
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .uploadMain {
   border: 1px solid #fff;
   background-color: #fff;
@@ -14,8 +22,8 @@
   flex-direction: column;
   margin: 0px;
   padding: 0 50px;
-  height: 100%;
-  width: 75vw;
+  /* height: 100%;
+  width: 75vw; */
   border-radius: 0px;
 }
 .DROPZONE {

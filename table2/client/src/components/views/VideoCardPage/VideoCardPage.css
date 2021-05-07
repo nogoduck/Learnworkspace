@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
-body {
+/* body {
   margin: 0px;
   padding: 0px;
   background: linear-gradient(to right bottom, #3498db, #8e44ad, #d35400);
@@ -13,7 +13,7 @@ body {
   font-size: 1.5em;
   user-select: none;
   overflow-x: hidden;
-}
+} */
 
 .home_btn {
   position: relative;
