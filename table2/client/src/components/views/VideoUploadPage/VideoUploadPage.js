@@ -104,77 +104,69 @@ function VideoUploadPage(props) {
   };
 
   return (
-    <React.Fragment>
-      <div className="container">
-        <div className="uploadMain">
-          <Link to="/">
-            <button className="home_btn">←</button>
-          </Link>
-          <h2>비디오 업로드</h2>
-          <form className="uploadForm" onSubmit={onSubmit}>
-            <div className="DROPANDTHUMBNAIL">
-              <Dropzone onDrop={onDrop} multiple={false} maxSize={10_0000_0000}>
-                {({ getRootProps, getInputProps }) => (
-                  <div className="DROPZONE" {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    <div className="icon">╋</div>
-                  </div>
-                )}
-              </Dropzone>
-              {ThumbnailPath && (
-                <div className="IMG">
-                  <img
-                    src={`http://localhost:8004/${ThumbnailPath}`}
-                    alt="video_thumbnail"
-                  />
-                </div>
-              )}
+    <div className="uploadMain">
+      <Link to="/">
+        <button className="home_btn">←</button>
+      </Link>
+      <h2>비디오 업로드</h2>
+      <form className="uploadForm" onSubmit={onSubmit}>
+        <div className="DROPANDTHUMBNAIL">
+          <Dropzone onDrop={onDrop} multiple={false} maxSize={10_0000_0000}>
+            {({ getRootProps, getInputProps }) => (
+              <div className="DROPZONE" {...getRootProps()}>
+                <input {...getInputProps()} />
+                <div className="icon">╋</div>
+              </div>
+            )}
+          </Dropzone>
+          {ThumbnailPath && (
+            <div className="IMG">
+              <img
+                src={`http://localhost:8004/${ThumbnailPath}`}
+                alt="video_thumbnail"
+              />
             </div>
-            <fieldset>
-              <legend>제목</legend>
-              <input
-                type="text"
-                placeholder="동영상을 설명하는 제목을 추가하세요"
-                value={VideoTitle}
-                onChange={onVideoTitleHandler}
-              />
-            </fieldset>
-            <fieldset>
-              <legend>설명</legend>
-              <label></label>
-              <textarea
-                placeholder="시청자에게 동영상에 대해 알려주세요"
-                value={VideoDesc}
-                onChange={onVideoDescHandler}
-              />
-            </fieldset>
-            <fieldset className="SELECTBOX">
-              <legend>필수 선택</legend>
-              공개범위
-              <select onChange={onPrivateHandler}>
-                <option value="0">Private</option>
-                <option value="1">Public</option>
-              </select>
-              <span className="SELECT_ICON">|</span> 카테고리
-              <select onChange={onCategoryHandler}>
-                {CategoryOptions.map((item, index) => (
-                  <option key={index} value={item.value}>
-                    {item.label}
-                  </option>
-                ))}
-              </select>
-            </fieldset>
-            <button
-              className="BUTTON UPLOAD_BTN"
-              type="submit"
-              onClick={onSubmit}
-            >
-              업로드
-            </button>
-          </form>
+          )}
         </div>
-      </div>
-    </React.Fragment>
+        <fieldset>
+          <legend>제목</legend>
+          <input
+            type="text"
+            placeholder="동영상을 설명하는 제목을 추가하세요"
+            value={VideoTitle}
+            onChange={onVideoTitleHandler}
+          />
+        </fieldset>
+        <fieldset>
+          <legend>설명</legend>
+          <label></label>
+          <textarea
+            placeholder="시청자에게 동영상에 대해 알려주세요"
+            value={VideoDesc}
+            onChange={onVideoDescHandler}
+          />
+        </fieldset>
+        <fieldset className="SELECTBOX">
+          <legend>필수 선택</legend>
+          공개범위
+          <select onChange={onPrivateHandler}>
+            <option value="0">Private</option>
+            <option value="1">Public</option>
+          </select>
+          <span className="SELECT_ICON">|</span> 카테고리
+          <select onChange={onCategoryHandler}>
+            {CategoryOptions.map((item, index) => (
+              <option key={index} value={item.value}>
+                {item.label}
+              </option>
+            ))}
+          </select>
+        </fieldset>
+        <button className="BUTTON UPLOAD_BTN" type="submit" onClick={onSubmit}>
+          업로드
+        </button>
+      </form>
+    </div>
   );
 }
 export default withRouter(VideoUploadPage);

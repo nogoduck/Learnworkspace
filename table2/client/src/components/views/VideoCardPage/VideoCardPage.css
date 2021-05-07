@@ -53,7 +53,7 @@
   flex-wrap: wrap;
   margin: 10px;
   justify-content: center;
-  overflow: auto;
+  /* overflow: auto; */
 }
 .card img {
   width: 300px;
