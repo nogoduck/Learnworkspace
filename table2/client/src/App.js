@@ -4,6 +4,7 @@ import LandingPage from "./components/views/LandingPage/LandingPage";
 import LoginPage from "./components/views/LoginPage/LoginPage";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import VideoUploadPage from "./components/views/VideoUploadPage/VideoUploadPage";
+import VideoCardPage from "./components/views/VideoCardPage/VideoCardPage";
 import Auth from "./hoc/auth";
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
             exact
             path="/video/upload"
             component={Auth(VideoUploadPage, true)}
+          />
+          <Route
+            exact
+            path="/video/explore"
+            component={Auth(VideoCardPage, true)}
           />
         </Switch>
       </div>

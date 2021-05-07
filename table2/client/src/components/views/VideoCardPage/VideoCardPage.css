@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient(to right bottom, #3498db, #8e44ad, #d35400);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 1.5em;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+a:link,
+a:hover,
+a:visited {
+  color: #000;
+}
+a:hover {
+  color: #000;
+  font-weight: normal;
+}
+
+.cardMain {
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #fff;
+  border-radius: 0px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 2px #000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.VIDEO {
+  margin: 7px;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.card img {
+  width: 300px;
+  height: 200px;
+}
+/* 
+.prifle__img img {
+  width: 50px;
+  height: 50px;
+} */
+.duration__Absolute {
+  position: absolute;
+}
+.duration__Relative {
+  position: relative;
+  bottom: 40px;
+  left: 255px;
+}
+.duration__Relative span {
+  background-color: #000;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.video__title {
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  bottom: 30px;
+  left: 10px;
+  color: #000;
+}
+.video__article {
+  font-weight: 600;
+  font-size: 14px;
+  color: gray;
+  position: relative;
+  bottom: 30px;
+  left: 60px;
+}
+.Ment {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+.BUTTON {
+  margin-top: 10px;
+  font-size: 0.8em;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #3498db;
+  width: 100px;
+}
+.BUTTON:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 1px #b2bec3;
+}
