@@ -23,21 +23,20 @@ function VideoDetailPage(props) {
     });
   }, []);
 
-  return (
-    <div>
-      {/* <video
-        
-        src={`http://localhost:8004/uploads/1620346642093_Cat - 66004.mp4`}
-        controls
-      /> */}
-      <video
-        style={{ width: "100%" }}
-        src={`http://localhost:8004/${VideoDetail.filePath}`}
-        controls
-      />
-      <h2>{VideoDetail.filePath}</h2>
-    </div>
-  );
+  if (VideoDetail.writer) {
+    return (
+      <div>
+        <video
+          style={{ width: "100%" }}
+          src={`http://localhost:8004/${VideoDetail.filePath}`}
+          controls
+        />
+        <h2>{VideoDetail.filePath}</h2>
+      </div>
+    );
+  } else {
+    return <div>영상 불러오는중...</div>;
+  }
 }
 
 export default withRouter(VideoDetailPage);
