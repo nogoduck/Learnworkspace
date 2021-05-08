@@ -46,38 +46,45 @@ function RegisterPage(props) {
   };
 
   return (
-    <div className="main">
+    <div id="register__container">
       <Link to="/">
-        <button className="home_btn">←</button>
+        <button className="link_back">뒤로가기</button>
       </Link>
-      <h2>회원가입</h2>
-      <form className="registerForm" onSubmit={onSubmitHandler}>
+      <div id="container_title">회원가입</div>
+      <form id="register__form" onSubmit={onSubmitHandler}>
         <input
+          className="input_account"
           type="name"
           placeholder="이름"
           value={Name}
           onChange={onNameHandler}
         />
         <input
+          className="input_account"
           type="email"
           placeholder="이메일"
           value={Email}
           onChange={onEmailHandler}
         />
         <input
+          className="input_account"
           type="password"
           placeholder="비밀번호"
           value={Password}
           onChange={onPasswordHandler}
         />
         <input
+          className="input_account"
           type="password"
           placeholder="비밀번호 확인"
           value={ConfirmPassword}
           onChange={onConfirmPasswordHandler}
         />
-        <br />
-        <button type="submit">다음</button>
+        <div id="ect__container-register">
+          <button className="btn_next" type="submit">
+            다음
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -1,91 +1,81 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
-/* 
+
 body {
+  /* background: linear-gradient(to right bottom, #3498db, #8e44ad, #d35400); */
+  font-family: "Nanum Gothi ", sans-serif;
   margin: 0px;
   padding: 0px;
-  background: linear-gradient(to right bottom, #3498db, #8e44ad, #d35400);
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Nanum Gothi ", sans-serif;
-  font-size: 1.5em;
-  user-select: none;
-  border: 5px solid black;
-} */
-body {
-  background: linear-gradient(to right bottom, #3498db, #8e44ad, #d35400);
-
-  display: flex;
   width: 100vw;
   height: 100vh;
-  justify-content: center;
-  /* align-items: center; */
-  overflow: auto;
 }
-#root {
-  /* display: flex; */
-  /* width: 90%; */
-  /* flex-direction: column; */
-  /* justify-content: center;
-  align-items: center;
-  align-self: center; */
+a {
+  text-decoration: none;
+  color: #4b7bec;
 }
-.main {
+a:hover {
+  color: #3867d6;
+}
+#landing__container {
   position: absolute;
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  /* height: 10%; */
-  margin: 10%;
-  padding: 20px;
-  border: 1px solid #fff;
-  border-radius: 25px;
+  margin: auto;
+  width: 750px;
+  height: 450px;
+  border: 1px solid #dadce0;
+  border-radius: 5px;
   background-color: #fff;
-  box-shadow: 0px 0px 20px 2px #000;
-  /* height: 75vh;
-  width: 75vw; */
+  box-shadow: 0px 0px 5px 1px #dfe6e9;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  user-select: none;
 }
-a:link,
-a:hover,
-a:visited {
-  text-decoration: none;
-  color: #d35400;
+#container_title {
+  font-size: 25px;
+  margin: 30px;
 }
-a:hover {
-  font-weight: bold;
+.container_article {
+  /* margin-top: 10px; */
+  font-size: 1em;
 }
-
-.Ment {
-  margin-top: 10px;
-  font-size: 0.9em;
-}
-.BUTTON {
-  margin: 10px 10px 0px 10px;
-  font-size: 0.8em;
-  padding: 5px;
-  border-radius: 5px;
+.btn_default-blue {
+  width: 75px;
+  font-size: 1em;
+  padding: 8px;
+  margin: 10px;
   border: none;
+  border-radius: 5px;
   outline: none;
   color: white;
-  background-color: #3498db;
-  width: 100px;
+  background-color: #4b7bec;
 }
-.BUTTON:hover {
+.btn_default-blue:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 5px 1px #b2bec3;
+  background-color: #3867d6;
 }
-
-.LINK {
+.btn_default-green {
+  width: 75px;
+  font-size: 1em;
+  padding: 8px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+  background-color: #20bf6b;
+}
+.btn_default-green:hover {
+  cursor: pointer;
+  background-color: #05c46b;
+}
+.link_ghost {
   background-color: #fff;
   border: none;
-  font-size: 1.3rem;
+  font-size: 1em;
   padding: 0px;
   margin: 0px;
   text-decoration: none;
@@ -95,7 +85,4 @@ a:hover {
 .LINK:hover {
   font-weight: bold;
   cursor: pointer;
-}
-.Storage_Btn {
-  color: red;
 }

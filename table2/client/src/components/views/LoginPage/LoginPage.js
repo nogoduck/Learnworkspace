@@ -35,26 +35,35 @@ function LoginPage(props) {
   };
 
   return (
-    <div className="main">
+    <div id="login__container">
       <Link to="/">
-        <button className="home_btn">←</button>
+        <button className="link_back">뒤로가기</button>
       </Link>
-      <h2>로그인</h2>
-      <form className="loginForm" onSubmit={onSubmitHandler}>
+      <div id="container_title">로그인</div>
+      <form id="login__form" onSubmit={onSubmitHandler}>
         <input
+          className="input_account"
           type="email"
           placeholder="이메일"
           value={Email}
           onChange={onEmailHandler}
         />
         <input
+          className="input_account"
           type="password"
           placeholder="비밀번호"
           value={Password}
           onChange={onPasswordHandler}
         />
-        <br />
-        <button type="submit">다음</button>
+
+        <div id="ect__container-login">
+          <Link className="link_register" to="/register">
+            회원가입
+          </Link>
+          <button className="btn_next" type="submit">
+            다음
+          </button>
+        </div>
       </form>
     </div>
   );

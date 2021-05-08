@@ -1,43 +1,72 @@
-.home_btn {
+.link_back {
   position: relative;
-  /* bottom: 250%; */
-  border-radius: 50%;
+  bottom: 150%;
+  right: 190%;
   border: none;
   outline: none;
-  color: white;
-  background-color: #3498db;
-  font-size: 1em;
-  font-weight: 800;
-  width: 50px;
-  height: 50px;
+  color: #fc5c65;
+  background-color: #fff;
+  font-size: 0.9em;
 }
-.home_btn:hover {
+.link_back:hover {
   cursor: pointer;
+  color: #eb3b5a;
 }
-.loginForm {
+#login__container {
+  width: 400px;
+  height: 450px;
+  border: 1px solid #dadce0;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 1px #dfe6e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  user-select: none;
+}
+#container_title {
+  font-size: 25px;
+  margin: 30px;
+}
+#login__form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 330px;
   height: 200px;
 }
-.loginForm input {
-  font-size: 0.8em;
-  border-radius: 5px;
-  border: none;
-  outline: none;
+.input_account {
+  height: 28px;
   margin: 5px 0px;
-  padding: 5px;
-  box-shadow: 0px 0px 5px 1px #bdc3c7;
-}
-.loginForm button {
-  font-size: 0.8em;
-  padding: 5px;
+  padding: 8px;
+  font-size: 1em;
+  outline: none;
+  border: 1px solid #dadce0;
   border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px #dfe6e9;
+}
+.input_account:focus {
+  border: 1px solid #3867d6;
+}
+#ect__container-login {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.link_register {
+  font-size: 0.9em;
+}
+.btn_next {
+  width: 75px;
+  font-size: 1em;
+  padding: 8px;
   border: none;
+  border-radius: 5px;
   outline: none;
   color: white;
-  background-color: #3498db;
+  background-color: #4b7bec;
 }
-.loginForm button:hover {
+.btn_next:hover {
   cursor: pointer;
+  background-color: #3867d6;
 }
