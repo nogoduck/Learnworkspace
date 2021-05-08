@@ -22,13 +22,13 @@ function VideoCardPage() {
     let minutes = Math.floor(video.duration / 60);
     let seconds = Math.floor(video.duration - minutes * 60);
     return (
-      <a href={`/video/post${video._id}`} className="VIDEO">
+      <a href={`/video/post${video._id}`} className="video__container">
         <img
           src={`http://localhost:8004/${video.thumbnail}`}
           alt="thumbnail_IMG"
         />
-        <div className="duration__Absolute">
-          <div className="duration__Relative">
+        <div className="duration__absolute">
+          <div className="duration__relative">
             <span>
               {minutes}:{seconds < 10 ? `0${seconds}` : `${seconds}`}
             </span>
@@ -56,10 +56,13 @@ function VideoCardPage() {
   });
 
   return (
-    <div className="cardMain">
-      <Link to="/">
-        <button className="home_btn">←</button>
-      </Link>
+    <div id="card__container">
+      <div id="container_nav">
+        <Link to="/">
+          <button className="link_back-card">뒤로가기</button>
+        </Link>
+      </div>
+      <div id="container_title">업로드한 영상</div>
       <div className="card" style={{ display: "flex", flexWrap: "wrap" }}>
         {renderCards}
       </div>
