@@ -1,9 +1,9 @@
 import "./LandingPage.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
-import moment from "moment";
+
 function LandingPage(props) {
   const onLogoutHandler = () => {
     Axios.get("/api/users/logout").then((res) => {

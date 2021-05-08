@@ -5,6 +5,7 @@ import LoginPage from "./components/views/LoginPage/LoginPage";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import VideoUploadPage from "./components/views/VideoUploadPage/VideoUploadPage";
 import VideoCardPage from "./components/views/VideoCardPage/VideoCardPage";
+import VideoDetailPage from "./components/views/VideoDetailPage/VideoDetailPage";
 import Auth from "./hoc/auth";
 import React from "react";
 function App() {
@@ -24,6 +25,11 @@ function App() {
             exact
             path="/video/explore"
             component={Auth(VideoCardPage, true)}
+          />
+          <Route
+            exact
+            path="/video/:videoId"
+            component={Auth(VideoDetailPage, null)}
           />
         </Switch>
       </>
