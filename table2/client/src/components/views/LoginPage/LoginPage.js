@@ -57,7 +57,7 @@ function LoginPage(props) {
         />
 
         <div id="ect__container-login">
-          <Link className="link_register" to="/register">
+          <Link className="link_hover link_register" to="/register">
             회원가입
           </Link>
           <button className="btn_next" type="submit">

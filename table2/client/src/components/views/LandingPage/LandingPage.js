@@ -29,7 +29,8 @@ function LandingPage(props) {
           개인 영상을 저장할 수 있는 공간입니다
         </div>
         <div className="container_article">
-          서로에게 상처되지 않는 따뜻한 댓글 부탁드립니다
+          서로에게 상처되지 않는 <span className="point-red">따뜻한 댓글</span>
+          부탁드립니다
         </div>
         <div className="container_article">
           사이트를 떠날 땐 반드시{" "}
@@ -54,10 +55,17 @@ function LandingPage(props) {
       <div id="landing__container">
         <div id="container_title">환영합니다 😊</div>
         <div className="container_article">
-          <Link to="/login">로그인</Link>을 하시겠습니까?
+          <Link className="link_hover" to="/login">
+            로그인
+          </Link>
+          을 하시겠습니까?
         </div>
         <div className="container_article">
-          계정이 없으시다면 <Link to="/register">회원가입</Link>도 가능합니다
+          계정이 없으시다면
+          <Link className="link_hover" to="/register">
+            회원가입
+          </Link>
+          도 가능합니다
         </div>
       </div>
     );

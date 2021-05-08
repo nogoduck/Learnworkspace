@@ -11,6 +11,7 @@
 .link_back-login:hover {
   cursor: pointer;
   color: #eb3b5a;
+  background-color: #dcdde1;
 }
 #login__container {
   position: absolute;
@@ -62,6 +63,8 @@
 }
 .link_register {
   font-size: 0.9em;
+  padding: 2px 5px 7px 5px;
+  height: 15px;
 }
 .btn_next {
   width: 75px;

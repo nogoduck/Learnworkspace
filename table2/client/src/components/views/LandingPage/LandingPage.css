@@ -8,12 +8,21 @@ body {
   width: 100vw;
   height: 100vh;
 }
-a {
+/* a {
   text-decoration: none;
   color: #4b7bec;
 }
 a:hover {
   color: #3867d6;
+} */
+.link_hover {
+  text-decoration: none;
+  color: #4b7bec;
+}
+.link_hover:hover {
+  cursor: pointer;
+  color: #3867d6;
+  background-color: #dcdde1;
 }
 #landing__container {
   position: absolute;
@@ -44,6 +53,12 @@ a:hover {
   font-size: 1.1em;
   letter-spacing: 0.5px;
 }
+.point-red {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #e84118;
+  background-color: #dcdde1;
+}
 .btn_default-blue {
   width: 75px;
   font-size: 1em;
@@ -67,7 +82,7 @@ a:hover {
   border: none;
   border-radius: 5px;
   outline: none;
-  color: white;
+  color: #fff;
   background-color: #20bf6b;
 }
 .btn_default-green:hover {

@@ -104,23 +104,23 @@ function VideoUploadPage(props) {
   };
 
   return (
-    <div className="uploadMain">
+    <div id="upload__container">
       <Link to="/">
-        <button className="home_btn">←</button>
+        <button className="link_back-upload">뒤로가기</button>
       </Link>
-      <h2>비디오 업로드</h2>
-      <form className="uploadForm" onSubmit={onSubmit}>
-        <div className="DROPANDTHUMBNAIL">
+      <div id="container_title">영상 업로드</div>
+      <form id="upload__form" onSubmit={onSubmit}>
+        <div className="dropzone__container">
           <Dropzone onDrop={onDrop} multiple={false} maxSize={10_0000_0000}>
             {({ getRootProps, getInputProps }) => (
-              <div className="DROPZONE" {...getRootProps()}>
+              <div className="dropzone_content" {...getRootProps()}>
                 <input {...getInputProps()} />
-                <div className="icon">╋</div>
+                <div className="ico_drop">╋</div>
               </div>
             )}
           </Dropzone>
           {ThumbnailPath && (
-            <div className="IMG">
+            <div className="dropzone_article">
               <img
                 src={`http://localhost:8004/${ThumbnailPath}`}
                 alt="video_thumbnail"
@@ -128,43 +128,47 @@ function VideoUploadPage(props) {
             </div>
           )}
         </div>
-        <fieldset>
-          <legend>제목</legend>
-          <input
-            type="text"
-            placeholder="동영상을 설명하는 제목을 추가하세요"
-            value={VideoTitle}
-            onChange={onVideoTitleHandler}
-          />
-        </fieldset>
-        <fieldset>
-          <legend>설명</legend>
-          <label></label>
-          <textarea
-            placeholder="시청자에게 동영상에 대해 알려주세요"
-            value={VideoDesc}
-            onChange={onVideoDescHandler}
-          />
-        </fieldset>
-        <fieldset className="SELECTBOX">
-          <legend>필수 선택</legend>
-          공개범위
-          <select onChange={onPrivateHandler}>
-            <option value="0">Private</option>
-            <option value="1">Public</option>
-          </select>
-          <span className="SELECT_ICON">|</span> 카테고리
-          <select onChange={onCategoryHandler}>
-            {CategoryOptions.map((item, index) => (
-              <option key={index} value={item.value}>
-                {item.label}
-              </option>
-            ))}
-          </select>
-        </fieldset>
-        <button className="BUTTON UPLOAD_BTN" type="submit" onClick={onSubmit}>
-          업로드
-        </button>
+        <div className="upload_content">
+          <fieldset>
+            <legend>제목</legend>
+            <input
+              type="text"
+              placeholder="동영상을 설명하는 제목을 추가하세요"
+              value={VideoTitle}
+              onChange={onVideoTitleHandler}
+            />
+          </fieldset>
+          <fieldset>
+            <legend>설명</legend>
+            <label></label>
+            <textarea
+              placeholder="시청자에게 동영상에 대해 알려주세요"
+              value={VideoDesc}
+              onChange={onVideoDescHandler}
+            />
+          </fieldset>
+          <fieldset className="upload_option">
+            <legend>필수 선택</legend>
+            공개범위
+            <select onChange={onPrivateHandler}>
+              <option value="0">Private</option>
+              <option value="1">Public</option>
+            </select>
+            <span className="ico_select">|</span> 카테고리
+            <select onChange={onCategoryHandler}>
+              {CategoryOptions.map((item, index) => (
+                <option key={index} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </fieldset>
+        </div>
+        <div id="etc__container-uplaod">
+          <button className="btn_next" type="submit" onClick={onSubmit}>
+            업로드
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -11,6 +11,7 @@
 .link_back-register:hover {
   cursor: pointer;
   color: #eb3b5a;
+  background-color: #dcdde1;
 }
 #register__container {
   position: absolute;
