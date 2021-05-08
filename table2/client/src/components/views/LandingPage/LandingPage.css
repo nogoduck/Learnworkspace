@@ -37,10 +37,12 @@ a:hover {
 #container_title {
   font-size: 25px;
   margin: 30px;
+  letter-spacing: 1px;
 }
 .container_article {
-  /* margin-top: 10px; */
-  font-size: 1em;
+  margin-top: 10px;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
 }
 .btn_default-blue {
   width: 75px;
@@ -75,14 +77,15 @@ a:hover {
 .link_ghost {
   background-color: #fff;
   border: none;
+  outline: none;
   font-size: 1em;
   padding: 0px;
   margin: 0px;
   text-decoration: none;
-  color: #d35400;
+  color: #4b7bec;
   font-weight: 400;
 }
-.LINK:hover {
-  font-weight: bold;
+.link_ghost:hover {
   cursor: pointer;
+  color: #3867d6;
 }

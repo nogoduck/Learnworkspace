@@ -48,7 +48,7 @@ function RegisterPage(props) {
   return (
     <div id="register__container">
       <Link to="/">
-        <button className="link_back">뒤로가기</button>
+        <button className="link_back-register">뒤로가기</button>
       </Link>
       <div id="container_title">회원가입</div>
       <form id="register__form" onSubmit={onSubmitHandler}>

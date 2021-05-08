@@ -37,7 +37,7 @@ function LoginPage(props) {
   return (
     <div id="login__container">
       <Link to="/">
-        <button className="link_back">뒤로가기</button>
+        <button className="link_back-login">뒤로가기</button>
       </Link>
       <div id="container_title">로그인</div>
       <form id="login__form" onSubmit={onSubmitHandler}>

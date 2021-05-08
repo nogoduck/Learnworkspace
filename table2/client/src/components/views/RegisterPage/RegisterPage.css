@@ -1,4 +1,24 @@
+.link_back-register {
+  position: relative;
+  bottom: 80%;
+  right: 190%;
+  border: none;
+  outline: none;
+  color: #fc5c65;
+  background-color: #fff;
+  font-size: 0.9em;
+}
+.link_back-register:hover {
+  cursor: pointer;
+  color: #eb3b5a;
+}
 #register__container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
   width: 400px;
   height: 500px;
   border: 1px solid #dadce0;
@@ -14,6 +34,7 @@
 #container_title {
   font-size: 25px;
   margin: 30px;
+  letter-spacing: 1px;
 }
 #register__form {
   display: flex;

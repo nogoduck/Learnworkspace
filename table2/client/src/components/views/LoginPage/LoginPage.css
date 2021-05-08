@@ -1,6 +1,6 @@
-.link_back {
+.link_back-login {
   position: relative;
-  bottom: 150%;
+  bottom: 180%;
   right: 190%;
   border: none;
   outline: none;
@@ -8,11 +8,17 @@
   background-color: #fff;
   font-size: 0.9em;
 }
-.link_back:hover {
+.link_back-login:hover {
   cursor: pointer;
   color: #eb3b5a;
 }
 #login__container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
   width: 400px;
   height: 450px;
   border: 1px solid #dadce0;
@@ -28,6 +34,7 @@
 #container_title {
   font-size: 25px;
   margin: 30px;
+  letter-spacing: 1px;
 }
 #login__form {
   display: flex;
