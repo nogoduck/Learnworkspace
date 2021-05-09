@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import Axios from "axios";
 import SideVideo from "./section/SideVideo";
+import Subscribe from "./section/Subscribe";
+import { List, Avatar, Row, Col } from "antd";
 
 function VideoDetailPage(props) {
   const videoId = props.match.params.videoId;
@@ -48,7 +50,14 @@ function VideoDetailPage(props) {
                 <li>{VideoDetail.writer.name}</li>
                 <li>{VideoDetail.description}</li>
               </ul>
-              <div className="video_func">좋아요 버튼 / 구독 버튼</div>
+              <div className="video_func">
+                좋아요 버튼 /
+                <div
+                  className="subscribe"
+                  actions={[<Subscribe userTo={VideoDetail.writer._id} />]}
+                ></div>
+                구독 버튼
+              </div>
             </div>
           </div>
           <div id="video_side">
