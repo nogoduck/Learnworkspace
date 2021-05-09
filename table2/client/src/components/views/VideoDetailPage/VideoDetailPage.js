@@ -1,7 +1,8 @@
+import "./VideoDetailPage.css";
 import React, { useEffect, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
-
 import Axios from "axios";
+import SideVideo from "./section/SideVideo";
 
 function VideoDetailPage(props) {
   const videoId = props.match.params.videoId;
@@ -25,17 +26,39 @@ function VideoDetailPage(props) {
 
   if (VideoDetail.writer) {
     return (
-      <div>
-        <video
-          style={{ width: "100%" }}
-          src={`http://localhost:8004/${VideoDetail.filePath}`}
-          controls
-        />
-        <h2>{VideoDetail.filePath}</h2>
+      <div id="videodetail__container">
+        <div id="container_title-videodetail">
+          <Link to="/video/explore">
+            <button className="link_back-videodetail">뒤로가기</button>
+          </Link>
+        </div>
+
+        <div id="video_content">
+          <div id="video_article">
+            <video
+              style={{ width: "100%" }}
+              src={`http://localhost:8004/${VideoDetail.filePath}`}
+              controls
+            />
+            <div className="video_profile">
+              <ul>
+                <li>
+                  <img src="http://placehold.it/50x50" />
+                </li>
+                <li>{VideoDetail.writer.name}</li>
+                <li>{VideoDetail.description}</li>
+              </ul>
+              <div className="video_func">좋아요 버튼 / 구독 버튼</div>
+            </div>
+          </div>
+          <div id="video_side">
+            <SideVideo />
+          </div>
+        </div>
       </div>
     );
   } else {
-    return <div>영상 불러오는중...</div>;
+    return <div id="video__container">영상 불러오는중...</div>;
   }
 }
 

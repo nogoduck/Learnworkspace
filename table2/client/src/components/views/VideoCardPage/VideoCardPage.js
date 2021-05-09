@@ -22,7 +22,7 @@ function VideoCardPage() {
     let minutes = Math.floor(video.duration / 60);
     let seconds = Math.floor(video.duration - minutes * 60);
     return (
-      <a href={`/video/${video._id}`} className="video__container">
+      <Link to={`/video/${video._id}`} className="video__container">
         <img
           src={`http://localhost:8004/${video.thumbnail}`}
           alt="thumbnail_IMG"
@@ -51,7 +51,7 @@ function VideoCardPage() {
             {video.view} · {moment(video.createdAt).format("YY MMM Do ")}
           </div>
         </div>
-      </a>
+      </Link>
     );
   });
 

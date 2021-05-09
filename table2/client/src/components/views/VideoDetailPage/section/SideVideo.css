@@ -1,0 +1,15 @@
+#sidevideo__container {
+  display: flex;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+#sidevideo__content {
+  flex: 4;
+}
+#sidevideo__content img {
+  width: 100%;
+}
+#sidevideo__article {
+  flex: 6;
+  margin-left: 1em;
+}
