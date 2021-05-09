@@ -6,8 +6,11 @@ function Subscribe(props) {
   const [SubscribeNumber, setSubscribeNumber] = useState(0);
   const [Subscribed, setSubscribed] = useState(false);
 
+  const userTo = props.userTo;
+  const userFrom = props.userFrom;
+
   useEffect(() => {
-    let variable = { userTo: props.userTo };
+    const variable = { userTo: userTo, userFrom: userFrom };
 
     Axios.post("/api/subscribe/subscribeNumber", variable).then((res) => {
       if (res.data.success) {
@@ -17,12 +20,7 @@ function Subscribe(props) {
       }
     });
 
-    let subscribedVariable = {
-      userTo: props.userTo,
-      userFrom: localStorage.getItem("userId"),
-    };
-
-    Axios.post("/api/subscribe/subscribed", subscribedVariable).then((res) => {
+    Axios.post("/api/subscribe/subscribed", variable).then((res) => {
       if (res.data.success) {
         setSubscribed(res.data.subscribed);
       } else {
@@ -31,9 +29,47 @@ function Subscribe(props) {
     });
   }, []);
 
+  const onSubscribe = () => {
+    let subscribedVariable = {
+      userTo: userTo,
+      userFrom: userFrom,
+    };
+
+    if (Subscribed) {
+      Axios.post("/api/subscribe/unSubscribe", subscribedVariable).then(
+        (res) => {
+          if (res.data.success) {
+            setSubscribeNumber(SubscribeNumber - 1);
+            setSubscribed(!Subscribed);
+          } else {
+            alert("구독 취소 실패");
+          }
+        }
+      );
+    } else {
+      Axios.post("/api/subscribe/subscribe", subscribedVariable).then((res) => {
+        if (res.data.success) {
+          setSubscribeNumber(SubscribeNumber + 1);
+          setSubscribed(!Subscribed);
+        } else {
+          alert("구독 실패");
+        }
+      });
+    }
+  };
   return (
     <div>
-      <button>
+      <button
+        style={{
+          backgroundColor: `${Subscribed ? "#AAAAAA" : "#CC0000"}`,
+          borderRadius: "4px",
+          border: "none",
+          color: "#fff",
+          padding: "10px",
+          outline: "none",
+        }}
+        onClick={onSubscribe}
+      >
         {SubscribeNumber} {Subscribed ? "구독중" : "구독"}
       </button>
     </div>

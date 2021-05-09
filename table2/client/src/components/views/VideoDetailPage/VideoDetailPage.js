@@ -51,12 +51,14 @@ function VideoDetailPage(props) {
                 <li>{VideoDetail.description}</li>
               </ul>
               <div className="video_func">
-                좋아요 버튼 /
+                <Subscribe
+                  userTo={VideoDetail.writer._id}
+                  userFrom={localStorage.getItem("userId")}
+                />
                 <div
                   className="subscribe"
-                  actions={[<Subscribe userTo={VideoDetail.writer._id} />]}
+                  onClick={[<Subscribe userTo={VideoDetail.writer._id} />]}
                 ></div>
-                구독 버튼
               </div>
             </div>
           </div>
