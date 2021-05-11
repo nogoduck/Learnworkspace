@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Main.css";
 import { Row, Col, Input, Form, Button, Divider, Menu } from "antd";
-
+import { LoadingOutlined } from "@ant-design/icons";
 function Main() {
   return (
     <>
@@ -16,6 +16,7 @@ function Main() {
         ></div> */}
           <Col span={12} style={{ border: "2px solid blue", width: "100%" }}>
             1
+            <LoadingOutlined style={{ fontSize: "100px" }} />
           </Col>
           <Col span={12} style={{ border: "2px solid blue" }}>
             2
