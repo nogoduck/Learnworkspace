@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { useState, useCallback } from "react";
 import { Form, Input, Button } from "antd";
 import Link from "next/link";
@@ -5,6 +7,8 @@ import styled from "styled-components";
 
 const ButtonWrapper = styled.div`
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const FormWrapper = styled(Form)`
@@ -55,6 +59,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
           <Button type="primary" htmlType="submit" loading={false}>
             로그인
           </Button>
+
           <Link href="/signup">
             <a>
               <Button>회원가입</Button>
@@ -64,6 +69,11 @@ const LoginForm = ({ setIsLoggedIn }) => {
       </FormWrapper>
     </>
   );
+};
+
+LoginForm.PropTypes = {
+  header: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default LoginForm;
