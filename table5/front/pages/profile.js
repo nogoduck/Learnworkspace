@@ -1,11 +1,17 @@
 import AppLayout from "../components/AppLayout";
+import Head from "next/head";
 
-const profile = () => {
+const Profile = () => {
   return (
-    <AppLayout>
-      <div>profile</div>
-    </AppLayout>
+    <>
+      <Head>
+        <title>Node Bird | 프로필</title>
+      </Head>
+      <AppLayout>
+        <div>profile</div>
+      </AppLayout>
+    </>
   );
 };
 
-export default profile;
+export default Profile;

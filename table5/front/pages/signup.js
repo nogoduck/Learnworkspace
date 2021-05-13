@@ -1,10 +1,17 @@
 import AppLayout from "../components/AppLayout";
+import Head from "next/head";
 
 const Signup = () => {
   return (
-    <AppLayout>
-      <div>로그인페이지</div>
-    </AppLayout>
+    <>
+      <Head>
+        <title>Node Bird | 회원가입</title>
+      </Head>
+
+      <AppLayout>
+        <div>로그인페이지</div>
+      </AppLayout>
+    </>
   );
 };
 
