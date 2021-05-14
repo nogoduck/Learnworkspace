@@ -1,52 +1,24 @@
-const initialState = {
-  user: {
-    isLoggedIn: false,
-    user: null,
-    signUpdata: {},
-    loginData: {},
+import { HYDRATE } from "next-redux-wrapper";
+import { combineReducers } from "redux";
+
+import user from "./user";
+import post from "./post";
+
+const rootReducer = combineReducers({
+  index: (state = {}, action) => {
+    switch (action.type) {
+      case HYDRATE:
+        console.log("HYDRATE: ", action);
+        return {
+          ...state,
+          ...action.payload,
+        };
+      default:
+        return state;
+    }
   },
-  post: {
-    mainPoasts: [],
-  },
-};
-
-export const loginAction = (data) => {
-  console.log(data);
-  return {
-    type: "LOG_IN",
-    data,
-  };
-};
-
-export const logoutAction = () => {
-  return {
-    type: "LOG_OUT",
-  };
-};
-
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "LOG_IN":
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          isLoggedIn: true,
-          user: action.user,
-        },
-      };
-    case "LOG_OUT":
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          isLoggedIn: false,
-          user: null,
-        },
-      };
-    default:
-      return state;
-  }
-};
+  user,
+  post,
+});
 
 export default rootReducer;
