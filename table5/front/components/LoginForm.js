@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
-
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 import { Form, Input, Button } from "antd";
 import Link from "next/link";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
 
+import userInput from "../hooks/userInput";
+import { loginAction } from "../reducers";
 const ButtonWrapper = styled.div`
   margin-top: 10px;
   display: flex;
@@ -15,20 +16,14 @@ const FormWrapper = styled(Form)`
   padding: 20px;
 `;
 
-const LoginForm = ({ setIsLoggedIn }) => {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-
-  const onChangeId = useCallback((e) => {
-    setId(e.target.value);
-  }, []);
-  const onChangePassword = useCallback((e) => {
-    setPassword(e.target.value);
-  }, []);
+const LoginForm = () => {
+  const dispatch = useDispatch();
+  const [id, onChangeId] = userInput("");
+  const [password, onChangePassword] = userInput("");
 
   const onSubmitForm = useCallback(() => {
     console.log(id, password);
-    setIsLoggedIn(true);
+    dispatch(loginAction({ id, password }));
   }, [id, password]);
 
   return (
@@ -69,11 +64,6 @@ const LoginForm = ({ setIsLoggedIn }) => {
       </FormWrapper>
     </>
   );
-};
-
-LoginForm.PropTypes = {
-  header: PropTypes.string.isRequired,
-  data: PropTypes.array.isRequired,
 };
 
 export default LoginForm;
