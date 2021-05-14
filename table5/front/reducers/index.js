@@ -11,6 +11,7 @@ const initialState = {
 };
 
 export const loginAction = (data) => {
+  console.log(data);
   return {
     type: "LOG_IN",
     data,
