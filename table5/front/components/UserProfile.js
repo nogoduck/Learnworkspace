@@ -7,7 +7,7 @@ const UserProfile = () => {
   const dispatch = useDispatch();
 
   const onLogout = useCallback(() => {
-    dispatch(logoutAction);
+    dispatch(logoutAction());
   }, []);
 
   return (

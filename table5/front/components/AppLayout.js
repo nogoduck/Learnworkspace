@@ -18,7 +18,7 @@ const GithubIcon = styled(GithubOutlined)`
 `;
 
 const AppLayout = ({ children }) => {
-  const { isLoggedIn } = useSelector((state) => state.user.isLoggedIn);
+  const { isLoggedIn } = useSelector((state) => state.user);
 
   return (
     <>
