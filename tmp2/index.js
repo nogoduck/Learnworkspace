@@ -15,7 +15,15 @@ const initalState = {
   number: 32,
 };
 const reducer = (state = initalState, action) => {
-    switch()
+  switch (action.type) {
+    case ADD_NUMBER:
+      return {
+        ...state,
+        number: state.number + 1,
+      };
+    default:
+      return state;
+  }
 };
 
 //store
