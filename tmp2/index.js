@@ -1,8 +1,12 @@
 const redux = require("redux");
+const reduxLogger = require("redux-logger");
 const createStore = redux.createStore;
+const applyMiddleware = redux.applyMiddleware;
+const logger = reduxLogger.createLogger();
 //actions
 //action types
 const ADD_NUMBER = "ADD_NUMBER";
+const ADD_VIEW = "ADD_VIEW";
 const addNumber = () => {
   return {
     type: ADD_NUMBER,
@@ -10,10 +14,10 @@ const addNumber = () => {
 };
 
 //reducers
-const initalState = {
+const defaultNumber = {
   number: 32,
 };
-const reducer = (state = initalState, action) => {
+const controlRsseducer = (state = defaultNumber, action) => {
   switch (action.type) {
     case ADD_NUMBER:
       return {
@@ -25,14 +29,34 @@ const reducer = (state = initalState, action) => {
   }
 };
 
+const viewState = {
+  viewCount = 100;
+
+}
+
+const viewReducer = (state = viewState, action) => {
+  switch (action.type) {
+    case ADD_VIEW:
+      return {
+        ...state,
+        viewCount : state.viewCount+1
+      }
+    default:
+      return state;
+  }
+}
+
+
 //store
-const store = createStore(reducer);
+const store = createStore(controlRsseducer, applyMiddleware(logger));
 
 //subscribe - view - dispatch
+// store.subscribe(() => {
+//   console.log("subscribe >> ", store.getState());
+// });
+
 store.dispatch(addNumber());
-
-console.log(store.getState());
-
-store.number(() => {
-  console.log("Number => ", store.getState());
-});
+store.dispatch(addNumber());
+store.dispatch(addNumber());
+store.dispatch(addNumber());
+store.dispatch(addNumber());
