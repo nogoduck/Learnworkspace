@@ -1,5 +1,5 @@
 const redux = require("redux");
-
+const createStore = redux.createStore;
 //actions
 //action types
 const ADD_NUMBER = "ADD_NUMBER";
@@ -10,7 +10,6 @@ const addNumber = () => {
 };
 
 //reducers
-
 const initalState = {
   number: 32,
 };
@@ -27,5 +26,13 @@ const reducer = (state = initalState, action) => {
 };
 
 //store
+const store = createStore(reducer);
 
 //subscribe - view - dispatch
+store.dispatch(addNumber());
+
+console.log(store.getState());
+
+store.number(() => {
+  console.log("Number => ", store.getState());
+});
