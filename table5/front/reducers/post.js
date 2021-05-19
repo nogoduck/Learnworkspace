@@ -1,34 +1,40 @@
 export const initialState = {
-  mainPoasts: [
+  mainPosts: [
     {
       id: 1,
       User: {
         id: 1,
-        nickname: "NotAngry",
+        nickname: "beenfood",
       },
-      content: "첫 버드",
+      content: "첫 번째 게시글 #해시태그 #빈푸드 #콩",
       Images: [
-        { src: "http://placehold.it/500x500" },
-        { src: "http://placehold.it/450x450" },
-        { src: "http://placehold.it/400x400" },
+        {
+          src: "https://placeholder.com/500x500",
+        },
+        {
+          src: "https://placeholder.com/510x510",
+        },
+        {
+          src: "https://placeholder.com/520x520",
+        },
       ],
       Comments: [
         {
           User: {
-            nickname: "FabioWimber",
+            nickname: "처음",
           },
-          content: "kona is hard",
+          content: "첫 번쨰 댓글",
         },
         {
           User: {
-            nickname: "OuO",
+            nickname: "둘째",
           },
-          content: "Second Comment",
+          content: "두 번째 댓글",
         },
       ],
     },
   ],
-  imagePaths: [],
+  imagePath: [],
   postAdded: false,
 };
 

@@ -1,5 +1,5 @@
 import { Form, Input, Button } from "antd";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { addPost } from "../reducers/post";
@@ -7,12 +7,20 @@ import { addPost } from "../reducers/post";
 const PostForm = () => {
   const { imagePaths } = useSelector((state) => state.post);
   const [text, setText] = useState("");
+  const imageInput = useRef();
   const onChangeText = useCallback((e) => {
     setText(e.target.value);
   });
 
-  const dispatch = useDispatch(addPost);
-  const onSubmit = useCallback(() => {}, []);
+  const dispatch = useDispatch();
+  const onSubmit = useCallback(() => {
+    dispatch(addPost);
+    setText("");
+  }, []);
+
+  const onClickImageUpload = useCallback(() => {
+    imageInput.current.click();
+  }, [imageInput.current]);
   return (
     <Form
       style={{ margin: "10px 0 20px" }}
@@ -27,8 +35,8 @@ const PostForm = () => {
       />
 
       <div>
-        <input type="file" multiple hidden />
-        <Button>이미지 업로드</Button>
+        <input type="file" multiple hidden ref={imageInput} />
+        <Button onClick={onClickImageUpload}>이미지 업로드</Button>
         <Button type="primary" style={{ float: "right" }} htmlType="submit">
           버드
         </Button>
