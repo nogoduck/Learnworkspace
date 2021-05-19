@@ -9,6 +9,7 @@ import PostCard from "../components/PostCard";
 const Home = () => {
   const { isLoggedIn } = useSelector((state) => state.user);
   const { mainPosts } = useSelector((state) => state.post);
+  // console.log(mainPosts);
   return (
     <>
       <Head>
@@ -16,9 +17,9 @@ const Home = () => {
       </Head>
       <AppLayout>
         {isLoggedIn && <PostForm />}
-        {mainPosts.map((post) => (
+        {/* {mainPosts.map((post) => (
           <PostCard key={post.id} post={post} />
-        ))}
+        ))} */}
       </AppLayout>
     </>
   );
