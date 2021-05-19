@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-import ChatPage from "./components/ChatPage";
-import LoginPage from "./components/LoginPage";
-import RegisterPage from "./components/RegisterPage";
+import ChatPage from "./components/ChatPage/ChatPage";
+import LoginPage from "./components/LoginPage/LoginPage";
+import RegisterPage from "./components/RegisterPage/RegisterPage";
 
 function App() {
   return (
