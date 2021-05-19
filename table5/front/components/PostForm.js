@@ -1,10 +1,17 @@
 import { Form, Input, Button } from "antd";
 import { useCallback, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addPost } from "../reducers/post";
 
 const PostForm = () => {
-  const { imagePaths } = useSelector((state) => state.psot);
-  const [text, onChangeText] = useState("");
+  const { imagePaths } = useSelector((state) => state.post);
+  const [text, setText] = useState("");
+  const onChangeText = useCallback((e) => {
+    setText(e.target.value);
+  });
+
+  const dispatch = useDispatch(addPost);
   const onSubmit = useCallback(() => {}, []);
   return (
     <Form
@@ -27,14 +34,15 @@ const PostForm = () => {
         </Button>
       </div>
       <div>
-        {imagePaths.map((v) => (
-          <div key={v} style={{ display: "inline-block" }}>
-            <img src={v} alt={v} style={{ width: "200px" }} />
-            <div>
-              <Button>제거</Button>
-            </div>
-          </div>
-        ))}
+        {imagePaths &&
+          imagePaths.map((v) => {
+            <div key={v} style={{ display: "inline-block" }}>
+              <img src={v} alt={v} style={{ width: "200px" }} />
+              <div>
+                <Button>제거</Button>
+              </div>
+            </div>;
+          })}
       </div>
     </Form>
   );
