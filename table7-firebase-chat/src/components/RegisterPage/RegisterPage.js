@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import md5 from "md5";
 
 import firebase from "../../firebase";
 
@@ -12,19 +13,32 @@ function RegisterPage() {
     formState: { errors },
   } = useForm();
   const [errorFromSubmit, setErrorFromSubmit] = useState("");
-  const password = useRef();
   const [loading, setLoading] = useState(false);
+  const password = useRef();
   password.current = watch("password");
 
   const onSubmit = async (data) => {
-    console.log("확인");
-
     try {
       setLoading(true);
       let createdUser = await firebase
         .auth()
         .createUserWithEmailAndPassword(data.email, data.password);
+      //프로필 이미지 삽입
+      await createdUser.user.updateProfile({
+        displayName: data.name,
+        photoURL: `http://gravatar.com/avatar/${md5(
+          createdUser.user.email
+        )}?d=identicon`,
+      });
+
+      //Firebase db에 데이터 삽입
+      await firebase.database().ref("users").child(createdUser.user.uid).set({
+        name: createdUser.user.displayName,
+        image: createdUser.user.photoURL,
+      });
+
       setLoading(false);
+      console.log("createdUser: ", createdUser);
     } catch (error) {
       setLoading(false);
       setErrorFromSubmit(error.message);
@@ -98,8 +112,8 @@ function RegisterPage() {
         )}
 
         {errorFromSubmit && <p>{errorFromSubmit}</p>}
-        <input type="submit" disable={loading} value="확인" />
-        <Link to="/login">로그인 하러가기</Link>
+        <input type="submit" disabled={loading} value="확인" />
+        <Link to="/login">로그인</Link>
       </form>
     </div>
   );

@@ -7,6 +7,8 @@ import "firebase/storage";
 var firebaseConfig = {
   apiKey: "AIzaSyDTWn7XleQMqF0hK4tEKPNZnLjOcTFkS1s",
   authDomain: "react-chat-app-dd091.firebaseapp.com",
+  databaseURL:
+    "https://react-chat-app-dd091-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "react-chat-app-dd091",
   storageBucket: "react-chat-app-dd091.appspot.com",
   messagingSenderId: "1027379611092",
