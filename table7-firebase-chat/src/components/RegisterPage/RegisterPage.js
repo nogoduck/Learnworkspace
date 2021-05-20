@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+
+import firebase from "../../firebase";
 
 function RegisterPage() {
   const {
@@ -9,12 +11,26 @@ function RegisterPage() {
     watch,
     formState: { errors },
   } = useForm();
-
+  const [errorFromSubmit, setErrorFromSubmit] = useState("");
   const password = useRef();
-  password.current = watch("passwordRequired");
+  password.current = watch("password");
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    console.log("확인");
+
+    try {
+      let createdUser = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(data.email, data.password);
+
+      console.log(createdUser);
+    } catch (error) {
+      console.log(error.message);
+      setErrorFromSubmit(error.message);
+      setTimeout(() => {
+        setErrorFromSubmit("");
+      }, 5000);
+    }
   };
 
   return (
@@ -25,26 +41,26 @@ function RegisterPage() {
         <input
           name="email"
           type="email"
-          {...register("emailRequired", {
+          {...register("email", {
             required: true,
             pattern: /^\S+@\S+$/i,
           })}
           autoFocus
         />
-        {errors.emailRequired && <p>이메일 형식이 올바르지 않습니다</p>}
+        {errors.email && <p>이메일 형식이 올바르지 않습니다</p>}
 
         <label>이름</label>
         <input
           name="name"
-          {...register("nameRequired", {
+          {...register("name", {
             required: true,
             maxLength: 10,
           })}
         />
-        {errors.nameRequired && errors.nameRequired.type === "required" && (
+        {errors.name && errors.name.type === "required" && (
           <p>이름을 입력해주세요</p>
         )}
-        {errors.nameRequired && errors.nameRequired.type === "maxLength" && (
+        {errors.name && errors.name.type === "maxLength" && (
           <p>이름은 10글자 이하로 입력가능합니다</p>
         )}
 
@@ -52,38 +68,35 @@ function RegisterPage() {
         <input
           name="password"
           type="password"
-          {...register("passwordRequired", {
+          {...register("password", {
             required: true,
             minLength: 6,
           })}
         />
-        {errors.passwordRequired &&
-          errors.passwordRequired.type === "required" && (
-            <p>비밀번호를 입력해주세요</p>
-          )}
-        {errors.passwordRequired &&
-          errors.passwordRequired.type === "minLength" && (
-            <p>비밀번호는 6글자 이상으로 입력가능합니다</p>
-          )}
+        {errors.password && errors.password.type === "required" && (
+          <p>비밀번호를 입력해주세요</p>
+        )}
+        {errors.password && errors.password.type === "minLength" && (
+          <p>비밀번호는 6글자 이상으로 입력가능합니다</p>
+        )}
 
         <label>비밀번호 확인</label>
         <input
           name="password_check"
           type="password"
-          {...register("passwordCheckRequired", {
+          {...register("passwordCheck", {
             required: true,
             validate: (value) => value === password.current,
           })}
         />
-        {errors.passwordCheckRequired &&
-          errors.passwordCheckRequired.type === "required" && (
-            <p>비밀번호 확인을 입력해주세요</p>
-          )}
-        {errors.passwordCheckRequired &&
-          errors.passwordCheckRequired.type === "validate" && (
-            <p>비밀번호가 동일하지 않습니다</p>
-          )}
+        {errors.passwordCheck && errors.passwordCheck.type === "required" && (
+          <p>비밀번호 확인을 입력해주세요</p>
+        )}
+        {errors.passwordCheck && errors.passwordCheck.type === "validate" && (
+          <p>비밀번호가 동일하지 않습니다</p>
+        )}
 
+        {errorFromSubmit && <p>{errorFromSubmit}</p>}
         <input type="submit" value="확인" />
         <Link to="/login">로그인 하러가기</Link>
       </form>
