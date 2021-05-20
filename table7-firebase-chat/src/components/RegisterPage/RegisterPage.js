@@ -13,19 +13,20 @@ function RegisterPage() {
   } = useForm();
   const [errorFromSubmit, setErrorFromSubmit] = useState("");
   const password = useRef();
+  const [loading, setLoading] = useState(false);
   password.current = watch("password");
 
   const onSubmit = async (data) => {
     console.log("확인");
 
     try {
+      setLoading(true);
       let createdUser = await firebase
         .auth()
         .createUserWithEmailAndPassword(data.email, data.password);
-
-      console.log(createdUser);
+      setLoading(false);
     } catch (error) {
-      console.log(error.message);
+      setLoading(false);
       setErrorFromSubmit(error.message);
       setTimeout(() => {
         setErrorFromSubmit("");
@@ -97,7 +98,7 @@ function RegisterPage() {
         )}
 
         {errorFromSubmit && <p>{errorFromSubmit}</p>}
-        <input type="submit" value="확인" />
+        <input type="submit" disable={loading} value="확인" />
         <Link to="/login">로그인 하러가기</Link>
       </form>
     </div>
