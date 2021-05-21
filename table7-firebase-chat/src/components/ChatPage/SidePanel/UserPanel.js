@@ -1,13 +1,15 @@
 import React, { useRef } from "react";
 import { BsChatSquareDots } from "react-icons/bs";
 import { Dropdown, Image } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import mime from "mime-types";
 
 import firebase from "../../../firebase";
+import { setPhotoURL } from "../../../redux/actions/user_action";
 
 function UserPanel() {
   const user = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
   const inputOpenImageRef = useRef();
 
   const handleLogout = () => {
@@ -25,14 +27,28 @@ function UserPanel() {
     };
 
     try {
+      //firabase storage에 파일 저장
       let uploadTaskSnapshot = await firebase
         .storage()
         .ref()
         .child(`user_image/${user.uid}`)
         .put(file, metadata);
 
-      console.log(uploadTaskSnapshot);
-    } catch (error) {}
+      let downloadURL = await uploadTaskSnapshot.ref.getDownloadURL();
+
+      //change profile image
+      await firebase.auth().currentUser.updateProfile({
+        photoURL: downloadURL,
+      });
+
+      await firebase.database().ref("users").child(user.uid).update({
+        image: downloadURL,
+      });
+
+      dispatch(setPhotoURL(downloadURL));
+    } catch (error) {
+      alert(error);
+    }
   };
   return (
     <div>
