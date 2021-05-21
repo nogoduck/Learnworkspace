@@ -7,7 +7,7 @@ import firebase from "./firebase";
 import ChatPage from "./components/ChatPage/ChatPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import RegisterPage from "./components/RegisterPage/RegisterPage";
-import { setUser } from "./redux/actions/user_action";
+import { setUser, clearUser } from "./redux/actions/user_action";
 
 function App() {
   let history = useHistory();
@@ -21,6 +21,7 @@ function App() {
         dispatch(setUser(user));
       } else {
         history.push("/login");
+        dispatch(clearUser(user));
       }
     });
   }, []);
