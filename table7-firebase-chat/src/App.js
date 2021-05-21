@@ -15,7 +15,7 @@ function App() {
   const isLoading = useSelector((state) => state.user.isLoading);
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log("user : ", user);
+      // console.log("user : ", user);
       if (user) {
         history.push("/");
         dispatch(setUser(user));

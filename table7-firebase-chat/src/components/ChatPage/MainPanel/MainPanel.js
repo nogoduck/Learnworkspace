@@ -10,9 +10,7 @@ export class MainPanel extends Component {
       <div
         style={{
           padding: "2rem 2rem 0 2rem",
-          backgroundColor: "#fffs",
           color: "#060607",
-          height: "100vh",
         }}
       >
         <MessageHeader />
