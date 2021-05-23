@@ -1,5 +1,5 @@
 #calc__container {
-  border: 5px solid red;
+  border: 5px solid #e74c3c;
   border-radius: 5px;
   padding: 12px;
   width: 210px;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 #calc__container input {
-  border: 2px solid orangered;
+  border: 2px solid #e74c3c;
   border-radius: 5px;
   outline: none;
   margin: 5px 0px 16px 0px;
@@ -17,7 +17,7 @@
   height: 32px;
   font-size: 1.5em;
 }
-#calc__container button {
+.btn {
   border-radius: 5px;
   outline: none;
   margin: 2px;
@@ -25,6 +25,16 @@
   height: 50px;
   background-color: #fff;
   font-size: 24px;
+  cursor: pointer;
+}
+.btn-null {
+  border: none;
+  color: #e74c3c;
+  background-color: #ecf0f1;
+  cursor: default;
+}
+.btn-width-2 {
+  width: 104px;
 }
 #calc-right-func {
   display: flex;

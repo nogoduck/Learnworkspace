@@ -10,34 +10,34 @@ function Main() {
         <div style={{ display: "flex" }}>
           <div>
             <div id="calc-top-func">
-              <button>n/a</button>
-              <button>.</button>
-              <button>+/-</button>
-              <button>C</button>
-              <button>()</button>
-              <button>%</button>
+              <button className="btn btn-null">n/a</button>
+              <button className="btn">.</button>
+              <button className="btn">+/-</button>
+              <button className="btn">C</button>
+              <button className="btn">()</button>
+              <button className="btn">%</button>
             </div>
             <div id="calc-number">
-              <button>1</button>
-              <button>2</button>
-              <button>3</button>
-              <button>4</button>
-              <button>5</button>
-              <button>6</button>
-              <button>7</button>
-              <button>8</button>
-              <button>9</button>
-              <button style={{ width: "104px" }}>0</button>
-              <button>00</button>
+              <button className="btn">1</button>
+              <button className="btn">2</button>
+              <button className="btn">3</button>
+              <button className="btn">4</button>
+              <button className="btn">5</button>
+              <button className="btn">6</button>
+              <button className="btn">7</button>
+              <button className="btn">8</button>
+              <button className="btn">9</button>
+              <button className="btn btn-width-2">0</button>
+              <button className="btn">00</button>
             </div>
           </div>
           <div id="calc-right-func">
-            <button>◀</button>
-            <button>/</button>
-            <button>*</button>
-            <button>-</button>
-            <button>+</button>
-            <button>=</button>
+            <button className="btn">◀</button>
+            <button className="btn">/</button>
+            <button className="btn">*</button>
+            <button className="btn">-</button>
+            <button className="btn">+</button>
+            <button className="btn">=</button>
           </div>
         </div>
       </div>
