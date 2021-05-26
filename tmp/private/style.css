@@ -1,10 +1,35 @@
-div {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: 0;
+}
+#main__header {
+  width: 960px;
+  margin: 0 auto;
+  height: 160px;
+  position: relative;
+}
+#main__header > #title {
   position: absolute;
-  left: 50%;
-  right: 50%;
-  top: 50%;
-  bottom: 50%;
-  width: 500px;
-  height: 320px;
-  background-color: red;
+  left: 20px;
+  top: 30px;
+}
+#main__header > #main__gnb {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#main__header > #main__lnb {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
 }
