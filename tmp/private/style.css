@@ -33,3 +33,46 @@ img {
   right: 0;
   bottom: 10px;
 }
+#main__gnb > ul {
+  overflow: hidden;
+}
+#main__gnb > ul > li {
+  float: left;
+}
+#main__gnb > ul > li :hover {
+  background: black;
+  color: white;
+}
+#main__gnb > ul > li > a {
+  border: 1px solid black;
+  padding: 2px 10px;
+  display: block;
+}
+#main__gnb > ul > li:first-child > a {
+  border-radius: 10px 0 0 10px;
+}
+#main__gnb > ul > li:last-child > a {
+  border-radius: 0 10px 10px 0;
+}
+
+#main__lnb > ul {
+  overflow: hidden;
+}
+#main__lnb > ul > li {
+  float: left;
+}
+#main__lnb > ul > li :hover {
+  background: black;
+  color: white;
+}
+#main__lnb > ul > li > a {
+  border: 1px solid black;
+  padding: 7px 20px;
+  display: block;
+}
+#main__lnb > ul > li:first-child > a {
+  border-radius: 12px 0 0 12px;
+}
+#main__lnb > ul > li:last-child > a {
+  border-radius: 0 12px 12px 0;
+}
