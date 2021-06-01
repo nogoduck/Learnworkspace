@@ -11,6 +11,7 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+
     <title>도서 도우미</title>
   </head>
   <body>
@@ -23,23 +24,25 @@
 
     <!-- Search Section -->
     <section id="search">
-      <form action="/search">
+      <form action="/search" method="GET">
         <div class="selectBox">
-          <select class="selectList" name="selectList">
+          <select class="selectList" name="option">
             <option>도서명</option>
             <option>저자명</option>
             <option>출판사</option>
           </select>
           <i class="fas fa-caret-down"></i>
         </div>
+        <div id="previous_type">{{previous_type}}</div>
 
+        <div class="previous_keyword">{{previous_keyword}}</div>
         <input
           type="text"
           name="keyword"
           placeholder="키워드를 입력하세요."
-          value="{{previous_keyword}}"
-          autofocus
+          value=""
         />
+        <input type="hidden" name="page" value="1" />
         <button type="submit">
           <i class="fas fa-search"></i>
         </button>
@@ -49,26 +52,147 @@
 
     <!-- Result Section -->
     <section id="result">
-      {% for i in range(0, result_cnt.val) %}
-      <div class="result__book">
-        <div class="book__img">
-          <img src="http://placehold.it/80x120" />
+      {% for i in range(0, bookcount.value) %}
+      <div class="result result__book">
+        <div class="result result__contaier">
+          <div class="book__img">
+            <img src="{{bookimg[i]}}" width="80" height="120" />
+          </div>
+          <div class="book__info">
+            <div class="book book__title">{{title[i]}}({{publishYear[i]}})</div>
+            <div class="book book__writer__publisher">
+              {{writer[i]}} | {{publisher[i]}}
+            </div>
+            <div class="book book__subCategory">분류 : {{subCategory[i]}}</div>
+
+            {% if isrental[i] !== "0" %}
+            <div class="book book__isrental">
+              <button
+                type="submit"
+                id="getBook{{CNO[i]}}"
+                onClick="rental({{CNO[i]}});"
+              >
+                대출 정보
+              </button>
+            </div>
+            <div class="CNO" id="{{CNO[i]}}"></div>
+            {% else %}
+            <button id="impossible__btn">대출 불가</button>
+            {% endif %}
+          </div>
+          <!-- result__contaier -->
         </div>
-        <div class="book__info">
-          <div class="book book__title">{{title}} ({{date}})</div>
-          <div class="book book__date">{{writer}} | {{publisher}}</div>
-          <div class="book book__location">소장위치 : {{location}}</div>
-          <div class="book book__state">도서상태 : {{state}}</div>
-        </div>
+        {% if isrental[i] !== "0" %}
+        <div id="drawtable" class="{{CNO[i]}}"></div>
+        {% endif %}
+
+        <!-- result__book -->
       </div>
       {% endfor %}
+      <!-- Paging Section -->
+      <div class="hidden">
+        <div id="totalPages">{{totalPages}}</div>
+        <div id="currentPage">{{currentPage}}</div>
+      </div>
+      <br />
+      <div class="paging__container">
+        <div class="__space__"></div>
+        {% for i in pagingArr %}
+        <form action="/search" method="GET">
+          <input type="hidden" name="option" value="{{previous_type}}" />
+          <input type="hidden" name="keyword" value="{{previous_keyword}}" />
+          <button type="submit" id="pagingindex{{i}}" name="page" value="{{i}}">
+            {{i}}
+          </button>
+        </form>
+        {% endfor %}
+        <div class="__space__"></div>
+      </div>
+      <!-- End Paging Section -->
     </section>
     <!-- End Result Section -->
+    <!-- Footer -->
+    <footer>
+      <div class="footer__container"></div>
+    </footer>
+    <!-- End Footer -->
 
+    <!-- Function -->
+    <div class="scrolldown__icon"><i class="fas fa-chevron-down"></i></div>
+    <!-- End Function -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       const header = document.querySelector("header");
+      const selectList = document.querySelector(".selectList");
+      const previous_type = document.querySelector("#previous_type");
+      const previous_keyword = document.querySelector(".previous_keyword");
+      const input = document.querySelector("#search input");
+      const currentpage = document.querySelector("#currentPage");
+      const ispage = document.getElementById(
+        `pagingindex${currentpage.innerText}`
+      );
+      const drawactive = () => {
+        // ispage.style.color = "#d35400";
+        ispage.style.fontWeight='bold';
+        ispage.style.textDecoration='underline';
+      };
+      selectList.value = previous_type.textContent;
+
+      if (ispage !== null) {
+        console.log("DRAW");
+        drawactive();
+      }
+
+      setTimeout(() => {
+        input.value = previous_keyword.innerText;
+        input.focus();
+      }, 0);
+
       header.addEventListener("click", () => {
         location.href = "/";
+      });
+
+      function rental(cno) {
+        const isrental = document.getElementById(`${cno}`);
+        const drawtable = document.getElementsByClassName(`${cno}`)[0];
+        const rentalInfoBtn = document.getElementById(`getBook${cno}`);
+        if (rentalInfoBtn.innerText === "대출 정보") {
+          axios
+            .get(`/search/postman/${cno}`)
+            .then((res) => {
+              const data = res.data;
+              rentalInfoBtn.innerText = "숨기기";
+              drawtable.classList.remove("hidden");
+              drawtable.innerHTML = data;
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        } else {
+          rentalInfoBtn.innerText = "대출 정보";
+          drawtable.classList.add("hidden");
+        }
+      }
+
+      const downicon = document.querySelector(".scrolldown__icon");
+      let previousScrollY;
+      document.addEventListener("scroll", (e) => {
+        let nowScrollY = scrollY;
+        if (nowScrollY > previousScrollY) {
+          // console.log("down Scroll");
+          downicon.style.display = "inline";
+        } else {
+          // console.log("up Scroll");
+          downicon.style.display = "none";
+        }
+        previousScrollY = scrollY;
+      });
+
+      downicon.addEventListener("click", () => {
+        scrollTo(0, 9999_9999);
+        setTimeout(() => {
+          downicon.style.display = "none";
+        }, 0);
       });
     </script>
   </body>

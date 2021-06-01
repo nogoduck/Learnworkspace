@@ -1,38 +1,239 @@
+const { info } = require("console");
 const express = require("express");
-const router = express.Router();
 const app = express();
+const router = express.Router();
+const path = require("path");
+const { PythonShell } = require("python-shell");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+let previous_keyword;
+let previous_type;
+let resultCNO = null;
+let bookcount = null;
+let bookimg = [];
+let title = [];
+let writer = [];
+let publisher = [];
+let publishYear = [];
+let CNO = [];
+let isrental = [];
+let subCategory = [];
+let pagingArr = [];
+let totalPages = 0;
+let currentPage = 1;
+let PAGES = 1;
 
-const result_cnt = 2;
-const title = "1984";
-const date = 2003;
-const writer = "조지 오웰";
-const publisher = "민음사";
-const location = "2층 소설";
-const state = "대출 불가";
-const file = '{"title":"미운오리(2010)","author":"미상"}';
+const reset = () => {
+  bookcount = null;
+  title = [];
+  writer = [];
+  publisher = [];
+  publishYear = [];
+  CNO = [];
+  bookimg = [];
+  isrental = [];
+  subCategory = [];
+  totalPages = 0;
+  currentPage = 1;
+  pagingArr = [];
+};
 
-let b = JSON.parse(file);
-console.log("b", b);
-console.log("b", b.title);
-router.get("/", (req, res, next) => {
-  const previous_keyword = req.query.keyword;
-  console.log(previous_keyword);
+const convertType = (type) => {
+  switch (type) {
+    case "저자명":
+      return "A";
+    case "출판사":
+      return "P";
+    default:
+      return "T";
+  }
+};
 
+const putData = (data, index) => {
+  let dataindex = index % 10;
+
+  switch (dataindex) {
+    case 0:
+      title.push(data);
+      break;
+    case 1:
+      writer.push(data);
+      break;
+    case 2:
+      publisher.push(data);
+      break;
+    case 3:
+      publishYear.push(data);
+      break;
+    case 4:
+      CNO.push(data);
+      break;
+    case 5:
+      bookimg.push(data);
+      break;
+    case 6:
+      isrental.push(data);
+      break;
+    case 7:
+      subCategory.push(data);
+      break;
+    case 8:
+      totalPages = data;
+      break;
+    case 9:
+      currentPage = data;
+      break;
+      deafualt: break;
+  }
+};
+
+const draw = (res) => {
   res.render("search", {
     title: title,
-    date: date,
     writer: writer,
     publisher: publisher,
-    location: location,
-    state: state,
+    publishYear: publishYear,
+    CNO: CNO,
+    bookimg: bookimg,
+    isrental: isrental,
+    subCategory: subCategory,
+    totalPages: totalPages,
+    currentPage: currentPage,
     previous_keyword: previous_keyword,
-    result_cnt: {
-      val: result_cnt,
+    previous_type: previous_type,
+    pagingArr: pagingArr,
+    bookcount: {
+      value: bookcount,
     },
   });
+};
+
+const resetCNO = () => {
+  resultCNO = null;
+};
+
+const drawCNO = (res, info) => {
+  let bb = 0;
+  res.write(
+    "<table>                \
+              <tr>                  \
+                <th>현황</th>       \
+                <th>위치</th>       \
+                <th>대출자</th>     \
+                <th>반납예정일</th> \
+              </tr>"
+  );
+
+  for (let aa = 0; aa <= info.length / 4; aa++) {
+    res.write("<tr>");
+    for (; bb < aa * 4; bb++) {
+      res.write(`<td>${info[bb]}</td>`);
+    }
+    res.write("</tr>");
+  }
+  res.end();
+};
+
+const distribute = (total, current) => {
+  const pagingCnt = 9;
+  const half = Math.floor(pagingCnt / 2);
+  const arr = [];
+  current = parseInt(current);
+  let L = current - half;
+  let R = current + half;
+
+  if (L < 1) {
+    R += Math.abs(L) + 1;
+    L = 1;
+  }
+
+  if (R > total) {
+    L -= R - total;
+    R = total;
+  }
+
+  L = L < 1 ? 1 : L;
+
+  for (let i = L; i <= R; i++) {
+    arr.push(i);
+  }
+
+  return arr;
+};
+
+router.get("/postman/:id", async (req, res) => {
+  const postCNO = req.params.id;
+  const optionCNO = {
+    mode: "text",
+    pythonPath: "",
+    pythonOption: ["-u"],
+    scriptPath: "",
+    args: [postCNO],
+  };
+  PythonShell.run(
+    path.join(__dirname, "../RentalBook.py"),
+    optionCNO,
+    (err, res) => {
+      if (err) throw err;
+      console.log(res);
+      resultCNO = res;
+      for (let i = 0; i < res.length; i++) {
+        console.log(res[i]);
+      }
+      drawCNO(resCNO, res);
+    }
+  );
+  const resCNO = res;
+  console.log("resultCNO: ", resultCNO);
+  resetCNO();
+});
+
+router.get("/", async (req, res, next) => {
+  previous_keyword = req.query.keyword;
+  previous_type = req.query.option;
+  PAGES = req.query.page;
+  const INPUT = req.query.keyword;
+  const TYPE = req.query.option;
+  const CONVERTTYPE = convertType(TYPE);
+  console.log("INPUT: ", INPUT);
+  console.log("CONVERTTYPE: ", CONVERTTYPE);
+  console.log("PAGES:", PAGES);
+  const option = {
+    mode: "text",
+    pythonPath: "",
+    pythonOption: ["-u"],
+    scriptPath: "",
+    args: [INPUT, CONVERTTYPE, PAGES],
+  };
+
+  PythonShell.run(
+    path.join(__dirname, "../searchBook.py"),
+    option,
+    (err, res) => {
+      if (err) throw err;
+      reset();
+      bookcount = 0;
+      let i = 0;
+      let j = 0;
+      if (res[0] !== "NULL") {
+        try {
+          while (res[i] !== undefined) {
+            bookcount += 1;
+            for (j = i; j < i + 10; j++) {
+              putData(res[j], j);
+            }
+            i = j;
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      console.log("자료 개수 : ", bookcount);
+
+      pagingArr = distribute(totalPages, PAGES);
+      return draw(routerResponse);
+    }
+  );
+  const routerResponse = res;
 });
 
 module.exports = router;
