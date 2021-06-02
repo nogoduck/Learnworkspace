@@ -9,6 +9,25 @@
   <body>
     <h3>Test Dummy data</h3>
 
-    <form></form>
+    <form action="/result">
+      <select name="option1">
+        <option>쌀</option>
+        <option>밀</option>
+        <option>통곡</option>
+      </select>
+      <select name="option2">
+        <option>GT</option>
+        <option>Trek</option>
+        <option>Kona</option>
+        <option>Yeti</option>
+        <option>SantaCruz</option>
+      </select>
+      <br />
+      <input type="radio" name="option3" value="EnduroBike" id="radio_btn1" />
+      <label for="radio_btn1">Enduro Bike</label><br />
+      <input type="radio" name="option3" value="TrailBike" id="radio_btn2" />
+      <label for="radio_btn2">Trail Bike</label><br />
+      <button type="submit">Next</button>
+    </form>
   </body>
 </html>
