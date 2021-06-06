@@ -3,7 +3,7 @@ body {
   padding: 0px;
 }
 
-#register-icon {
+#register_icon {
   display: inline-block;
   background-color: #000;
   border-radius: 5px;
@@ -14,6 +14,7 @@ body {
 }
 #line {
   border: 1px solid black;
+  background-color: #000;
 }
 table,
 tr,
@@ -23,16 +24,35 @@ th {
   border-collapse: collapse;
   padding: 10px 0px;
 }
-label {
+.form-label {
   float: right;
   margin: 0px 10px 0px 50px;
 }
 input {
-  width: 100px;
+  /* width: 100px; */
 }
-.input-size-1 {
+.input-1 {
   width: 50px;
 }
-.input-size-2 {
+.input-2 {
   width: 25px;
+}
+.form_button {
+  display: flex;
+  justify-content: center;
+}
+.form_button button {
+  margin: 0px 5px;
+}
+.cancel_icon {
+  background-color: black;
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 50%;
+}
+.submit_icon {
+  background-color: black;
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 50%;
 }
