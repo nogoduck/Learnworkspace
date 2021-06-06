@@ -1,0 +1,38 @@
+body {
+  margin: 20px;
+  padding: 0px;
+}
+
+#register-icon {
+  display: inline-block;
+  background-color: #000;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  padding: 1px 5px;
+  margin-right: 7px;
+}
+#line {
+  border: 1px solid black;
+}
+table,
+tr,
+td,
+th {
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px 0px;
+}
+label {
+  float: right;
+  margin: 0px 10px 0px 50px;
+}
+input {
+  width: 100px;
+}
+.input-size-1 {
+  width: 50px;
+}
+.input-size-2 {
+  width: 25px;
+}
