@@ -1,0 +1,32 @@
+body {
+  margin: 0 10px;
+  padding: 0px;
+  width: 800px;
+}
+li {
+  list-style: none;
+}
+
+#topNav ul li {
+  float: left;
+  border: 1px solid black;
+  /* border-right: 1px solid black; */
+  padding: 0 20px;
+  margin: 0 0 20px 0;
+}
+#topNav ul li:last-child {
+  border: none;
+}
+.description-1 {
+  border: 1px solid black;
+  width: 400px;
+  padding: 15px;
+  margin: 15px;
+}
+.description-3 {
+  border: 1px solid black;
+  width: 700px;
+  padding: 15px;
+  margin: 15px;
+  line-height: 150%;
+}

@@ -18,16 +18,20 @@ body {
 }
 table,
 tr,
-td,
 th {
   border-bottom: 1px solid black;
   border-collapse: collapse;
-  padding: 10px 0px;
 }
-.form-label {
+
+td:first-child {
+  padding: 10px 0px;
   float: right;
   margin: 0px 10px 0px 50px;
 }
+/* .form-label {
+  float: right;
+  margin: 0px 10px 0px 50px;
+} */
 input {
   /* width: 100px; */
 }
