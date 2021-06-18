@@ -47,6 +47,9 @@ function LandingPage(props) {
           <Link to="/video/explore">
             <button className="btn_default-green">저장소</button>
           </Link>
+          <Link to="/subscription">
+            <button className="btn_default-gray">구독</button>
+          </Link>
         </div>
       </div>
     );

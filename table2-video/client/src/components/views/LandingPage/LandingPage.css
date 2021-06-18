@@ -87,7 +87,22 @@ a:hover {
 }
 .btn_default-green:hover {
   cursor: pointer;
-  background-color: #05c46b;
+  background-color: #27ae60;
+}
+.btn_default-gray {
+  width: 75px;
+  font-size: 1em;
+  padding: 8px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  background-color: #95a5a6;
+}
+.btn_default-gray:hover {
+  cursor: pointer;
+  background-color: #7f8c8d;
 }
 .link_ghost {
   background-color: #fff;

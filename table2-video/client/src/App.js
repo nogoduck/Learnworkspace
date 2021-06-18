@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Auth from "./hoc/auth";
+import React from "react";
 
 import LandingPage from "./components/views/LandingPage/LandingPage";
 import LoginPage from "./components/views/LoginPage/LoginPage";
@@ -6,8 +8,8 @@ import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import VideoUploadPage from "./components/views/VideoUploadPage/VideoUploadPage";
 import VideoCardPage from "./components/views/VideoCardPage/VideoCardPage";
 import VideoDetailPage from "./components/views/VideoDetailPage/VideoDetailPage";
-import Auth from "./hoc/auth";
-import React from "react";
+import SubscriptionPage from "./components/views/SubscriptionPage/SubscriptionPage";
+
 function App() {
   return (
     <Router>
@@ -30,6 +32,11 @@ function App() {
             exact
             path="/video/:videoId"
             component={Auth(VideoDetailPage, null)}
+          />
+          <Route
+            exact
+            path="/subscription"
+            component={Auth(SubscriptionPage, null)}
           />
         </Switch>
       </>
