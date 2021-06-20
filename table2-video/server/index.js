@@ -5,10 +5,13 @@ const app = express();
 const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
+
 const config = require("./config/key");
 const userRouter = require("./routes/users");
 const videoRouter = require("./routes/video");
 const subscribeRouter = require("./routes/subscribe");
+const commentRouter = require("./routes/comment");
+
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
@@ -37,6 +40,7 @@ mongoose
 app.use("/api/users", userRouter);
 app.use("/api/video", videoRouter);
 app.use("/api/subscribe", subscribeRouter);
+app.use("/api/comment", commentRouter);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

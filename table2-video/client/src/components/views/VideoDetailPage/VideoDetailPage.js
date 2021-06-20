@@ -1,10 +1,11 @@
 import "./VideoDetailPage.css";
 import React, { useEffect, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
+import { List, Avatar, Row, Col } from "antd";
 import Axios from "axios";
 import SideVideo from "./section/SideVideo";
 import Subscribe from "./section/Subscribe";
-import { List, Avatar, Row, Col } from "antd";
+import Comment from "./section/Comment";
 
 function VideoDetailPage(props) {
   const videoId = props.match.params.videoId;
@@ -13,6 +14,7 @@ function VideoDetailPage(props) {
   console.log("variable :: ", variable);
 
   const [VideoDetail, setVideoDetail] = useState([]);
+  // const [Comment, setComment] = useState(initialState);
 
   useEffect(() => {
     Axios.post("/api/video/getVideoDetail", variable).then((res) => {
@@ -66,6 +68,7 @@ function VideoDetailPage(props) {
                 ></div>
               </div>
             </div>
+            <Comment postId={videoId} />
           </div>
           <div id="video_side">
             <SideVideo />
