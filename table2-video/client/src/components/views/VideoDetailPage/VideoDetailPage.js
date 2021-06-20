@@ -27,6 +27,14 @@ function VideoDetailPage(props) {
   }, []);
 
   if (VideoDetail.writer) {
+    const subscribeButton = VideoDetail.writer._id !==
+      localStorage.getItem("userId") && (
+      <Subscribe
+        userTo={VideoDetail.writer._id}
+        userFrom={localStorage.getItem("userId")}
+      />
+    );
+
     return (
       <div id="videodetail__container">
         <div id="container_title-videodetail">
@@ -51,10 +59,7 @@ function VideoDetailPage(props) {
                 <li>{VideoDetail.description}</li>
               </ul>
               <div className="video_func">
-                <Subscribe
-                  userTo={VideoDetail.writer._id}
-                  userFrom={localStorage.getItem("userId")}
-                />
+                {subscribeButton}
                 <div
                   className="subscribe"
                   onClick={[<Subscribe userTo={VideoDetail.writer._id} />]}
