@@ -1,7 +1,13 @@
 const React = require("react");
+const { Component } = React;
 
-const temp = () => {
-  return <div>LandingPage</div>;
-};
+class Main extends Component {
+  state = {
+    text: "WebPack-Practice",
+  };
+  render() {
+    return <div>{this.state.text}</div>;
+  }
+}
 
-module.exports = temp;
+module.exports = Main;
