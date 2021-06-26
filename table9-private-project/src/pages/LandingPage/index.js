@@ -1,12 +1,14 @@
 import React from "react";
 import TopNav from "../../components/TopNav";
+import SideNav from "../../components/SideNav";
 function LandingPage() {
   return (
     <>
       <TopNav />
-
-      <SideNav />
-      <div>Contents</div>
+      <div style={{ display: "flex" }}>
+        <SideNav />
+        <div>CONTENTS</div>
+      </div>
     </>
   );
 }
