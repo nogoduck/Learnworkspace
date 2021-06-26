@@ -5,7 +5,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Sub1></Sub1> */}
         <Route path="/" exact component={LandingPage} />
       </BrowserRouter>
     </>

@@ -4,10 +4,12 @@ import { Container } from "./styled";
 function SideNav() {
   return (
     <Container>
-      사이드 메뉴
-      <div>12</div>
-      <div>12</div>
-      <div>12</div>
+      <ul>
+        <li>소개</li>
+        <li>카드</li>
+        <li>게시판</li>
+        <li>item4</li>
+      </ul>
     </Container>
   );
 }
