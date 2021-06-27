@@ -6,6 +6,7 @@ function App() {
     <>
       <BrowserRouter>
         <Route path="/" exact component={LandingPage} />
+        <Route path="/menu/:menu" component={LandingPage} />
       </BrowserRouter>
     </>
   );

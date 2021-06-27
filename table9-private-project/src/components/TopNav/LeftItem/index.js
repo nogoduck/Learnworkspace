@@ -1,7 +1,7 @@
 import React from "react";
-
+import { Container } from "./styled.js";
 function LeftItem() {
-  return <div style={{ float: "left" }}>LEFT</div>;
+  return <Container>🚲devLog</Container>;
 }
 
 export default LeftItem;

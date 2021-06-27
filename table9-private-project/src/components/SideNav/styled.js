@@ -9,7 +9,6 @@ export const Container = styled.div`
 
   & li {
     color: white;
-    list-style: none;
-    font-size: 2em;
+    font-size: 1.5em;
   }
 `;
