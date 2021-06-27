@@ -18,3 +18,10 @@ li {
 a {
   text-decoration: none;
 }
+
+button:focus {
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
