@@ -10,6 +10,7 @@ function RightItem() {
   };
   return (
     <div style={{ float: "right" }}>
+      <button>Modal Practice</button>
       <button onClick={onClickLoginModal}>Login</button>
       <Menu onCloseModal={onClickLoginModal}></Menu>
       <button>Register</button>
