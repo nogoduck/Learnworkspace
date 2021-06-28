@@ -1,12 +1,9 @@
 import React from "react";
 import { Container, CloseButton } from "./styled";
 
-function Menu({ children, onCloseModal }) {
+function Menu({ children, onCloseModal, style }) {
   return (
-    <Container>
-      메뉴 모달
-      <br />
-      <input type="text" />
+    <Container style={style}>
       <CloseButton onClick={onCloseModal}>&times;</CloseButton>
       {children}
     </Container>

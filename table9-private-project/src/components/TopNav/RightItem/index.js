@@ -12,7 +12,13 @@ function RightItem() {
     <div style={{ float: "right" }}>
       <button>Modal Practice</button>
       <button onClick={onClickLoginModal}>Login</button>
-      <Menu onCloseModal={onClickLoginModal}></Menu>
+      <Menu onCloseModal={onClickLoginModal} style={{ padding: "10px" }}>
+        로그인
+        <br />
+        <input type="text" name="email" id="email" />
+        <br />
+        <input type="password" name="password" id="password" />
+      </Menu>
       <button>Register</button>
     </div>
   );
